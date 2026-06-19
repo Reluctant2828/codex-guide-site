@@ -283,6 +283,51 @@
     }
     .callout span { flex: 0 0 auto; }
     .callout p { margin: 0; }
+    .feature-card {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) minmax(260px, .95fr);
+      gap: 18px;
+      align-items: center;
+      max-width: 860px;
+      margin: 18px 0 22px;
+      padding: 16px;
+      border: 1px solid #dbeaf1;
+      border-radius: 16px;
+      background: #ffffff;
+      box-shadow: 0 18px 38px rgba(31, 71, 91, .07);
+    }
+    .feature-card img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      border: 1px solid #e2ecf2;
+      background: #f8fcfe;
+    }
+    .feature-copy { min-width: 0; }
+    .feature-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #fff7e5;
+      border: 1px solid #ffe2a8;
+      color: #715323;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .feature-copy h4 {
+      margin: 10px 0 8px;
+      font-size: 22px;
+      line-height: 1.22;
+      color: #17384a;
+    }
+    .feature-copy p {
+      margin: 0;
+      color: #425563;
+      font-size: 15px;
+      line-height: 1.72;
+    }
     .table-wrap {
       overflow-x: auto;
       margin: 18px 0 24px;
@@ -462,6 +507,16 @@
       .intro-card { padding: 15px 16px; margin-bottom: 24px; }
       .intro-card p { font-size: 16px; }
       p, ul, ol, blockquote, .callout, .prompt-card, .table-wrap, figure { margin-left: 0; margin-right: 0; }
+      .feature-card {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 12px;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 14px;
+      }
+      .feature-copy h4 { font-size: 19px; }
+      .feature-copy p { font-size: 14.5px; }
       .prompt-card { border-radius: 12px; }
       .prompt-head { padding: 9px 10px; }
       pre { padding: 14px 12px; font-size: 12.5px; }
@@ -490,7 +545,8 @@
       <div class="sub-links"><a class="sub-link" href="#2-1-插件">2.1 插件</a>
 <a class="sub-link" href="#2-2-模式">2.2 模式</a>
 <a class="sub-link" href="#2-3-自动化功能">2.3 自动化功能</a>
-<a class="sub-link" href="#2-4-skill">2.4 Skill</a></div>
+<a class="sub-link" href="#2-4-skill">2.4 Skill</a>
+<a class="sub-link" href="#2-5-新增能力-record-replay">2.5 新增能力：Record &amp; Replay</a></div>
     </div>
 <div class="nav-group">
       <a class="main-link" href="#3-第一次上手-照着这三步跑通">3. 第一次上手：照着这三步跑通</a>
@@ -679,6 +735,50 @@
 <tr><td>pdf</td><td>PDF 太长、不能复制、排版难检查</td><td><a href="https://github.com/openai/skills/tree/main/skills/.curated/pdf" target="_blank" rel="noreferrer"><strong>地址</strong></a></td></tr>
 <tr><td>playwright</td><td>网页流程要测试，人工点太慢</td><td><a href="https://github.com/openai/skills/tree/main/skills/.curated/playwright" target="_blank" rel="noreferrer"><strong>地址</strong></a></td></tr></table></div>
 <p>安装 Skill 也很简单：直接把地址发给 Codex，说“帮我安装这个 Skill”即可。<span class="accent"><strong>大家要始终贯彻一个理念：把 Codex 当作你的私人秘书，你只管像领导一样给要求，它会想尽办法把结果交付出来。</strong></span></p>
+<h3 id="2-5-新增能力-record-replay">2.5 新增能力：Record &amp; Replay</h3>
+<aside class="feature-card">
+        <img src="./assets/record-replay-skill.svg" alt="Record &amp; Replay 示意图" loading="eager"/>
+        <div class="feature-copy">
+          <div class="feature-tag">Mac 录制流程 / 自动整理 Skill</div>
+          <h4>Record &amp; Replay</h4>
+          <p>这个能力可以理解成：你在 Mac 上把一套操作流程 <strong>演示一遍</strong>，Codex 会观察步骤、整理规则，然后帮你草拟成一个可复用的 <strong>Skill</strong>。适合那些“每次都差不多，但用文字描述很麻烦”的重复流程。</p>
+        </div>
+      </aside>
+<p>它更适合这类任务：</p>
+<ul>
+<li>报销、上传资料、下载固定报表这类重复办公流程。</li>
+<li>每次都要按固定字段创建 issue、工单、客户记录或发布内容。</li>
+<li>某个流程很依赖你的个人习惯，用文字讲不如直接演示一遍。</li>
+<li>你想把一个熟练员工的操作步骤沉淀下来，变成以后新人也能复用的 Skill。</li>
+</ul>
+<p>使用方式可以按这个顺序理解：</p>
+<ol>
+<li>先选一个你已经很熟、步骤稳定的流程。</li>
+<li>在 Codex 的 Plugins 里选择 <strong>Record a skill</strong>。</li>
+<li>开始录制后，你在 Mac 上正常演示一次完整流程。</li>
+<li>结束录制后，Codex 会检查录制内容，并整理出 Skill 草稿。</li>
+<li>你再补充规则，比如命名格式、字段默认值、哪些地方不能乱点。</li>
+<li>下次遇到同类任务时，直接让 Codex 使用这个 Skill。</li>
+</ol>
+<aside class="callout"><span>⚠️</span><p><strong>录制时不要放入密码、客户隐私、付款信息等敏感内容。示范要短、完整、聚焦，流程结束就停止录制。</strong></p></aside>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>我想把“下载每周报表并整理成固定命名格式”这个流程录制成 Skill。
+请先帮我确认这个流程适不适合 Record &amp; Replay。
+如果适合，请告诉我录制前要准备什么、录制时要注意什么、录制后怎么检查 Skill 草稿。</code></pre>
+        </div>
+<p>录完以后，可以这样让它优化 Skill：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请检查刚刚生成的 Skill 草稿。
+重点看：
+1. 什么时候应该触发这个 Skill
+2. 哪些输入每次会变化
+3. 哪些步骤必须严格固定
+4. 如何判断流程已经成功完成
+5. 有没有敏感信息需要去掉</code></pre>
+        </div>
 <div class="section-break"></div>
 </section>
 <section class="content-section" data-step="03"><div class="section-kicker">Step 03</div><h2 id="3-第一次上手-照着这三步跑通">3. 第一次上手：照着这三步跑通</h2>
