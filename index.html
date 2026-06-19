@@ -269,6 +269,43 @@
     li { margin: 6px 0; }
     li::marker { color: #5faed4; }
     .accent { color: var(--accent); }
+    .section-guide {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 820px;
+      margin: 14px 0 26px;
+    }
+    .guide-item {
+      min-width: 0;
+      padding: 12px 13px;
+      border: 1px solid #dbeaf1;
+      border-radius: 12px;
+      background: #ffffff;
+      box-shadow: 0 10px 22px rgba(31, 71, 91, .045);
+    }
+    .guide-item strong {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      margin-bottom: 5px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #edf8fd;
+      color: #0d638d;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    .guide-item p {
+      max-width: none;
+      margin: 0;
+      color: #405563;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .guide-look { border-top: 3px solid #74bfdf; }
+    .guide-gain { border-top: 3px solid #7fc9b2; }
+    .guide-avoid { border-top: 3px solid #f0b35a; }
     blockquote, .callout {
       margin: 18px 0;
       padding: 14px 16px;
@@ -504,6 +541,21 @@
       table { min-width: 560px; }
       .content-section { padding: 34px 0 38px 18px; }
       .content-section::before { left: 4px; top: 42px; bottom: 38px; }
+      .section-guide {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+        margin: 12px 0 22px;
+      }
+      .guide-item { padding: 9px 10px; border-radius: 11px; }
+      .guide-item strong {
+        margin-bottom: 4px;
+        padding: 1px 7px;
+        font-size: 11px;
+      }
+      .guide-item p {
+        font-size: 12.6px;
+        line-height: 1.45;
+      }
       .quick-card { display: none; }
       .reader-note { gap: 6px; }
       .reader-note span { padding: 4px 8px; }
@@ -625,7 +677,12 @@
         <section class="intro-card"><div class="intro-meta">更新于 6.18 / 持续更新中 by 磊磊中转站</div><p>很多人第一次用 Codex，会把它当成另一个聊天窗口：问一句、等一句、复制一段答案。这样当然也能用，但远远没有用到它真正的价值。Codex 更像一个能进入工作现场的执行型同事：它可以读资料、改文件、跑检查、开浏览器验证结果，也可以把重复流程沉淀成固定方法。说夸张一点，如果只拿它闲聊，就有点像<span class="accent"><strong>原始人拿到 AK47，也只会当成烧火棍来使用</strong></span>。</p>
 <p>这篇文章不是让大家背功能名，而是帮你建立一个更实用的使用方式：先判断什么事情适合交给 Codex，再学会把需求说清楚，最后把高频任务沉淀成可以反复使用的工作流。</p></section>
 <aside class="callout"><span>🧭</span><p><strong>建议读法：如果你只想马上用起来，先看第 3、4、5 章；如果你想把它变成长期生产力，再回头看第 2、6 章。</strong></p></aside>
-<section class="content-section" data-step="01"><div class="section-kicker">Step 01</div><h2 id="1-先建立认知-codex-适合接手哪些工作">1. 先建立认知：Codex 适合接手哪些工作</h2>
+<section class="content-section" data-step="01"><div class="section-kicker">Step 01</div><h2 id="1-先建立认知-codex-适合接手哪些工作">1. 先建立认知：Codex 适合接手哪些工作</h2><div class="section-guide" aria-label="本章导读">
+      <div class="guide-item guide-look"><strong>先看这个</strong><p>先把 Codex 当成能交付任务的执行同事，而不是只会回答问题的聊天窗口。</p></div>
+      <div class="guide-item"><strong>适合谁</strong><p>第一次接触 Codex，还不知道能交给它什么工作的人。</p></div>
+      <div class="guide-item guide-gain"><strong>读完你会</strong><p>判断哪些工作适合交给 Codex，以及开口前要准备哪些材料。</p></div>
+      <div class="guide-item guide-avoid"><strong>不要这样用</strong><p>不要只问一句“帮我看看”，要把材料、目标和结果要求一起给它。</p></div>
+    </div>
 <ul>
 <li>把散乱资料整理成结构清晰、可以直接发给别人的文档。</li>
 <li>把会议记录整理成结论、行动项、负责人和截止时间。</li>
@@ -638,7 +695,12 @@
 <figure><img src="./assets/notion-image-1.png" alt="文章截图" loading="eager"/></figure>
 <div class="section-break"></div>
 </section>
-<section class="content-section" data-step="02"><div class="section-kicker">Step 02</div><h2 id="2-看懂工具-不同能力应该怎么选">2. 看懂工具：不同能力应该怎么选</h2>
+<section class="content-section" data-step="02"><div class="section-kicker">Step 02</div><h2 id="2-看懂工具-不同能力应该怎么选">2. 看懂工具：不同能力应该怎么选</h2><div class="section-guide" aria-label="本章导读">
+      <div class="guide-item guide-look"><strong>先看这个</strong><p>先不用背功能名，先看任务属于哪一类，再选择插件、模式、自动化或 Skill。</p></div>
+      <div class="guide-item"><strong>适合谁</strong><p>已经打开 Codex，但看到一堆功能不知道怎么选的人。</p></div>
+      <div class="guide-item guide-gain"><strong>读完你会</strong><p>知道不同能力分别解决什么问题，遇到任务时不会乱点。</p></div>
+      <div class="guide-item guide-avoid"><strong>不要这样用</strong><p>不要为了显得专业先找一堆插件，普通文字任务通常直接说清楚就够。</p></div>
+    </div>
 <h3 id="2-1-插件">2.1 插件</h3>
 <figure><img src="./assets/notion-image-2.png" alt="文章截图" loading="eager"/></figure>
 <div class="table-wrap"><table><tr><th>插件</th><th>适合解决的痛点</th><th>一句话理解</th></tr>
@@ -655,7 +717,7 @@
 <p><strong>计划模式</strong>：像“<span class="accent"><strong>开工前先开个小会</strong></span>”：让 Codex 先读材料、拆步骤、问问题、给方案，但先不要真正执行。</p>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>进入计划模式。
 先不要改文件，先帮我分析这个任务应该怎么做。
 请告诉我：
@@ -667,7 +729,7 @@
 <p><strong>追求目标</strong>：像“给 Codex 一个长期任务”：它会持续记住最终要达成什么，中途你可以继续补充、调整、暂停或恢复，<span class="accent"><strong>不达目的不停止，狠狠 push！！！</strong></span></p>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>进入目标模式。
 请把这个作为目标：
 帮我完成一份分析竞品与我司差异的分析报告。
@@ -693,26 +755,26 @@
 </ul>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请帮我创建一个每周五下午的提醒：
 提醒我整理本周工作总结，并列出需要汇报的重点。</code></pre>
         </div>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请每周一上午提醒我检查上周未完成事项。
 提醒内容包括：未完成任务、阻塞点、下一步行动。</code></pre>
         </div>
 <p>项目监控可以这样说：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请创建一个项目监控自动化。
 每天下午 5 点检查这个项目是否有新的失败、阻塞或需要我处理的事项。
 如果没有异常，就不用打扰我；如果有异常，请用清单告诉我问题和建议动作。</code></pre>
         </div>
 <p>每日简报可以这样说：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请创建一个每日简报自动化。
 每天上午 9 点提醒我查看今天最重要的事项。
 请按这几个部分输出：今日重点、需要跟进、可能风险、建议先做什么。</code></pre>
@@ -766,14 +828,14 @@
 <aside class="callout"><span>⚠️</span><p><strong>录制时不要放入密码、客户隐私、付款信息等敏感内容。示范要短、完整、聚焦，流程结束就停止录制。</strong></p></aside>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>我想把“下载每周报表并整理成固定命名格式”这个流程录制成 Skill。
 请先帮我确认这个流程适不适合 Record &amp; Replay。
 如果适合，请告诉我录制前要准备什么、录制时要注意什么、录制后怎么检查 Skill 草稿。</code></pre>
         </div>
 <p>录完以后，可以这样让它优化 Skill：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请检查刚刚生成的 Skill 草稿。
 重点看：
 1. 什么时候应该触发这个 Skill
@@ -784,17 +846,22 @@
         </div>
 <div class="section-break"></div>
 </section>
-<section class="content-section" data-step="03"><div class="section-kicker">Step 03</div><h2 id="3-第一次上手-照着这三步跑通">3. 第一次上手：照着这三步跑通</h2>
+<section class="content-section" data-step="03"><div class="section-kicker">Step 03</div><h2 id="3-第一次上手-照着这三步跑通">3. 第一次上手：照着这三步跑通</h2><div class="section-guide" aria-label="本章导读">
+      <div class="guide-item guide-look"><strong>先看这个</strong><p>第一次不要做大项目，先用一个真实小任务跑通完整流程。</p></div>
+      <div class="guide-item"><strong>适合谁</strong><p>想马上开始用，但不知道第一句话怎么说的人。</p></div>
+      <div class="guide-item guide-gain"><strong>读完你会</strong><p>拿到一套可以照着做的三步上手方法和通用提示词。</p></div>
+      <div class="guide-item guide-avoid"><strong>不要这样用</strong><p>不要一上来就让它做复杂项目，先让它总结、改写、检查一个小任务。</p></div>
+    </div>
 <aside class="callout"><span>✅</span><p><strong>最简单的入门公式：给材料 + 说目标 + 定格式 + 要求自检。先用一个小任务跑通，再逐步交给它更复杂的工作。</strong></p></aside>
 <h3 id="3-1-第一步-从一个真实小任务开始">3.1 第一步：从一个真实小任务开始</h3>
 <p>不要只说：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>帮我看看这个。</code></pre>
         </div>
 <p>更好的说法是：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请帮我阅读这个文件夹里的资料，整理成一篇适合发到 内网 的说明文档。
 目标读者是新员工，语气要清楚、轻松，不要太正式。
 请先告诉我你准备怎么整理，再开始写。</code></pre>
@@ -804,7 +871,7 @@
 <figure><img src="./assets/notion-image-5.png" alt="文章截图" loading="eager"/></figure>
 <h3 id="3-3-第三步-不知道怎么说就复制这一段">3.3 第三步：不知道怎么说就复制这一段</h3>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请先理解我的目标，再给出一个简短计划。
 如果需要查看文件或运行命令，你可以自己去做。
 开始执行前，先告诉我你准备分几步完成。
@@ -813,20 +880,25 @@
 <p>不知道怎么开口时，直接复制这一段。它的重点不是写得高级，而是让 Codex 先理解目标、再计划、再执行、最后自检。</p>
 <div class="section-break"></div>
 </section>
-<section class="content-section" data-step="04"><div class="section-kicker">Step 04</div><h2 id="4-放进真实工作-这些场景可以直接套">4. 放进真实工作：这些场景可以直接套</h2>
+<section class="content-section" data-step="04"><div class="section-kicker">Step 04</div><h2 id="4-放进真实工作-这些场景可以直接套">4. 放进真实工作：这些场景可以直接套</h2><div class="section-guide" aria-label="本章导读">
+      <div class="guide-item guide-look"><strong>先看这个</strong><p>这一章不是讲概念，而是把 Codex 放进真实工作场景里看怎么用。</p></div>
+      <div class="guide-item"><strong>适合谁</strong><p>想知道 Codex 到底能帮自己省哪些时间的人。</p></div>
+      <div class="guide-item guide-gain"><strong>读完你会</strong><p>直接拿走文档、数据分析、代码、调研、浏览器验证等常见场景的写法。</p></div>
+      <div class="guide-item guide-avoid"><strong>不要这样用</strong><p>不要只复制示例，要把里面的材料、读者、格式换成你的真实任务。</p></div>
+    </div>
 <aside class="callout"><span>👉</span><p><strong>不知道从哪里开始，就从你每天最耗时间、最重复、最不想手动整理的一件事开始。下面这些提示词可以直接复制，再替换成你的资料。</strong></p></aside>
 <h3 id="4-1-写文档-整理会议纪要-总结资料">4.1 写文档、整理会议纪要、总结资料</h3>
 <p>如果你手上有一堆资料，先不要自己硬整理。把材料交给 Codex，让它先提炼重点、搭好结构，再改成<span class="accent"><strong>读者能直接看懂的内容</strong></span>。</p>
 <p>你可以这样说：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请把这些会议记录整理成一篇 Notion 纪要。
 要求包含：会议结论、待办事项、负责人、截止时间、争议点。
 语气简洁，不要写成正式公文。</code></pre>
         </div>
 <p>也可以这样说：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请阅读这个文件夹里的资料，帮我整理成一篇新员工能看懂的入门文档。
 先列大纲，再写正文。
 正文里多用小标题和示例。</code></pre>
@@ -845,7 +917,7 @@
 <p>遇到 Excel、CSV、PDF、截图这类资料，先不要自己翻半天。让 Codex 先读一遍，再让它按“重点、异常、结论、建议动作”输出。</p>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请分析这个表格，告诉我：
 1. 哪些数据最异常？
 2. 哪些趋势值得关注？
@@ -854,7 +926,7 @@
         </div>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请阅读这个 PDF，整理出：
 - 核心结论
 - 关键数据
@@ -866,14 +938,14 @@
 <p>工程相关任务里，Codex 的优势是它可以<span class="accent"><strong>直接读仓库</strong></span>、理解项目结构、改文件、跑测试、解释 diff。</p>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>这个 bug 是：用户点击保存后偶尔没有提示成功。
 请你先定位原因，再给出修复方案。
 修复后运行相关测试，并告诉我改了哪些文件。</code></pre>
         </div>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请 review 当前未提交的改动。
 重点看：逻辑漏洞、边界情况、兼容性、是否缺测试。
 不要只总结，要直接指出具体问题和文件位置。</code></pre>
@@ -882,7 +954,7 @@
 <p>脑子里只有一个模糊想法时，也可以交给 Codex。先不要急着要成品，让它帮你拆清楚目标、路径、第一版要做到什么程度。</p>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>我想做一个面向销售团队的客户跟进模板库。
 请先帮我拆解这个需求：
 - 应该包含哪些模板？
@@ -892,7 +964,7 @@
         </div>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请把这个目标拆成一周内能完成的任务清单。
 每个任务写清楚产出物和验收标准。</code></pre>
         </div>
@@ -908,7 +980,7 @@
 </ul>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请打开本地运行的网站，检查首页在桌面端和手机端是否显示正常。
 重点看文字是否溢出、按钮是否能点击、图片是否加载。
 最后告诉我发现了什么问题。</code></pre>
@@ -919,12 +991,17 @@
 <p>当然，大家也能在网上看到很多有意思的产品，更多心得后续再分享。我想说的是，在现在这个 Agent 时代，哪怕你缺少某一方面的能力，AI 也已经可以帮我们补上很多短板。所以请保持不断学习新事物的能力，期待大家都能 vibe coding 出属于自己的创意作品，have fun！</p>
 <div class="section-break"></div>
 </section>
-<section class="content-section" data-step="05"><div class="section-kicker">Step 05</div><h2 id="5-用得更稳-把需求说清楚">5. 用得更稳：把需求说清楚</h2>
+<section class="content-section" data-step="05"><div class="section-kicker">Step 05</div><h2 id="5-用得更稳-把需求说清楚">5. 用得更稳：把需求说清楚</h2><div class="section-guide" aria-label="本章导读">
+      <div class="guide-item guide-look"><strong>先看这个</strong><p>Codex 好不好用，很大程度取决于你有没有把任务说清楚。</p></div>
+      <div class="guide-item"><strong>适合谁</strong><p>已经会用了，但经常觉得输出不稳定、不够准的人。</p></div>
+      <div class="guide-item guide-gain"><strong>读完你会</strong><p>学会让它先出计划、分步骤执行、自检，并按你的反馈继续修改。</p></div>
+      <div class="guide-item guide-avoid"><strong>不要这样用</strong><p>不要只说“再改改”或“不对”，要告诉它哪里不满意、想改成什么样。</p></div>
+    </div>
 <h3 id="5-1-先让-codex-出计划-再让它执行">5.1 先让 Codex 出计划，再让它执行</h3>
 <p>任务越复杂，越要先让 Codex 写计划。你看得懂计划，再让它执行；如果计划都说不清楚，直接执行通常也不会稳。</p>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请先不要动文件。
 先阅读相关内容，然后给我一个执行计划：
 1. 你会看哪些文件？
@@ -934,7 +1011,7 @@
         </div>
 <p>如果你对任务很熟，也可以让它直接执行：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请直接完成这个修改。
 完成后运行相关检查，并总结改动和验证结果。</code></pre>
         </div>
@@ -949,7 +1026,7 @@
 </ol>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>我们分四步做：
 第一步，请先读取资料并总结重点。
 第二步，再生成大纲。
@@ -961,7 +1038,7 @@
 <p>完成任务后，<span class="accent"><strong>不要只看“它有没有写完”，还要让它站在读者或使用者角度自检一遍。</strong></span></p>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请自检这份文档：
 - 是否有重复内容？
 - 是否有读者看不懂的术语？
@@ -971,7 +1048,7 @@
         </div>
 <p>工程任务可以这样说：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请检查这次改动：
 - 改了哪些文件？
 - 为什么这么改？
@@ -982,12 +1059,12 @@
 <p>Codex 很<span class="accent"><strong>擅长模仿格式</strong></span>。你给的示例越清楚，它越容易产出你想要的结果。</p>
 <p>不够清楚：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>帮我写得专业一点。</code></pre>
         </div>
 <p>更清楚：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请按下面这个风格改写：
 - 句子短一点。
 - 不要宣传腔。
@@ -999,26 +1076,31 @@
 <p>结果不满意时，不要急着重开。直接告诉它哪里不对、希望改成什么样，它会沿着当前上下文继续修。</p>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>这版太像制度文件了。
 请改成教学笔记的语气，少用“必须”“禁止”，多用“你可以”“适合”“建议”。</code></pre>
         </div>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>这版太长了。
 请压缩到原来的 60%，保留示例提示词，删掉重复解释。</code></pre>
         </div>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>你理解错了，我不是要写给工程师，而是写给全员。
 请重新调整结构，先讲普通办公场景，再讲代码能力。</code></pre>
         </div>
 <p><span class="accent"><strong>如果是前端同学，更可以直接调用插件，指哪改哪。</strong></span></p>
 <div class="section-break"></div>
 </section>
-<section class="content-section" data-step="06"><div class="section-kicker">Step 06</div><h2 id="6-进阶使用-把重复工作变成流程">6. 进阶使用：把重复工作变成流程</h2>
+<section class="content-section" data-step="06"><div class="section-kicker">Step 06</div><h2 id="6-进阶使用-把重复工作变成流程">6. 进阶使用：把重复工作变成流程</h2><div class="section-guide" aria-label="本章导读">
+      <div class="guide-item guide-look"><strong>先看这个</strong><p>当一个任务反复出现，就不要每次都重新写提示词，要把它沉淀成流程。</p></div>
+      <div class="guide-item"><strong>适合谁</strong><p>经常做周报、会议纪要、客户反馈、固定检查这类重复工作的人。</p></div>
+      <div class="guide-item guide-gain"><strong>读完你会</strong><p>理解 Skill、项目说明文件、个人工作流和 MCP 分别适合放在哪里。</p></div>
+      <div class="guide-item guide-avoid"><strong>不要这样用</strong><p>不要把密码、客户隐私、付款信息直接放进录制、自动化或固定流程里。</p></div>
+    </div>
 <h3 id="6-1-自己蒸馏自己-有女娲-skill-把自己变成赛博员工">6.1 自己<span class="accent">蒸馏</span>自己，有女娲 Skill 把自己变成赛博员工</h3>
 <p>当你发现自己经常这样说：</p>
 <ul>
@@ -1030,7 +1112,7 @@
 <p>这就适合做成 Skill。</p>
 <p>你可以先让 Codex 帮你提炼流程：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>我经常需要完成这个任务：把客户反馈整理成产品改进建议。
 请帮我把它设计成一个可复用 Skill。
 请输出：
@@ -1054,7 +1136,7 @@
 <p>这样以后每次让 Codex 处理项目时，它不用从零开始猜。</p>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>请帮我为这个项目写一份给 Codex 看的说明文件。
 内容包括：项目简介、目录结构、常用命令、代码风格、测试方式、注意事项。</code></pre>
         </div>
@@ -1062,7 +1144,7 @@
 <p>你也可以让 Codex 观察你的重复工作，然后帮你设计流程。</p>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>我每周都要做这些事：
 1. 整理客户反馈
 2. 写周报
@@ -1092,7 +1174,7 @@
 <tr><td>CAD、3D 建模、设计工具这类软件步骤复杂</td><td>如果软件支持脚本/API，可以做 MCP 让 Codex 辅助生成、检查或批量处理</td></tr></table></div>
 <p>例如 CAD 画图或 3D 建模：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>如果公司经常使用 CAD 或 3D 建模软件，
 可以让技术同事基于软件的 API 或脚本能力做一个 MCP 连接。
 这样 Codex 就不只是“给建议”，而是可以读取模型信息、生成脚本、检查参数、批量处理文件，甚至辅助完成部分建模流程。</code></pre>
@@ -1108,7 +1190,12 @@
 </ul>
 <div class="section-break"></div>
 </section>
-<section class="content-section" data-step="07"><div class="section-kicker">Step 07</div><h2 id="7-常见问题-少走一些弯路">7. 常见问题：少走一些弯路</h2>
+<section class="content-section" data-step="07"><div class="section-kicker">Step 07</div><h2 id="7-常见问题-少走一些弯路">7. 常见问题：少走一些弯路</h2><div class="section-guide" aria-label="本章导读">
+      <div class="guide-item guide-look"><strong>先看这个</strong><p>这里集中回答新手最容易卡住的问题，适合当作排雷清单。</p></div>
+      <div class="guide-item"><strong>适合谁</strong><p>看完前面以后，仍然担心自己不会用、用错或结果不准的人。</p></div>
+      <div class="guide-item guide-gain"><strong>读完你会</strong><p>知道什么时候该用插件、Skill、自动化，以及结果不满意时怎么继续改。</p></div>
+      <div class="guide-item guide-avoid"><strong>不要这样用</strong><p>不要把 Codex 的输出直接当最终答案，重要内容仍然要让它报告结果并由你确认。</p></div>
+    </div>
 <h3 id="q1-codex-和普通聊天-ai-最大的区别是什么">Q1：Codex 和普通聊天 AI 最大的区别是什么？</h3>
 <p>普通聊天 AI 更偏向“回答问题”；Codex 更偏向“推进任务”。它可以读文件、改文件、运行命令、开浏览器验证，并把结果落到具体文件里。</p>
 <h3 id="q2-我不会写代码-也能用-codex-吗">Q2：我不会写代码，也能用 Codex 吗？</h3>
@@ -1125,12 +1212,12 @@
 <p>不要只说“不对”或者“再改改”。直接告诉它哪里不对、为什么不满意、希望变成什么样。反馈越具体，下一版越接近你要的结果。</p>
 <p>示例：</p>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>这版太正式了，请改成轻松的教学语气。
 保留结构，但删掉制度感很强的表达。</code></pre>
         </div>
 <div class="prompt-card">
-          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <div class="prompt-head"><span>直接复制</span><button type="button" class="copy-button">复制</button></div>
           <pre><code>这版没有示例，不适合新手。
 请每一节都补一个可以直接复制的提示词。</code></pre>
         </div>
@@ -1144,7 +1231,12 @@
 <li>重要产出让 Codex 自检一遍。</li>
 </ul>
 </section>
-<section class="content-section" data-step="08"><div class="section-kicker">Step 08</div><h2 id="8-30-分钟练习-跑通一次完整流程">8. 30 分钟练习：跑通一次完整流程</h2>
+<section class="content-section" data-step="08"><div class="section-kicker">Step 08</div><h2 id="8-30-分钟练习-跑通一次完整流程">8. 30 分钟练习：跑通一次完整流程</h2><div class="section-guide" aria-label="本章导读">
+      <div class="guide-item guide-look"><strong>先看这个</strong><p>如果只想练一次，就按这 30 分钟流程完整跑一遍。</p></div>
+      <div class="guide-item"><strong>适合谁</strong><p>准备带员工上手，或者想自己快速熟悉 Codex 工作方式的人。</p></div>
+      <div class="guide-item guide-gain"><strong>读完你会</strong><p>用一篇已有文档跑完总结、改写、生成 FAQ、自检和网页分享。</p></div>
+      <div class="guide-item guide-avoid"><strong>不要这样用</strong><p>不要跳步骤，先跑通一次完整小流程，再扩展到更复杂的工作。</p></div>
+    </div>
 <p>第一次练习不要追求大而全。用 30 分钟跑完下面这条小流程，就能熟悉 Codex 的基本用法：</p>
 <ol>
 <li>第 1 步：让 Codex 总结一篇你已有的文档。</li>
@@ -1155,7 +1247,12 @@
 <li>第 6 步：让 Codex 把内容做成一个可以分享的网页。</li>
 </ol>
 </section>
-<section class="content-section" data-step="09"><div class="section-kicker">Step 09</div><h2 id="9-最后记住这-5-个原则">9. 最后记住这 5 个原则</h2>
+<section class="content-section" data-step="09"><div class="section-kicker">Step 09</div><h2 id="9-最后记住这-5-个原则">9. 最后记住这 5 个原则</h2><div class="section-guide" aria-label="本章导读">
+      <div class="guide-item guide-look"><strong>先看这个</strong><p>最后不要记一堆功能名，只记住真正能让 Codex 交付结果的原则。</p></div>
+      <div class="guide-item"><strong>适合谁</strong><p>读完全文后想快速复盘重点的人。</p></div>
+      <div class="guide-item guide-gain"><strong>读完你会</strong><p>用 5 句话记住怎么给任务、给材料、拆复杂工作和沉淀流程。</p></div>
+      <div class="guide-item guide-avoid"><strong>不要这样用</strong><p>不要把它当搜索框用，目标和验收标准越清楚，结果才越稳。</p></div>
+    </div>
 <ul>
 <li>不要只问一句就结束，要把任务背景、材料和结果要求说清楚。</li>
 <li>任务越复杂，越要先让它出计划。</li>
