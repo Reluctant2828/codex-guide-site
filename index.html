@@ -244,7 +244,11 @@
       line-height: 1.45;
     }
     article { max-width: var(--content); margin-inline: auto; background: transparent; }
-    h2, h3, h4 { scroll-margin-top: 24px; letter-spacing: 0; }
+    h2, h3, h4 {
+      scroll-margin-top: 24px;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
     h2 {
       margin: 0 0 16px;
       padding-left: 0;
@@ -264,11 +268,21 @@
       color: #1c4256;
     }
     h4 { margin: 22px 0 8px; font-size: 16px; }
-    p { max-width: 68ch; margin: 12px 0; }
+    p {
+      max-width: 68ch;
+      margin: 12px 0;
+      text-wrap: balance;
+      line-break: loose;
+    }
     ul, ol { max-width: 70ch; margin: 12px 0 20px; padding-left: 24px; }
-    li { margin: 6px 0; }
+    li {
+      margin: 6px 0;
+      text-wrap: balance;
+      line-break: loose;
+    }
     li::marker { color: #5faed4; }
     .accent { color: var(--accent); }
+    .nowrap { white-space: nowrap; }
     .section-guide {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -302,6 +316,7 @@
       color: #405563;
       font-size: 14px;
       line-height: 1.55;
+      text-wrap: balance;
     }
     .guide-look { border-top: 3px solid #74bfdf; }
     .guide-gain { border-top: 3px solid #7fc9b2; }
@@ -322,7 +337,7 @@
       box-shadow: 0 10px 24px rgba(31, 71, 91, .045);
     }
     .callout span { flex: 0 0 auto; }
-    .callout p { margin: 0; }
+    .callout p { margin: 0; text-wrap: balance; }
     .feature-card {
       display: grid;
       grid-template-columns: minmax(220px, 1fr) minmax(260px, .95fr);
@@ -367,6 +382,7 @@
       color: #425563;
       font-size: 15px;
       line-height: 1.72;
+      text-wrap: balance;
     }
     .table-wrap {
       overflow-x: auto;
@@ -536,7 +552,7 @@
         padding: 26px 18px 22px;
         border-radius: 16px;
       }
-      .hero h2 { max-width: 260px; font-size: 30px; }
+      .hero h2 { max-width: 260px; font-size: 28px; line-height: 1.15; }
       .hero .float { right: 18px; top: 28px; width: 58px; height: 58px; }
       table { min-width: 560px; }
       .content-section { padding: 34px 0 38px 18px; }
@@ -988,7 +1004,7 @@
 <h3 id="4-6-满足每位同学的一切想象力">4.6 <span class="accent">满足每位同学的一切想象力</span></h3>
 <p>我在这里稍微多说一句：每位同学内心其实都有无限的想象力，只是以前受限于能力，很多想法很难落地。比如我小时候一直想成为一名游戏开发者，可是人生总是充满不确定，后来专业选择了别的方向。</p>
 <p>但有了 Codex 后，我每天都靠它 vibe coding 做出一些有意思的东西。例如：记录每一次旅游回忆的网站、绑定 Apple Watch 的健身小游戏、每天给我推荐训练动作，训练完成后电子宠物就会收到食物。</p>
-<p>当然，大家也能在网上看到很多有意思的产品，更多心得后续再分享。我想说的是，在现在这个 Agent 时代，哪怕你缺少某一方面的能力，AI 也已经可以帮我们补上很多短板。所以请保持不断学习新事物的能力，期待大家都能 vibe coding 出属于自己的创意作品，have fun！</p>
+<p>当然，大家也能在网上看到很多有意思的产品，更多心得后续再分享。我想说的是，在现在这个 Agent 时代，哪怕你缺少某一方面的能力，AI 也已经可以帮我们补上很多短板。所以请保持不断学习新事物的能力，也希望大家都能开心地 vibe coding 出属于自己的创意作品。</p>
 <div class="section-break"></div>
 </section>
 <section class="content-section" data-step="05"><div class="section-kicker">Step 05</div><h2 id="5-用得更稳-把需求说清楚">5. 用得更稳：把需求说清楚</h2><div class="section-guide" aria-label="本章导读">
