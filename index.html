@@ -1,0 +1,1104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Codex 进阶使用教程</title>
+  <style>
+    :root {
+      --ink: #22313b;
+      --muted: #66747f;
+      --line: #dfe8ee;
+      --blue: #edf8fd;
+      --blue-strong: #74bfdf;
+      --paper: #ffffff;
+      --soft: #f6fbfd;
+      --accent: #e94d62;
+      --mint: #cfeee4;
+      --sun: #ffe2a8;
+      --lavender: #e8e0ff;
+      --nav: 292px;
+      --content: 960px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: linear-gradient(90deg, #eaf7fc 0, #eaf7fc var(--nav), #fbfdfe var(--nav));
+      font: 16px/1.82 "Inter", "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      text-rendering: optimizeLegibility;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: var(--nav) minmax(0, 1fr);
+      min-height: 100vh;
+    }
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 24px 18px 20px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-right: 1px solid var(--line);
+      background: #eaf7fc;
+    }
+    .brand {
+      display: grid;
+      grid-template-columns: 62px minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(169, 216, 239, .7);
+    }
+    .progress {
+      height: 3px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255,255,255,.8);
+      margin: 0 2px 14px;
+    }
+    .progress span {
+      display: block;
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #75bee2, #e98ca0);
+      transition: width .12s linear;
+    }
+    .brand img {
+      width: 62px;
+      height: 62px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(43, 95, 126, .12);
+    }
+    .brand h1 {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+    .brand p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 6px;
+      min-height: 0;
+      overflow: auto;
+      padding-right: 4px;
+      flex: 1 1 auto;
+    }
+    .nav a {
+      color: #2b4351;
+      text-decoration: none;
+      border-radius: 8px;
+      line-height: 1.35;
+    }
+    .nav a:hover,
+    .nav a.is-active {
+      background: #fff;
+      color: #0d638d;
+      box-shadow: 0 8px 18px rgba(43, 95, 126, .08);
+    }
+    .nav-group {
+      border-bottom: 1px solid rgba(169, 216, 239, .56);
+      background: transparent;
+      border-radius: 0;
+      padding: 6px 0;
+    }
+    .nav-group:last-child { border-bottom: 0; }
+    .main-link {
+      display: block;
+      padding: 7px 9px;
+      font-size: 13.5px;
+      font-weight: 700;
+    }
+    .sub-links {
+      display: grid;
+      gap: 1px;
+      margin: 2px 0 2px 10px;
+      padding-left: 10px;
+      border-left: 1px solid #c8e3f0;
+    }
+    .sub-link {
+      display: block;
+      padding: 4px 8px;
+      color: #5c6d77;
+      font-size: 12.2px;
+    }
+    .sticker-note {
+      flex: 0 0 auto;
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+    }
+    .sticker-note img {
+      width: 78px;
+      height: 78px;
+      object-fit: contain;
+      transform: rotate(-4deg);
+      opacity: .92;
+    }
+    .top-link {
+      display: block;
+      margin-top: 8px;
+      text-align: center;
+      color: #557282;
+      text-decoration: none;
+      font-size: 12px;
+    }
+    .top-link:hover { color: #0d638d; }
+    main {
+      max-width: 1080px;
+      width: 100%;
+      padding: 48px 64px 96px;
+      margin-inline: auto;
+    }
+    .hero {
+      position: relative;
+      max-width: var(--content);
+      margin-left: auto;
+      margin-right: auto;
+      min-height: 142px;
+      padding-right: 116px;
+      margin-bottom: 18px;
+      padding: 28px 116px 28px 30px;
+      border: 1px solid #dbeaf1;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 20px 46px rgba(31, 71, 91, .07);
+    }
+    .hero h2 {
+      margin: 0 0 10px;
+      padding-left: 0;
+      border-left: 0;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.12;
+    }
+    .hero p { color: var(--muted); margin: 0; }
+    .hero .float {
+      position: absolute;
+      right: 26px;
+      top: 28px;
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 20px rgba(70, 116, 142, .16));
+    }
+    .reader-note {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .reader-note span {
+      border: 1px solid #d8e8ef;
+      border-radius: 999px;
+      background: #f7fbfd;
+      padding: 5px 10px;
+      color: #557282;
+      font-size: 12px;
+    }
+    .quick-card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid #e1edf3;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .quick-card div {
+      flex: 1 1 180px;
+      border: 1px solid #e2ecf2;
+      border-radius: 12px;
+      background: #fbfdfe;
+      padding: 11px 12px;
+    }
+    .quick-card div:nth-child(1) { border-top: 3px solid var(--blue-strong); }
+    .quick-card div:nth-child(2) { border-top: 3px solid #7fc9b2; }
+    .quick-card div:nth-child(3) { border-top: 3px solid #f4b95c; }
+    .quick-card strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 13px;
+      color: #17384a;
+    }
+    .quick-card span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    article { max-width: var(--content); margin-inline: auto; background: transparent; }
+    h2, h3, h4 { scroll-margin-top: 24px; letter-spacing: 0; }
+    h2 {
+      margin: 0 0 16px;
+      padding-left: 0;
+      border-left: 0;
+      font-size: 25px;
+      line-height: 1.28;
+    }
+    .hero h2 {
+      margin-bottom: 10px;
+      padding-left: 0;
+      border-left: 0;
+    }
+    h3 {
+      margin: 32px 0 10px;
+      padding-top: 2px;
+      font-size: 19px;
+      color: #1c4256;
+    }
+    h4 { margin: 22px 0 8px; font-size: 16px; }
+    p { max-width: 68ch; margin: 12px 0; }
+    ul, ol { max-width: 70ch; margin: 12px 0 20px; padding-left: 24px; }
+    li { margin: 6px 0; }
+    li::marker { color: #5faed4; }
+    .accent { color: var(--accent); }
+    blockquote, .callout {
+      margin: 18px 0;
+      padding: 14px 16px;
+      border: 1px solid #d3e7f0;
+      border-left: 4px solid #75bee2;
+      background: #f2fbff;
+      border-radius: 12px;
+      max-width: 72ch;
+    }
+    .callout {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      box-shadow: 0 10px 24px rgba(31, 71, 91, .045);
+    }
+    .callout span { flex: 0 0 auto; }
+    .callout p { margin: 0; }
+    .table-wrap {
+      overflow-x: auto;
+      margin: 18px 0 24px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 12px 26px rgba(31, 71, 91, .045);
+    }
+    table { width: 100%; border-collapse: collapse; min-width: 680px; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; font-size: 14.5px; line-height: 1.65; }
+    th { background: var(--blue); font-weight: 700; }
+    tr:last-child td { border-bottom: 0; }
+    tr:nth-child(even) td { background: #fbfdfe; }
+    .prompt-card {
+      max-width: 74ch;
+      margin: 16px 0 22px;
+      overflow: hidden;
+      border: 1px solid #d9e8ef;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(31, 71, 91, .055);
+    }
+    .prompt-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      color: #23617d;
+      background: #edf8fd;
+      border-bottom: 1px solid #d9e8ef;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .copy-button {
+      border: 1px solid #c7dfe9;
+      border-radius: 8px;
+      background: #fff;
+      color: #16303c;
+      padding: 5px 10px;
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .copy-button:hover { background: #e9f7fc; }
+    pre {
+      overflow: auto;
+      margin: 0;
+      padding: 16px 18px;
+      border-radius: 0;
+      background: #fbfdfe;
+      color: #24313a;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    code { font-family: "Cascadia Code", Consolas, monospace; }
+    p code, li code { color: #0f668c; background: #e8f6fd; padding: 1px 5px; border-radius: 5px; }
+    figure { max-width: var(--content); margin: 22px 0 28px; }
+    figure img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 30px rgba(31, 71, 91, .08);
+    }
+    .content-section {
+      position: relative;
+      margin: 0;
+      padding: 42px 0 46px 30px;
+      border-top: 1px solid var(--line);
+      background: transparent;
+    }
+    .content-section::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 48px;
+      bottom: 46px;
+      width: 2px;
+      background: linear-gradient(#9bd5ed, #f3c36d);
+      border-radius: 999px;
+    }
+    .content-section:first-of-type { margin-top: 8px; }
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 8px;
+      border-radius: 999px;
+      background: #eaf7fc;
+      color: #0d638d;
+      padding: 3px 9px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .intro-card {
+      max-width: var(--content);
+      margin: 18px auto 28px;
+      padding: 8px 4px 8px 18px;
+      border-left: 4px solid #75bee2;
+      background: transparent;
+    }
+    .intro-meta {
+      margin-bottom: 10px;
+      color: #557282;
+      font-size: 13px;
+    }
+    .intro-card p {
+      max-width: 67ch;
+      margin-left: 0;
+      margin-right: 0;
+      font-size: 16.5px;
+      line-height: 1.86;
+    }
+    .intro-card p:first-child { margin-top: 0; }
+    .intro-card p:last-child { margin-bottom: 0; }
+    .section-break { height: 1px; margin: 24px 0; background: transparent; }
+    @media (max-width: 900px) {
+      body { background: #fff; }
+      .layout { display: block; }
+      .sidebar {
+        position: relative;
+        height: auto;
+        max-height: none;
+        display: block;
+        overflow: visible;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 10px 14px 12px;
+        box-shadow: 0 8px 20px rgba(43, 95, 126, .06);
+      }
+      .brand {
+        grid-template-columns: 42px minmax(0, 1fr);
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+      }
+      .brand img { width: 42px; height: 42px; border-radius: 9px; }
+      .brand h1 { font-size: 14px; }
+      .brand p { font-size: 11px; }
+      .progress { margin-bottom: 8px; }
+      .nav {
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        overflow-x: auto;
+        padding: 0 0 6px;
+        scrollbar-width: thin;
+      }
+      .nav::-webkit-scrollbar { height: 4px; }
+      .nav::-webkit-scrollbar-thumb { background: #b9dcea; border-radius: 999px; }
+      .nav-group {
+        flex: 0 0 auto;
+        border: 0;
+        padding: 0;
+      }
+      .main-link {
+        white-space: nowrap;
+        padding: 7px 10px;
+        border: 1px solid #cfe6f2;
+        background: rgba(255,255,255,.82);
+      }
+      .sub-links { display: none; }
+      .top-link { display: none; }
+      .sticker-note { display: none; }
+      main { padding: 28px 20px 60px; }
+      .hero {
+        min-height: 112px;
+        padding: 26px 18px 22px;
+        border-radius: 16px;
+      }
+      .hero h2 { max-width: 260px; font-size: 30px; }
+      .hero .float { right: 18px; top: 28px; width: 58px; height: 58px; }
+      table { min-width: 560px; }
+      .content-section { padding: 34px 0 38px 18px; }
+      .content-section::before { left: 4px; top: 42px; bottom: 38px; }
+      .quick-card { display: none; }
+      .reader-note { gap: 6px; }
+      .reader-note span { padding: 4px 8px; }
+      .intro-card { padding: 15px 16px; margin-bottom: 24px; }
+      .intro-card p { font-size: 16px; }
+      p, ul, ol, blockquote, .callout, .prompt-card, .table-wrap, figure { margin-left: 0; margin-right: 0; }
+      .prompt-card { border-radius: 12px; }
+      .prompt-head { padding: 9px 10px; }
+      pre { padding: 14px 12px; font-size: 12.5px; }
+      h2, h3, h4 { scroll-margin-top: 112px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="./assets/chikiwa-main.webp" alt="chikiwa sticker"/>
+        <div>
+          <h1>Codex 进阶使用教程</h1>
+          <p>更新于 6.18 / 持续更新中</p>
+        </div>
+      </div>
+      <div class="progress" aria-hidden="true"><span id="reading-progress"></span></div>
+      <nav class="nav" aria-label="文章导航">
+        <div class="nav-group">
+      <a class="main-link" href="#1-先知道-codex-能帮你做什么">1. 先知道：Codex 能帮你做什么</a>
+      
+    </div>
+<div class="nav-group">
+      <a class="main-link" href="#2-再认识-几个常用能力分别干嘛">2. 再认识：几个常用能力分别干嘛</a>
+      <div class="sub-links"><a class="sub-link" href="#2-1-插件">2.1 插件</a>
+<a class="sub-link" href="#2-2-模式">2.2 模式</a>
+<a class="sub-link" href="#2-3-自动化功能">2.3 自动化功能</a>
+<a class="sub-link" href="#2-4-skill">2.4 Skill</a></div>
+    </div>
+<div class="nav-group">
+      <a class="main-link" href="#3-第一次用-照着这三步来">3. 第一次用：照着这三步来</a>
+      <div class="sub-links"><a class="sub-link" href="#3-1-第一步-拿一个真实小任务练手">3.1 第一步：拿一个真实小任务练手</a>
+<a class="sub-link" href="#3-2-第二步-不会写提示词-就让它帮你改">3.2 第二步：不会写提示词，就让它帮你改</a>
+<a class="sub-link" href="#3-3-第三步-不知道怎么说就复制这一段">3.3 第三步：不知道怎么说就复制这一段</a></div>
+    </div>
+<div class="nav-group">
+      <a class="main-link" href="#4-不知道能干嘛-直接套这些场景">4. 不知道能干嘛？直接套这些场景</a>
+      <div class="sub-links"><a class="sub-link" href="#4-1-写文档-整理会议纪要-总结资料">4.1 写文档、整理会议纪要、总结资料</a>
+<a class="sub-link" href="#4-2-分析文件-表格-pdf-截图">4.2 分析文件、表格、PDF、截图</a>
+<a class="sub-link" href="#4-3-修改代码-解释代码-查-bug-做-review">4.3 修改代码、解释代码、查 bug、做 review</a>
+<a class="sub-link" href="#4-4-做调研-生成方案-拆解任务">4.4 做调研、生成方案、拆解任务</a>
+<a class="sub-link" href="#4-5-操作浏览器-验证网页-测试本地应用">4.5 操作浏览器、验证网页、测试本地应用</a>
+<a class="sub-link" href="#4-6-满足每位同学的一切想象力">4.6 满足每位同学的一切想象力</a></div>
+    </div>
+<div class="nav-group">
+      <a class="main-link" href="#5-想用得顺-记住这几招">5. 想用得顺：记住这几招</a>
+      <div class="sub-links"><a class="sub-link" href="#5-1-先让-codex-出计划-再让它执行">5.1 先让 Codex 出计划，再让它执行</a>
+<a class="sub-link" href="#5-2-复杂任务分步骤做">5.2 复杂任务分步骤做</a>
+<a class="sub-link" href="#5-3-让-codex-自检">5.3 让 Codex 自检</a>
+<a class="sub-link" href="#5-4-给示例-给格式-给成功标准">5.4 给示例、给格式、给成功标准</a>
+<a class="sub-link" href="#5-5-不满意时-不要急着重开">5.5 不满意时，不要急着重开</a></div>
+    </div>
+<div class="nav-group">
+      <a class="main-link" href="#6-进阶-把重复工作交给它">6. 进阶：把重复工作交给它</a>
+      <div class="sub-links"><a class="sub-link" href="#6-1-自己蒸馏自己-有女娲-skill-把自己变成赛博员工">6.1 自己蒸馏自己，有女娲 Skill 把自己变成赛博员工</a>
+<a class="sub-link" href="#6-2-用项目说明文件让-codex-理解固定背景">6.2 用项目说明文件让 Codex 理解固定背景</a>
+<a class="sub-link" href="#6-3-让-codex-帮你搭建个人工作流">6.3 让 Codex 帮你搭建个人工作流</a>
+<a class="sub-link" href="#6-4-善用-mcp-连接">6.4 善用 MCP 连接</a></div>
+    </div>
+<div class="nav-group">
+      <a class="main-link" href="#7-新手常见问题">7. 新手常见问题</a>
+      <div class="sub-links"><a class="sub-link" href="#q1-codex-和普通聊天-ai-最大的区别是什么">Q1：Codex 和普通聊天 AI 最大的区别是什么？</a>
+<a class="sub-link" href="#q2-我不会写代码-也能用-codex-吗">Q2：我不会写代码，也能用 Codex 吗？</a>
+<a class="sub-link" href="#q3-什么时候需要用插件">Q3：什么时候需要用插件？</a>
+<a class="sub-link" href="#q4-什么时候需要用-skill">Q4：什么时候需要用 Skill？</a>
+<a class="sub-link" href="#q5-什么时候需要自动化">Q5：什么时候需要自动化？</a>
+<a class="sub-link" href="#q6-codex-的结果可以直接用吗">Q6：Codex 的结果可以直接用吗？</a>
+<a class="sub-link" href="#q7-结果不满意怎么办">Q7：结果不满意怎么办？</a>
+<a class="sub-link" href="#q8-怎么让-codex-越用越顺">Q8：怎么让 Codex 越用越顺？</a></div>
+    </div>
+<div class="nav-group">
+      <a class="main-link" href="#8-30-分钟上手练习">8. 30 分钟上手练习</a>
+      
+    </div>
+<div class="nav-group">
+      <a class="main-link" href="#9-最后只记住这-5-句话">9. 最后只记住这 5 句话</a>
+      
+    </div>
+      </nav>
+      <div class="sticker-note">
+        <img src="./assets/chikiwa-note.jpg" alt="chikiwa note sticker"/>
+      </div>
+      <a class="top-link" href="#">回到顶部</a>
+    </aside>
+    <main>
+      <section class="hero">
+        <h2>Codex 进阶使用教程</h2>
+        <div class="reader-note">
+          <span>左侧固定导航</span>
+          <span>提示词可直接复制</span>
+          <span>按章节阅读更轻松</span>
+        </div>
+        <div class="quick-card" aria-label="阅读重点">
+          <div><strong>先看能力边界</strong><span>知道 Codex 适合帮你做什么。</span></div>
+          <div><strong>再看使用方法</strong><span>插件、模式、自动化、Skill 分开理解。</span></div>
+          <div><strong>最后照着练</strong><span>直接复制提示词，边用边调。</span></div>
+        </div>
+        <img class="float" src="./assets/chikiwa-side.webp" alt="chikiwa sticker"/>
+      </section>
+      <article>
+        <section class="intro-card"><div class="intro-meta">更新于 6.18 / 持续更新中 by 磊磊中转站</div><p>Codex 很强，但新手最容易犯的错，是把它当成普通聊天机器人：问一句、等一句、拿到一段文字就结束。其实它更像一个能进工作区干活的执行助手：能读文件、改内容、开浏览器检查结果，也能把重复流程沉淀下来。说夸张点，如果只拿它闲聊，就像<span class="accent"><strong>原始人拿到 AK47，也只会当成烧火棍来使用</strong></span>。</p>
+<p>不用先把所有概念记住。你只要按这个顺序理解：先知道它能做什么，再学会怎么开口，最后把常用任务变成模板。</p></section>
+<aside class="callout"><span>🧭</span><p><strong>新手读法：如果时间不多，先看第 3、4、5 章。第 2 章的插件、Skill、自动化，先知道有这些东西就够了。</strong></p></aside>
+<section class="content-section" data-step="01"><div class="section-kicker">Step 01</div><h2 id="1-先知道-codex-能帮你做什么">1. 先知道：Codex 能帮你做什么</h2>
+<ul>
+<li>把一堆资料整理成清晰文档。</li>
+<li>根据会议记录生成纪要、行动项、复盘。</li>
+<li>阅读代码、解释逻辑、修 bug、补测试、做 review。</li>
+<li>使用插件处理文档、表格、PPT、PDF、浏览器等具体任务。</li>
+<li>把重复工作沉淀成 Skill，或者设置自动提醒、定期检查。</li>
+<li><span class="accent"><strong>vibe coding 任何你想做的事，制作网站/APP/游戏/脚本……（真的乐趣十足）</strong></span></li>
+</ul>
+<aside class="callout"><span>💡</span><p><strong>用一句话来说就是没有它无法完成的任务，只有你想不出的使用场景</strong></p></aside>
+<figure><img src="./assets/notion-image-1.png" alt="文章截图" loading="eager"/></figure>
+<div class="section-break"></div>
+</section>
+<section class="content-section" data-step="02"><div class="section-kicker">Step 02</div><h2 id="2-再认识-几个常用能力分别干嘛">2. 再认识：几个常用能力分别干嘛</h2>
+<h3 id="2-1-插件">2.1 插件</h3>
+<figure><img src="./assets/notion-image-2.png" alt="文章截图" loading="eager"/></figure>
+<div class="table-wrap"><table><tr><th>插件</th><th>适合解决的痛点</th><th>一句话理解</th></tr>
+<tr><td><strong>Computer Use</strong></td><td>本地软件里有重复点击、复制、导出、设置等操作</td><td>让 Codex 直接操作桌面应用，可以理解成 AI 模拟人远程操控你的电脑；只要是你电脑里的应用，它基本都能帮你操作。</td></tr>
+<tr><td><strong>Chrome</strong></td><td>网页填写、信息修改、网页流程操作太重复</td><td>让 Codex 直接操作 Chrome 页面，适合销售岗、运营岗处理重复网页操作，真的能解放双手。</td></tr>
+<tr><td><strong>Spreadsheets</strong></td><td>Excel/CSV 看不出重点，报表总要手工整理</td><td>让 Codex 读表、找异常、算指标，并整理成汇报表或图表。</td></tr>
+<tr><td><strong>Presentations</strong></td><td>有一堆内容，但懒得做 PPT 或排版</td><td>让 Codex 把大纲、文档或资料变成培训课件、汇报 PPT、路演材料。</td></tr>
+<tr><td><strong>Documents</strong></td><td>要写 Word、说明书、报告、SOP、纪要</td><td>让 Codex 生成、改写、润色和整理正式文档。</td></tr>
+<tr><td><strong>PDF</strong></td><td>PDF 太长、不能复制、排版难检查、信息不好提取</td><td>让 Codex 读取 PDF、提取重点、检查分页排版，适合合同、报告、白皮书和资料包。</td></tr>
+<tr><td><strong>Sites</strong></td><td>想把内容做成一个能访问的网页，而不是只放文档里</td><td>让 Codex 创建并部署网页，适合教程页、展示页、活动页、内部资料站，也适合开会汇报。</td></tr>
+<tr><td><strong>LaTeX</strong></td><td>论文、公式、学术排版或技术文档编译不过</td><td>让 Codex 编译和修复 LaTeX，适合论文和高质量排版。</td></tr></table></div>
+<h3 id="2-2-模式">2.2 模式</h3>
+<figure><img src="./assets/notion-image-3.png" alt="文章截图" loading="eager"/></figure>
+<p><strong>计划模式</strong>：像“<span class="accent"><strong>开工前先开个小会</strong></span>”：让 Codex 先读材料、拆步骤、问问题、给方案，但先不要真正执行。</p>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>进入计划模式。
+先不要改文件，先帮我分析这个任务应该怎么做。
+请告诉我：
+1. 你需要看哪些信息
+2. 准备分几步做
+3. 可能有哪些风险
+4. 最后如何验证结果</code></pre>
+        </div>
+<p><strong>追求目标</strong>：像“给 Codex 一个长期任务”：它会持续记住最终要达成什么，中途你可以继续补充、调整、暂停或恢复，<span class="accent"><strong>不达目的不停止，狠狠 push！！！</strong></span></p>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>进入目标模式。
+请把这个作为目标：
+帮我完成一份分析竞品与我司差异的分析报告。
+要求按照我给你的资料，自行分析，最后能直接复制使用。
+你可以持续推进，直到报告完成并检查过。</code></pre>
+        </div>
+<h3 id="2-3-自动化功能">2.3 自动化功能</h3>
+<figure><img src="./assets/notion-image-4.png" alt="文章截图" loading="eager"/></figure>
+<div class="table-wrap"><table><tr><th><strong>你遇到的痛点</strong></th><th><strong>适合的自动化</strong></th><th><strong>一句话理解</strong></th></tr>
+<tr><td>每天都有一堆信息要看，但不想每天手动打开检查</td><td>每日简报</td><td>让 Codex 每天固定时间帮你汇总重点，告诉你今天最该关注什么。</td></tr>
+<tr><td>每周都要复盘，但总是拖到最后才想起来</td><td>每周回顾</td><td>让 Codex 每周自动提醒并整理本周完成了什么、卡住什么、下周做什么。</td></tr>
+<tr><td>项目正在推进，怕遗漏变更、失败、评论或新问题</td><td>项目监控</td><td>让 Codex 定期检查项目状态，有异常再提醒你。</td></tr>
+<tr><td>有个任务要等结果，比如部署、审核、对方回复</td><td>持续跟进</td><td>让 Codex 过一段时间回来看看有没有新进展，不用你一直盯着。</td></tr>
+<tr><td>经常忘记跟进客户、候选人、供应商或内部事项</td><td>跟进提醒</td><td>让 Codex 在指定日期提醒你，并带上该跟进什么。</td></tr>
+<tr><td>某个流程每次都一样，比如收集信息、整理报告、检查列表</td><td>周期任务</td><td>让 Codex 按固定节奏重复执行同一个流程。</td></tr></table></div>
+<p>最适合自动化的不是“大任务”，而是这类你经常说的话：</p>
+<ul>
+<li>“明天提醒我看一下。”</li>
+<li>“每周都要整理一次。”</li>
+<li>“这个结果出来了告诉我。”</li>
+<li>“这个项目有异常再提醒我。”</li>
+<li>“过几天继续跟进。”</li>
+</ul>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请帮我创建一个每周五下午的提醒：
+提醒我整理本周工作总结，并列出需要汇报的重点。</code></pre>
+        </div>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请每周一上午提醒我检查上周未完成事项。
+提醒内容包括：未完成任务、阻塞点、下一步行动。</code></pre>
+        </div>
+<p>项目监控可以这样说：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请创建一个项目监控自动化。
+每天下午 5 点检查这个项目是否有新的失败、阻塞或需要我处理的事项。
+如果没有异常，就不用打扰我；如果有异常，请用清单告诉我问题和建议动作。</code></pre>
+        </div>
+<p>每日简报可以这样说：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请创建一个每日简报自动化。
+每天上午 9 点提醒我查看今天最重要的事项。
+请按这几个部分输出：今日重点、需要跟进、可能风险、建议先做什么。</code></pre>
+        </div>
+<p>使用自动化时，最好说清楚：</p>
+<ul>
+<li>什么时候触发。</li>
+<li>要检查什么。</li>
+<li>输出什么格式。</li>
+<li>是否需要持续跟进。</li>
+</ul>
+<aside class="callout"><span>⚠️</span><p>温和提醒：自动化适合提醒、检查、汇总和跟进；如果要对外发送、删除内容、修改重要文件或执行高风险操作，最好让它先报告结果，再由你确认。</p></aside>
+<h3 id="2-4-skill">2.4 Skill</h3>
+<p><strong>Skill 就是给 Codex 安装一套专门的工作方法。</strong></p>
+<p>普通提示词是你每次临时教 Codex 怎么做；Skill 是把固定流程提前写好，以后遇到类似任务时，Codex 会<span class="accent"><strong>直接按这套专业流程执行</strong></span>。</p>
+<ul>
+<li>插件解决“Codex 能不能操作某个工具”的问题。</li>
+<li>Skill 解决“Codex 能不能按固定方法把事情做好”的问题。</li>
+</ul>
+<p>下面仅分享部分 Skill，大家可以在 GitHub 上找到更多适合自己的 Skill：</p>
+<div class="table-wrap"><table><tr><th>Skill</th><th>适合解决的痛点</th><th>地址</th></tr>
+<tr><td>transcribe</td><td>录音、访谈、会议视频没人整理文字</td><td><a href="https://github.com/openai/skills/tree/main/skills/.curated/transcribe" target="_blank" rel="noreferrer"><strong>地址</strong></a></td></tr>
+<tr><td>pdf</td><td>PDF 太长、不能复制、排版难检查</td><td><a href="https://github.com/openai/skills/tree/main/skills/.curated/pdf" target="_blank" rel="noreferrer"><strong>地址</strong></a></td></tr>
+<tr><td>playwright</td><td>网页流程要测试，人工点太慢</td><td><a href="https://github.com/openai/skills/tree/main/skills/.curated/playwright" target="_blank" rel="noreferrer"><strong>地址</strong></a></td></tr></table></div>
+<p>安装 Skill 也很简单：直接把地址发给 Codex，说“帮我安装这个 Skill”即可。<span class="accent"><strong>大家要始终贯彻一个理念：把 Codex 当作你的私人秘书，你只管像领导一样给要求，它会想尽办法把结果交付出来。</strong></span></p>
+<div class="section-break"></div>
+</section>
+<section class="content-section" data-step="03"><div class="section-kicker">Step 03</div><h2 id="3-第一次用-照着这三步来">3. 第一次用：照着这三步来</h2>
+<aside class="callout"><span>✅</span><p><strong>最简单的入门公式：给材料 + 说目标 + 要求它检查结果。先用一个小任务跑通，不要一上来就做大项目。</strong></p></aside>
+<h3 id="3-1-第一步-拿一个真实小任务练手">3.1 第一步：拿一个真实小任务练手</h3>
+<p>不要只说：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>帮我看看这个。</code></pre>
+        </div>
+<p>更好的说法是：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请帮我阅读这个文件夹里的资料，整理成一篇适合发到 内网 的说明文档。
+目标读者是新员工，语气要清楚、轻松，不要太正式。
+请先告诉我你准备怎么整理，再开始写。</code></pre>
+        </div>
+<h3 id="3-2-第二步-不会写提示词-就让它帮你改">3.2 第二步：不会写提示词，就让它帮你改</h3>
+<p>不会写提示词很正常。先把你想要的结果用大白话说出来，再让 Codex 帮你把话改清楚。</p>
+<figure><img src="./assets/notion-image-5.png" alt="文章截图" loading="eager"/></figure>
+<h3 id="3-3-第三步-不知道怎么说就复制这一段">3.3 第三步：不知道怎么说就复制这一段</h3>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请先理解我的目标，再给出一个简短计划。
+如果需要查看文件或运行命令，你可以自己去做。
+开始执行前，先告诉我你准备分几步完成。
+完成后请总结你做了什么、结果在哪里、我还需要注意什么。</code></pre>
+        </div>
+<p>不知道怎么开口时，直接复制这一段。它的重点不是写得高级，而是让 Codex 先理解目标、再计划、再执行、最后自检。</p>
+<div class="section-break"></div>
+</section>
+<section class="content-section" data-step="04"><div class="section-kicker">Step 04</div><h2 id="4-不知道能干嘛-直接套这些场景">4. 不知道能干嘛？直接套这些场景</h2>
+<aside class="callout"><span>👉</span><p><strong>下面每个场景都可以直接复制提示词。你不需要写得完美，只要把你的材料、目标读者、输出格式说清楚。</strong></p></aside>
+<h3 id="4-1-写文档-整理会议纪要-总结资料">4.1 写文档、整理会议纪要、总结资料</h3>
+<p>如果你手上有一堆乱资料，先别自己硬整理。把材料给 Codex，让它先帮你变成<span class="accent"><strong>结构清楚、能直接看的内容</strong></span>。</p>
+<p>你可以这样说：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请把这些会议记录整理成一篇 Notion 纪要。
+要求包含：会议结论、待办事项、负责人、截止时间、争议点。
+语气简洁，不要写成正式公文。</code></pre>
+        </div>
+<p>也可以这样说：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请阅读这个文件夹里的资料，帮我整理成一篇新员工能看懂的入门文档。
+先列大纲，再写正文。
+正文里多用小标题和示例。</code></pre>
+        </div>
+<p>适合的输出形式：</p>
+<ul>
+<li>Notion 笔记</li>
+<li>周报</li>
+<li>会议纪要</li>
+<li>培训文档</li>
+<li>FAQ</li>
+<li>SOP</li>
+<li>项目复盘</li>
+</ul>
+<h3 id="4-2-分析文件-表格-pdf-截图">4.2 分析文件、表格、PDF、截图</h3>
+<p>遇到 Excel、CSV、PDF、截图这种资料，不要先自己翻半天。先让 Codex 读一遍，再让它告诉你重点、异常和结论。</p>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请分析这个表格，告诉我：
+1. 哪些数据最异常？
+2. 哪些趋势值得关注？
+3. 可以得出什么业务结论？
+4. 如果要汇报给老板，应该怎么写？</code></pre>
+        </div>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请阅读这个 PDF，整理出：
+- 核心结论
+- 关键数据
+- 我需要关注的风险
+- 可以直接复制到 内网 的摘要</code></pre>
+        </div>
+<p>如果内容很多，可以先让它做“信息提取”，再让它做“观点整理”。</p>
+<h3 id="4-3-修改代码-解释代码-查-bug-做-review">4.3 修改代码、解释代码、查 bug、做 review</h3>
+<p>工程相关任务里，Codex 的优势是它可以<span class="accent"><strong>直接读仓库</strong></span>、理解项目结构、改文件、跑测试、解释 diff。</p>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>这个 bug 是：用户点击保存后偶尔没有提示成功。
+请你先定位原因，再给出修复方案。
+修复后运行相关测试，并告诉我改了哪些文件。</code></pre>
+        </div>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请 review 当前未提交的改动。
+重点看：逻辑漏洞、边界情况、兼容性、是否缺测试。
+不要只总结，要直接指出具体问题和文件位置。</code></pre>
+        </div>
+<h3 id="4-4-做调研-生成方案-拆解任务">4.4 做调研、生成方案、拆解任务</h3>
+<p>脑子里只有一个模糊想法时，也可以交给 Codex。先别急着要成品，让它帮你拆成步骤。</p>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>我想做一个面向销售团队的客户跟进模板库。
+请先帮我拆解这个需求：
+- 应该包含哪些模板？
+- 结构怎么设计？
+- 第一版最小可用版本是什么？
+- 有哪些容易被忽略的问题？</code></pre>
+        </div>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请把这个目标拆成一周内能完成的任务清单。
+每个任务写清楚产出物和验收标准。</code></pre>
+        </div>
+<h3 id="4-5-操作浏览器-验证网页-测试本地应用">4.5 操作浏览器、验证网页、测试本地应用</h3>
+<p>Codex 不只是写方案，也可以用浏览器能力帮你验证页面。</p>
+<p>适合的任务：</p>
+<ul>
+<li>打开本地网页，检查页面是否正常显示。</li>
+<li>点击按钮、填写表单、复现 bug。</li>
+<li>截图检查 UI 是否错位。</li>
+<li>测试移动端和桌面端布局。</li>
+<li>验证一个功能是否真的可用。</li>
+</ul>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请打开本地运行的网站，检查首页在桌面端和手机端是否显示正常。
+重点看文字是否溢出、按钮是否能点击、图片是否加载。
+最后告诉我发现了什么问题。</code></pre>
+        </div>
+<h3 id="4-6-满足每位同学的一切想象力">4.6 <span class="accent">满足每位同学的一切想象力</span></h3>
+<p>我在这里稍微多说一句：每位同学内心其实都有无限的想象力，只是以前受限于能力，很多想法很难落地。比如我小时候一直想成为一名游戏开发者，可是人生总是充满不确定，后来专业选择了别的方向。</p>
+<p>但有了 Codex 后，我每天都靠它 vibe coding 做出一些有意思的东西。例如：记录每一次旅游回忆的网站、绑定 Apple Watch 的健身小游戏、每天给我推荐训练动作，训练完成后电子宠物就会收到食物。</p>
+<p>当然，大家也能在网上看到很多有意思的产品，更多心得后续再分享。我想说的是，在现在这个 Agent 时代，哪怕你缺少某一方面的能力，AI 也已经可以帮我们补上很多短板。所以请保持不断学习新事物的能力，期待大家都能 vibe coding 出属于自己的创意作品，have fun！</p>
+<div class="section-break"></div>
+</section>
+<section class="content-section" data-step="05"><div class="section-kicker">Step 05</div><h2 id="5-想用得顺-记住这几招">5. 想用得顺：记住这几招</h2>
+<h3 id="5-1-先让-codex-出计划-再让它执行">5.1 先让 Codex 出计划，再让它执行</h3>
+<p>任务越复杂，越不要一口气全丢给它。先让它写计划，你看得懂，再让它执行。</p>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请先不要动文件。
+先阅读相关内容，然后给我一个执行计划：
+1. 你会看哪些文件？
+2. 你准备怎么改？
+3. 你会怎么验证？
+等我确认后再执行。</code></pre>
+        </div>
+<p>如果你对任务很熟，也可以让它直接执行：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请直接完成这个修改。
+完成后运行相关检查，并总结改动和验证结果。</code></pre>
+        </div>
+<h3 id="5-2-复杂任务分步骤做">5.2 复杂任务分步骤做</h3>
+<p>一个任务里如果同时有调研、写文档、做表格、生成 PPT，就把它拆开。一次只推进一小步，效果会稳很多。</p>
+<p>推荐拆法：</p>
+<ol>
+<li>先让 Codex 读取材料，提炼重点。</li>
+<li>再让 Codex 生成结构或大纲。</li>
+<li>然后生成正文。</li>
+<li>最后让它自检、润色、调整格式。</li>
+</ol>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>我们分四步做：
+第一步，请先读取资料并总结重点。
+第二步，再生成大纲。
+第三步，写完整正文。
+第四步，检查是否适合新人阅读。
+现在先做第一步。</code></pre>
+        </div>
+<h3 id="5-3-让-codex-自检">5.3 让 Codex 自检</h3>
+<p>完成任务后，<span class="accent"><strong>不要只看“它写完了没有”，还要让它检查。</strong></span></p>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请自检这份文档：
+- 是否有重复内容？
+- 是否有读者看不懂的术语？
+- 是否有可以直接操作的示例？
+- 是否适合放进报告？
+然后给出修改后的版本。</code></pre>
+        </div>
+<p>工程任务可以这样说：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请检查这次改动：
+- 改了哪些文件？
+- 为什么这么改？
+- 跑了哪些测试？
+- 还有哪些风险或未验证点？</code></pre>
+        </div>
+<h3 id="5-4-给示例-给格式-给成功标准">5.4 给示例、给格式、给成功标准</h3>
+<p>Codex 很<span class="accent"><strong>擅长模仿格式</strong></span>。你给的示例越清楚，它越容易产出你想要的结果。</p>
+<p>不够清楚：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>帮我写得专业一点。</code></pre>
+        </div>
+<p>更清楚：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请按下面这个风格改写：
+- 句子短一点。
+- 不要宣传腔。
+- 每段只讲一个意思。
+- 多用清单和小标题。
+- 读者是刚入职的新员工。</code></pre>
+        </div>
+<h3 id="5-5-不满意时-不要急着重开">5.5 不满意时，不要急着重开</h3>
+<p>结果不满意时，不要急着重开。直接告诉它哪里不对、希望改成什么样，它会沿着当前上下文继续修。</p>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>这版太像制度文件了。
+请改成教学笔记的语气，少用“必须”“禁止”，多用“你可以”“适合”“建议”。</code></pre>
+        </div>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>这版太长了。
+请压缩到原来的 60%，保留示例提示词，删掉重复解释。</code></pre>
+        </div>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>你理解错了，我不是要写给工程师，而是写给全员。
+请重新调整结构，先讲普通办公场景，再讲代码能力。</code></pre>
+        </div>
+<p><span class="accent"><strong>如果是前端同学，更可以直接调用插件，指哪改哪。</strong></span></p>
+<div class="section-break"></div>
+</section>
+<section class="content-section" data-step="06"><div class="section-kicker">Step 06</div><h2 id="6-进阶-把重复工作交给它">6. 进阶：把重复工作交给它</h2>
+<h3 id="6-1-自己蒸馏自己-有女娲-skill-把自己变成赛博员工">6.1 自己<span class="accent">蒸馏</span>自己，有女娲 Skill 把自己变成赛博员工</h3>
+<p>当你发现自己经常这样说：</p>
+<ul>
+<li>“每次都要按这个格式整理会议纪要。”</li>
+<li>“每次都要用同一套标准 review 文档。”</li>
+<li>“每次都要把客户反馈分成同几类。”</li>
+<li>“每次都要生成类似的周报。”</li>
+</ul>
+<p>这就适合做成 Skill。</p>
+<p>你可以先让 Codex 帮你提炼流程：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>我经常需要完成这个任务：把客户反馈整理成产品改进建议。
+请帮我把它设计成一个可复用 Skill。
+请输出：
+1. Skill 名称
+2. 适用场景
+3. 输入材料
+4. 处理步骤
+5. 输出格式
+6. 示例提示词</code></pre>
+        </div>
+<h3 id="6-2-用项目说明文件让-codex-理解固定背景">6.2 用项目说明文件让 Codex 理解固定背景</h3>
+<p>如果一个项目经常被 Codex 处理，可以准备一个说明文件，告诉它：</p>
+<ul>
+<li>这个项目是做什么的。</li>
+<li>常用命令是什么。</li>
+<li>文档风格是什么。</li>
+<li>测试怎么跑。</li>
+<li>哪些目录最重要。</li>
+<li>有哪些固定约定。</li>
+</ul>
+<p>这样以后每次让 Codex 处理项目时，它不用从零开始猜。</p>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>请帮我为这个项目写一份给 Codex 看的说明文件。
+内容包括：项目简介、目录结构、常用命令、代码风格、测试方式、注意事项。</code></pre>
+        </div>
+<h3 id="6-3-让-codex-帮你搭建个人工作流">6.3 让 Codex 帮你搭建个人工作流</h3>
+<p>你也可以让 Codex 观察你的重复工作，然后帮你设计流程。</p>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>我每周都要做这些事：
+1. 整理客户反馈
+2. 写周报
+3. 跟进未完成任务
+4. 给团队发提醒
+
+请帮我设计一个 Codex 工作流：
+- 哪些适合做成固定提示词
+- 哪些适合做成 Skill
+- 哪些适合做成自动化
+- 每一步应该怎么写提示词</code></pre>
+        </div>
+<h3 id="6-4-善用-mcp-连接">6.4 善用 MCP 连接</h3>
+<p>MCP 你可以先简单理解成“连接线”：把 Notion、Figma、GitHub、数据库这些外部工具接到 Codex 身上。</p>
+<p>普通情况下，Codex 只能看你给它的文件、文字、截图，或者使用已经安装好的插件；但如果你想让 Codex 直接和某个软件、平台、数据库、设计工具、知识库、CAD 或 3D 建模软件交互，就需要通过 MCP 把它们连接起来。</p>
+<p>更通俗一点：</p>
+<ul>
+<li>插件像“现成工具包”，装上就能用。</li>
+<li>Skill 像“固定工作方法”，告诉 Codex 应该怎么做。</li>
+<li>MCP 像“连接线”，让 Codex 能接触某个外部系统里的数据和操作能力。</li>
+</ul>
+<p>它解决的痛点是：</p>
+<div class="table-wrap"><table><tr><th>你遇到的痛点</th><th>MCP 的价值</th></tr>
+<tr><td>资料在 Notion、GitHub、Figma、数据库、内部系统里，复制出来很麻烦</td><td>让 Codex 直接读取这些系统里的上下文</td></tr>
+<tr><td>某个专业软件有 API，但 Codex 默认不会操作</td><td>通过 MCP 把软件能力封装成 Codex 可调用的工具</td></tr>
+<tr><td>团队有自己的内部平台，不想每次人工导出数据</td><td>给内部平台做 MCP，Codex 就能按权限查询和处理</td></tr>
+<tr><td>CAD、3D 建模、设计工具这类软件步骤复杂</td><td>如果软件支持脚本/API，可以做 MCP 让 Codex 辅助生成、检查或批量处理</td></tr></table></div>
+<p>例如 CAD 画图或 3D 建模：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>如果公司经常使用 CAD 或 3D 建模软件，
+可以让技术同事基于软件的 API 或脚本能力做一个 MCP 连接。
+这样 Codex 就不只是“给建议”，而是可以读取模型信息、生成脚本、检查参数、批量处理文件，甚至辅助完成部分建模流程。</code></pre>
+        </div>
+<p>适合用 MCP 的场景：</p>
+<ul>
+<li>连接 Figma，让 Codex 读取设计稿并辅助实现页面。</li>
+<li>连接 Notion，让 Codex 读取知识库、会议记录、PRD。</li>
+<li>连接 GitHub，让 Codex 查看 issue、PR、CI、代码变更。</li>
+<li>连接数据库，让 Codex 查询数据并生成分析。</li>
+<li>连接内部业务系统，让 Codex 按权限读取订单、客户、工单等信息。</li>
+<li>连接 CAD、BIM、3D 建模软件，让 Codex 通过脚本或 API 辅助专业软件工作。</li>
+</ul>
+<div class="section-break"></div>
+</section>
+<section class="content-section" data-step="07"><div class="section-kicker">Step 07</div><h2 id="7-新手常见问题">7. 新手常见问题</h2>
+<h3 id="q1-codex-和普通聊天-ai-最大的区别是什么">Q1：Codex 和普通聊天 AI 最大的区别是什么？</h3>
+<p>普通聊天 AI 更像“回答问题”。Codex 更像“帮你把事做完”：它可以读文件、改文件、运行命令、开浏览器验证，并把结果落到具体文件里。</p>
+<h3 id="q2-我不会写代码-也能用-codex-吗">Q2：我不会写代码，也能用 Codex 吗？</h3>
+<p>可以。Codex 不只是给工程师用。整理文档、分析资料、写 SOP、做培训材料、总结会议、处理表格、生成提示词库，这些都适合非技术同事使用。</p>
+<h3 id="q3-什么时候需要用插件">Q3：什么时候需要用插件？</h3>
+<p>当任务涉及特定文件或工具时，比如 Word、Excel、PPT、PDF、浏览器、网页测试、桌面操作，就可以考虑插件。简单文字任务不一定需要插件。</p>
+<h3 id="q4-什么时候需要用-skill">Q4：什么时候需要用 Skill？</h3>
+<p>当你发现一个任务经常重复，而且每次都有固定步骤、固定判断标准或固定输出格式，就适合做成 Skill。Skill 的价值是减少重复提示，让 Codex 稳定地按同一套流程做事。</p>
+<h3 id="q5-什么时候需要自动化">Q5：什么时候需要自动化？</h3>
+<p>当任务有固定时间、固定周期或需要持续跟进时，就适合自动化。比如每周提醒写周报、定期检查项目状态、过几天提醒跟进客户。</p>
+<h3 id="q6-codex-的结果可以直接用吗">Q6：Codex 的结果可以直接用吗？</h3>
+<p>普通草稿、内部整理、初步分析，可以先拿来用。只要涉及客户、合同、财务、权限、删除、外部发送，就先让它报告结果，你再确认。</p>
+<h3 id="q7-结果不满意怎么办">Q7：结果不满意怎么办？</h3>
+<p>不要只说“不对”。直接告诉它哪里不对、希望改成什么样。</p>
+<p>示例：</p>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>这版太正式了，请改成轻松的教学语气。
+保留结构，但删掉制度感很强的表达。</code></pre>
+        </div>
+<div class="prompt-card">
+          <div class="prompt-head"><span>可复制提示词</span><button type="button" class="copy-button">复制</button></div>
+          <pre><code>这版没有示例，不适合新手。
+请每一节都补一个可以直接复制的提示词。</code></pre>
+        </div>
+<h3 id="q8-怎么让-codex-越用越顺">Q8：<span class="accent"><strong>怎么让 Codex 越用越顺</strong></span>？</h3>
+<p>越用越顺的关键，不是每次都重新想怎么说，而是把常用任务沉淀下来：</p>
+<ul>
+<li>常用说法沉淀成提示词模板。</li>
+<li>固定项目背景写成说明文件。</li>
+<li>重复流程做成 Skill。</li>
+<li>周期任务做成自动化。</li>
+<li>重要产出让 Codex 自检一遍。</li>
+</ul>
+</section>
+<section class="content-section" data-step="08"><div class="section-kicker">Step 08</div><h2 id="8-30-分钟上手练习">8. 30 分钟上手练习</h2>
+<p>如果你是第一次用，不要一上来就研究所有功能。按这个顺序跑一遍就够：</p>
+<ol>
+<li>让 Codex 总结一篇你已有的文档。</li>
+<li>让 Codex 把总结改成 PPT。</li>
+<li>让 Codex 根据资料生成 FAQ。</li>
+<li>让 Codex 检查哪里写得不够清楚。</li>
+<li>让 Codex 生成一套以后可以复用的提示词。</li>
+<li>让 Codex 做一个网页。</li>
+</ol>
+</section>
+<section class="content-section" data-step="09"><div class="section-kicker">Step 09</div><h2 id="9-最后只记住这-5-句话">9. 最后只记住这 5 句话</h2>
+<ul>
+<li>任务越清楚，Codex 越好用。</li>
+<li>复杂任务先让它出计划。</li>
+<li>文件、截图、表格、网页都可以成为输入材料。</li>
+<li>插件解决具体工具问题，Skill 解决重复流程问题，自动化解决周期跟进问题。</li>
+</ul>
+<aside class="callout"><span>🚀</span><p><strong>它不是普通助手，它就是一个全能员工：你给清楚任务，它就会持续执行、服务你的目标。</strong></p></aside>
+</section>
+      </article>
+    </main>
+  </div>
+  <script>
+    const progress = document.getElementById('reading-progress');
+    const navLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
+    const sections = navLinks
+      .map((link) => document.getElementById(decodeURIComponent(link.getAttribute('href').slice(1))))
+      .filter(Boolean);
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? Math.min(100, Math.max(0, window.scrollY / max * 100)) : 0;
+      progress.style.width = pct + '%';
+      let active = sections[0];
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= 120) active = section;
+      }
+      if (!active) return;
+      navLinks.forEach((link) => {
+        link.classList.toggle('is-active', link.getAttribute('href') === '#' + active.id);
+      });
+    };
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    document.querySelectorAll('.copy-button').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const card = button.closest('.prompt-card');
+        const text = card?.querySelector('code')?.innerText || '';
+        try {
+          await navigator.clipboard.writeText(text);
+          button.textContent = '已复制';
+          window.setTimeout(() => { button.textContent = '复制'; }, 1200);
+        } catch {
+          button.textContent = '复制失败';
+          window.setTimeout(() => { button.textContent = '复制'; }, 1200);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
