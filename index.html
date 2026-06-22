@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Codex 入门学习站</title>
+  <title>Codex 使用指南</title>
   <style>
     :root { --ink:#0e0f12; --muted:#5f6672; --line:#dde3ea; --soft:#f5f7fa; --paper:#fff; --green:#10a37f; --blue:#2b8fff; --accent:#e94d62; --nav:310px; --content:1280px; }
     *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;color:var(--ink);background:#f7f8fa;font:16px/1.78 "Inter","Segoe UI","Microsoft YaHei",Arial,sans-serif;letter-spacing:0}
@@ -12,9 +12,9 @@
     .nav-search{width:100%;height:36px;margin:12px 0 8px;padding:0 11px;border:1px solid #d5dde6;border-radius:10px;background:#fff;color:var(--ink);font:inherit;font-size:13px}.progress{height:3px;border-radius:999px;overflow:hidden;background:#e2e7ed;margin-bottom:10px}.progress span{display:block;width:0%;height:100%;background:linear-gradient(90deg,var(--green),var(--blue))}
     .nav{min-height:0;overflow:auto;padding-right:4px}.nav-group{padding:6px 0;border-bottom:1px solid #dce3eb}.nav a{display:block;color:#303946;text-decoration:none;border-radius:8px}.main-link{padding:7px 9px;font-size:13px;font-weight:800;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sub-links{margin-left:10px;padding-left:9px;border-left:1px solid #cbd6e1}.sub-link{padding:4px 8px;font-size:12px;color:#687180;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.nav a:hover,.nav a.is-active{background:#fff;color:#08745e;box-shadow:0 7px 16px rgba(14,15,18,.06)}
     .sticker-note{display:flex;justify-content:center;padding-top:12px}.sticker-note img{width:74px;height:74px;object-fit:contain;transform:rotate(-5deg)} main{width:100%;max-width:1560px;margin:0 auto;padding:34px 34px 88px}
-    .hero{position:relative;overflow:hidden;min-height:330px;border:1px solid #dbe6e2;border-radius:20px;color:var(--ink);background:linear-gradient(135deg,#ffffff 0%,#f2faf7 58%,#eef6ff 100%);box-shadow:0 18px 44px rgba(14,15,18,.08)}.hero:before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:linear-gradient(180deg,var(--green),var(--blue))}.hero:after{content:"入门 · 教程 · 案例";position:absolute;right:34px;top:34px;z-index:3;height:30px;padding:0 12px;display:flex;align-items:center;border:1px solid #cfdce8;border-radius:999px;background:#fff;color:#284154;font-size:12px;font-weight:900;box-shadow:0 8px 18px rgba(14,15,18,.06)}
-    .hero-content{position:relative;z-index:3;max-width:850px;padding:42px 44px 40px}.hero-kicker{display:inline-flex;align-items:center;height:28px;padding:0 11px;border:1px solid #cbd9d5;border-radius:999px;background:#fff;color:#08745e;font-size:12px;font-weight:900}.hero h2{margin:18px 0 14px;max-width:100%;font-size:clamp(38px,4.4vw,58px);line-height:1.08;letter-spacing:0}.hero p{max-width:760px;margin:0;color:#364451;font-size:17px;line-height:1.75}.hero-stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.hero-stats span{display:inline-flex;align-items:center;height:32px;padding:0 11px;border:1px solid #d4e0e8;border-radius:999px;background:#fff;color:#24313a;font-size:13px;font-weight:800}.hero-sticker{position:absolute;right:34px;bottom:26px;z-index:4;width:88px;height:88px;object-fit:contain;filter:drop-shadow(0 16px 18px rgba(14,15,18,.16));opacity:.96}
-    .portal{margin:18px 0 34px;position:relative;z-index:5;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.portal a{min-height:126px;padding:18px;border:1px solid #dfe5ec;border-radius:14px;background:#fff;color:var(--ink);text-decoration:none;box-shadow:0 12px 26px rgba(14,15,18,.06)}.portal a:nth-child(1){border-top:4px solid var(--green)}.portal a:nth-child(2){border-top:4px solid var(--blue)}.portal a:nth-child(3){border-top:4px solid #f0b35a}.portal a:nth-child(4){border-top:4px solid var(--accent)}.portal span{display:block;font-size:22px;margin-bottom:8px}.portal strong{display:block;margin-bottom:5px;font-size:16px;line-height:1.35}.portal em{display:block;color:var(--muted);font-style:normal;font-size:13px;line-height:1.55}
+    .hero{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(310px,.72fr);gap:24px;align-items:stretch;min-height:350px;padding:40px 42px;border:1px solid #dfe6ed;border-radius:22px;color:var(--ink);background:#fff;box-shadow:0 18px 42px rgba(14,15,18,.07)}.hero:before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:linear-gradient(180deg,var(--green),var(--blue))}
+    .hero-content{position:relative;z-index:3;max-width:800px;padding:0}.hero-kicker{display:inline-flex;align-items:center;height:28px;padding:0 10px;border:1px solid #cfe4dc;border-radius:999px;background:#f1faf7;color:#08745e;font-size:12px;font-weight:900}.hero h2{margin:18px 0 14px;max-width:100%;font-size:clamp(42px,4.6vw,66px);line-height:1.04;letter-spacing:0;word-break:keep-all}.hero p{max-width:720px;margin:0;color:#364451;font-size:17px;line-height:1.75}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.hero-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 14px;border:1px solid #d4e0e8;border-radius:10px;background:#fff;color:#24313a;text-decoration:none;font-size:14px;font-weight:900}.hero-actions a.primary{border-color:#08745e;background:#08745e;color:#fff}.hero-route{position:relative;z-index:3;display:grid;gap:10px;align-self:stretch;padding:16px;border:1px solid #dfe6ed;border-radius:18px;background:#f8fafc}.route-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:2px}.route-head h3{margin:0;font-size:16px;line-height:1.35}.route-head p{margin:2px 0 0;color:var(--muted);font-size:13px;line-height:1.45}.hero-sticker{width:58px;height:58px;object-fit:contain;filter:drop-shadow(0 12px 16px rgba(14,15,18,.14));opacity:.98}.route-item{display:grid;grid-template-columns:42px minmax(0,1fr);gap:10px;align-items:start;padding:12px;border:1px solid #e4eaf0;border-radius:12px;background:#fff}.route-item span{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:#eaf6f2;color:#08745e;font-size:13px;font-weight:900}.route-item strong{display:block;font-size:15px;line-height:1.35}.route-item em{display:block;margin-top:2px;color:var(--muted);font-size:13px;line-height:1.45;font-style:normal}
+    .portal{margin:18px 0 34px;position:relative;z-index:5;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.portal a{min-height:118px;padding:16px 17px;border:1px solid #dfe5ec;border-radius:14px;background:#fff;color:var(--ink);text-decoration:none;box-shadow:0 10px 22px rgba(14,15,18,.055)}.portal a:nth-child(1){border-top:4px solid var(--green)}.portal a:nth-child(2){border-top:4px solid var(--blue)}.portal a:nth-child(3){border-top:4px solid #f0b35a}.portal a:nth-child(4){border-top:4px solid var(--accent)}.portal span{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:28px;margin-bottom:10px;border-radius:8px;background:#f1f6fb;color:#165fb5;font-size:13px;font-weight:900}.portal strong{display:block;margin-bottom:5px;font-size:16px;line-height:1.35}.portal em{display:block;color:var(--muted);font-style:normal;font-size:13px;line-height:1.55}
     article{max-width:var(--content);margin:0 auto;padding:24px 48px 52px;border:1px solid #e1e6ed;border-radius:18px;background:#fff;box-shadow:0 14px 38px rgba(14,15,18,.055)}.content-section{position:relative;margin:0;padding:40px 0 44px;border-bottom:1px solid #e6ebf1;background:#fff}.content-section:last-child{border-bottom:0}.section-kicker{display:inline-flex;align-items:center;height:26px;padding:0 9px;margin-bottom:10px;border-radius:999px;background:#eaf6f2;color:#08745e;font-size:12px;font-weight:800}
     h2,h3,h4{letter-spacing:0;scroll-margin-top:22px}h2{margin:0 0 14px;font-size:31px;line-height:1.25}h3{margin:32px 0 10px;font-size:21px;line-height:1.35;color:#17212b}h4{margin:22px 0 8px;font-size:17px}p{max-width:920px;margin:12px 0;color:#303946}ul,ol{max-width:940px;margin:12px 0 18px;padding-left:24px;color:#303946}li{margin:6px 0}li::marker{color:var(--green);font-weight:800}p,li,blockquote,.callout,.info-card,.resource-card,.case-point{overflow-wrap:anywhere}a{color:#08745e;overflow-wrap:anywhere}code{overflow-wrap:anywhere;white-space:normal}.accent{color:var(--accent)}
     .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0 24px}.cards.portal-cards{grid-template-columns:repeat(4,minmax(0,1fr))}.cards.case-jump-cards{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:12px;border:1px solid #dfe6ed;border-radius:16px;background:#f7fafc}.cards.case-jump-cards .info-card{min-height:126px;border-left:4px solid var(--green);background:#fff}.cards.case-jump-cards .info-card:last-child{border-left-color:#f0b35a}.cards.case-jump-cards .card-icon{font-size:15px;font-weight:900;color:#08745e}.cards.case-jump-cards .info-card:last-child .card-icon{color:#a36b12}.info-card{min-height:132px;padding:16px;border:1px solid #e0e6ed;border-radius:14px;background:#fbfcfd;color:var(--ink);text-decoration:none}.info-card:hover{transform:translateY(-1px);box-shadow:0 12px 26px rgba(14,15,18,.07)}.card-icon{display:block;margin-bottom:8px;font-size:24px}.info-card strong{display:block;margin-bottom:7px;font-size:16px;line-height:1.35}.info-card em{display:block;color:var(--muted);font-size:13px;line-height:1.55;font-style:normal}
@@ -28,55 +28,53 @@
     .example-card{max-width:min(82ch,100%);margin:16px 0 22px;overflow:hidden;border:1px solid #d9e2eb;border-radius:14px;background:#fff}.example-head{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:#f1f6fb;border-bottom:1px solid #d9e2eb;color:#1f3b52;font-size:12px;font-weight:800}pre{margin:0;padding:16px 18px;overflow:auto;background:#fbfcfd;color:#24313a;font-size:13px;line-height:1.6;max-width:100%}pre code{display:block;max-width:100%;white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere}code{font-family:"Cascadia Code",Consolas,monospace}p code,li code{padding:1px 5px;border-radius:5px;background:#eef5ff;color:#145db0}
     figure{margin:20px 0 24px}.article-image{max-width:1040px}.article-image img{display:block;width:100%;max-height:760px;object-fit:contain;background:#fff}.article-image figcaption{padding:8px 2px 0;color:#687180;font-size:13px;line-height:1.45}figure img{max-width:100%;border-radius:12px;border:1px solid #e0e6ed;box-shadow:0 12px 30px rgba(14,15,18,.08)}blockquote{max-width:940px;margin:16px 0;padding:12px 15px;border-left:4px solid var(--green);background:#f1faf7;border-radius:10px;color:#303946}.section-break{height:1px;margin:22px 0;background:#e6ebf1}
     @media(max-width:1390px) and (min-width:1061px){.hero-content{max-width:860px}.hero p{max-width:760px}}
-    @media(max-width:1060px){.layout{display:block}.sidebar{position:relative;height:auto;padding:12px 14px;border-right:0;border-bottom:1px solid var(--line)}.brand{grid-template-columns:42px minmax(0,1fr)}.brand img{width:42px;height:42px}.nav-search,.progress,.sticker-note{display:none}.nav{display:flex;flex-direction:row;gap:8px;overflow-x:auto;padding-bottom:4px}.nav-group{flex:0 0 auto;border-bottom:0;padding:0}.main-link{border:1px solid #d5dde6;background:#fff}.sub-links{display:none}main{padding:22px 16px 58px}.hero{min-height:360px;border-radius:18px}.hero:after{right:18px;top:18px}.hero-content{padding:28px 22px;max-width:none}.hero h2{font-size:38px}.hero p{font-size:15px;padding-right:0;max-width:330px}.hero-stats{max-width:330px}.hero-sticker{width:70px;height:70px;right:18px;bottom:18px}.portal{margin:16px 0 26px;grid-template-columns:repeat(2,minmax(0,1fr))}article{padding:18px 18px 30px;border-radius:15px}.content-section{padding:28px 0 34px}h2{font-size:25px}h3{font-size:19px}.cards,.cards.portal-cards,.resources,.tree-list,.tree-group:nth-child(2) .tree-items{grid-template-columns:1fr}.cards.case-jump-cards{grid-template-columns:repeat(2,minmax(0,1fr));padding:10px}.feature-card{grid-template-columns:1fr}.case-body{grid-template-columns:1fr}.case-point,.case-point:nth-child(2n),.case-point:nth-last-child(-n+2){border-right:0;border-bottom:1px solid #e4eaf0}.case-point:last-child{border-bottom:0}.shot-card img{max-height:520px}table{min-width:640px}}
+    @media(max-width:1060px){.layout{display:block}.sidebar{position:relative;height:auto;padding:12px 14px;border-right:0;border-bottom:1px solid var(--line)}.brand{grid-template-columns:42px minmax(0,1fr)}.brand img{width:42px;height:42px}.nav-search,.progress,.sticker-note{display:none}.nav{display:flex;flex-direction:row;gap:8px;overflow-x:auto;padding-bottom:4px}.nav-group{flex:0 0 auto;border-bottom:0;padding:0}.main-link{border:1px solid #d5dde6;background:#fff}.sub-links{display:none}main{padding:22px 16px 58px}.hero{display:block;min-height:auto;padding:28px 22px;border-radius:18px}.hero-content{max-width:none}.hero h2{font-size:38px}.hero p{font-size:15px;max-width:none}.hero-actions{margin-top:18px}.hero-route{margin-top:20px;padding:14px}.hero-sticker{width:54px;height:54px}.portal{margin:16px 0 26px;grid-template-columns:repeat(2,minmax(0,1fr))}article{padding:18px 18px 30px;border-radius:15px}.content-section{padding:28px 0 34px}h2{font-size:25px}h3{font-size:19px}.cards,.cards.portal-cards,.resources,.tree-list,.tree-group:nth-child(2) .tree-items{grid-template-columns:1fr}.cards.case-jump-cards{grid-template-columns:repeat(2,minmax(0,1fr));padding:10px}.feature-card{grid-template-columns:1fr}.case-body{grid-template-columns:1fr}.case-point,.case-point:nth-child(2n),.case-point:nth-last-child(-n+2){border-right:0;border-bottom:1px solid #e4eaf0}.case-point:last-child{border-bottom:0}.shot-card img{max-height:520px}table{min-width:640px}}
     @media(max-width:640px){.table-wrap{overflow:visible;border:0;background:transparent}.table-wrap table{display:block;min-width:0}.table-wrap tbody{display:grid;gap:10px}.table-wrap tr{display:block;border:1px solid #e0e6ed;border-radius:12px;background:#fff;overflow:hidden}.table-wrap tr:first-child{display:none}.table-wrap td{display:grid;grid-template-columns:92px minmax(0,1fr);gap:10px;padding:10px 12px;border-bottom:1px solid #eef2f6;font-size:14px;word-break:break-word}.table-wrap td:last-child{border-bottom:0}.table-wrap td:before{content:attr(data-label);color:#607080;font-size:12px;font-weight:900;line-height:1.6}.table-wrap th{display:none}}
-    @media(max-width:520px){.portal,.cards.case-jump-cards{grid-template-columns:1fr}.hero h2{font-size:32px;max-width:310px}.hero{min-height:360px}.hero p{max-width:300px}.hero-stats{max-width:270px}p,li{font-size:15px}}
+    @media(max-width:520px){.portal,.cards.case-jump-cards{grid-template-columns:1fr}.hero{padding:24px 18px}.hero h2{font-size:33px;max-width:none}.hero-actions a{width:100%}.route-item{grid-template-columns:38px minmax(0,1fr)}p,li{font-size:15px}}
   </style>
 </head>
 <body>
   <div class="layout">
     <aside class="sidebar">
-      <div class="brand"><img src="./assets/chikiwa-main.webp" alt="chikiwa"/><div><h1>Codex 入门学习站</h1><p>先学会用，再看案例</p></div></div>
+      <div class="brand"><img src="./assets/chikiwa-main.webp" alt="chikiwa"/><div><h1>Codex 使用指南</h1><p>先跑通，再查教程</p></div></div>
       <input class="nav-search" id="nav-search" placeholder="搜索目录" aria-label="搜索目录"/>
       <div class="progress"><span id="reading-progress"></span></div>
-      <nav class="nav" aria-label="文章导航"><div class="nav-group"><a class="main-link" href="#1-先把-codex-当成会动手的同事">1 先把 Codex 当成会动手的同事</a></div><div class="nav-group"><a class="main-link" href="#2-第一次上手-照着跑一遍">2 第一次上手：照着跑一遍</a></div><div class="nav-group"><a class="main-link" href="#3-发任务时-按这-5-件事说">3 发任务时，按这 5 件事说</a></div><div class="nav-group"><a class="main-link" href="#4-什么任务适合交给-codex">4 什么任务适合交给 Codex</a></div><div class="nav-group"><a class="main-link" href="#5-执行过程中你要盯什么">5 执行过程中你要盯什么</a></div><div class="nav-group"><a class="main-link" href="#6-权限和安全-不要乱点确认">6 权限和安全：不要乱点确认</a></div><div class="nav-group"><a class="main-link" href="#7-验收-不要只听它说完成">7 验收：不要只听它说完成</a></div><div class="nav-group"><a class="main-link" href="#8-新手学习路线">8 新手学习路线</a></div><div class="nav-group"><a class="main-link" href="#9-codex-实践教程">9 Codex 实践教程</a></div><div class="nav-group"><a class="main-link" href="#9-1-学习路线">9.1 学习路线</a></div><div class="nav-group"><a class="main-link" href="#9-2-了解-codex-基本组成">9.2 了解 Codex 基本组成</a></div><div class="nav-group"><a class="main-link" href="#9-3-用-codex-完成第一个任务">9.3 用 Codex 完成第一个任务</a></div><div class="nav-group"><a class="main-link" href="#9-4-任务的顺序执行和并行">9.4 任务的顺序执行和并行</a></div><div class="nav-group"><a class="main-link" href="#9-5-权限管理">9.5 权限管理</a></div><div class="nav-group"><a class="main-link" href="#9-6-skills-和-plugins">9.6 Skills 和 Plugins</a></div><div class="nav-group"><a class="main-link" href="#9-7-自动化">9.7 自动化</a></div><div class="nav-group"><a class="main-link" href="#9-8-如何设置自己的-codex-桌面宠物">9.8 如何设置自己的 Codex 桌面宠物</a></div><div class="nav-group"><a class="main-link" href="#9-9-第一次让-codex-改代码">9.9 第一次让 Codex 改代码</a></div><div class="nav-group"><a class="main-link" href="#9-10-在-vs-code-中使用-codex">9.10 在 VS Code 中使用 Codex</a></div><div class="nav-group"><a class="main-link" href="#9-11-agents-md">9.11 AGENTS.md</a></div><div class="nav-group"><a class="main-link" href="#9-12-沙盒与审批-codex-的安全护栏">9.12 沙盒与审批：Codex 的安全护栏</a></div><div class="nav-group"><a class="main-link" href="#9-13-codex-cloud-使用云端模式">9.13 Codex Cloud：使用云端模式</a></div><div class="nav-group"><a class="main-link" href="#9-14-hooks">9.14 Hooks</a></div><div class="nav-group"><a class="main-link" href="#9-15-排障手册">9.15 排障手册</a></div><div class="nav-group"><a class="main-link" href="#9-16-实践方法">9.16 实践方法</a></div><div class="nav-group"><a class="main-link" href="#9-17-任务设计">9.17 任务设计</a></div><div class="nav-group"><a class="main-link" href="#9-18-非开发工作流">9.18 非开发工作流</a></div><div class="nav-group"><a class="main-link" href="#9-19-团队实践">9.19 团队实践</a></div><div class="nav-group"><a class="main-link" href="#10-codex-实战案例">10 Codex 实战案例</a></div><div class="nav-group"><a class="main-link" href="#10-1-codex-ppt-skill-一句话生成演示文稿">10.1 Codex × PPT Skill：一句话生成演示文稿</a></div><div class="nav-group"><a class="main-link" href="#10-2-codex-draw-io-mcp-ai-自动绘制架构图">10.2 Codex × Draw.io MCP：AI 自动绘制架构图</a></div><div class="nav-group"><a class="main-link" href="#10-3-codex-playwright-mcp-让-ai-像人一样操控浏览器">10.3 Codex × Playwright MCP：让 AI 像人一样操控浏览器</a></div><div class="nav-group"><a class="main-link" href="#10-4-codex-hyperframes-用代码生成动画视频">10.4 Codex × HyperFrames：用代码生成动画视频</a></div><div class="nav-group"><a class="main-link" href="#10-5-codex-obsidian-在知识库中自动生成配图">10.5 Codex × Obsidian：在知识库中自动生成配图</a></div><div class="nav-group"><a class="main-link" href="#10-6-codex-飞书-cli-一句话处理飞书数据">10.6 Codex × 飞书 CLI：一句话处理飞书数据</a></div><div class="nav-group"><a class="main-link" href="#10-7-codex-llm-wiki-在-obsidian-中搭建-ai-知识库">10.7 Codex × LLM Wiki：在 Obsidian 中搭建 AI 知识库</a></div><div class="nav-group"><a class="main-link" href="#10-8-codex-figma-mcp-让-ai-读懂你的设计稿">10.8 Codex × Figma MCP：让 AI 读懂你的设计稿</a></div><div class="nav-group"><a class="main-link" href="#10-9-codex-notion-mcp-打通你的知识工作空间">10.9 Codex × Notion MCP：打通你的知识工作空间</a></div><div class="nav-group"><a class="main-link" href="#10-10-codex-dkfile-ai-网页一键发布到公网">10.10 Codex × DKFile：AI 网页一键发布到公网</a></div><div class="nav-group"><a class="main-link" href="#10-11-codex-云服务器-远程定位并修复-bug">10.11 Codex × 云服务器：远程定位并修复 Bug</a></div><div class="nav-group"><a class="main-link" href="#10-12-codex-chrome-让-ai-直接控制浏览器">10.12 Codex × Chrome：让 AI 直接控制浏览器</a></div><div class="nav-group"><a class="main-link" href="#10-13-codex-github-actions-ci-失败自动修复实测">10.13 Codex × GitHub Actions：CI 失败自动修复实测</a></div><div class="nav-group"><a class="main-link" href="#10-14-codex-临床文献综述-把医学问题整理成可复核证据表">10.14 Codex × 临床文献综述：把医学问题整理成可复核证据表</a></div><div class="nav-group"><a class="main-link" href="#10-15-codex-hatch-pet-用一张照片生成专属宠物">10.15 Codex × Hatch Pet：用一张照片生成专属宠物</a></div><div class="nav-group"><a class="main-link" href="#11-团队怎么落地">11 团队怎么落地</a></div></nav>
+      <nav class="nav" aria-label="文章导航"><div class="nav-group"><a class="main-link" href="#1-先搞清楚-codex-是怎么帮你干活的">1 先搞清楚：Codex 是怎么帮你干活的</a></div><div class="nav-group"><a class="main-link" href="#2-第一次上手-10-分钟跑完一个小任务">2 第一次上手：10 分钟跑完一个小任务</a></div><div class="nav-group"><a class="main-link" href="#3-发任务公式-目标-材料-限制-验收">3 发任务公式：目标、材料、限制、验收</a></div><div class="nav-group"><a class="main-link" href="#4-把材料交清楚-不要让-codex-猜上下文">4 把材料交清楚：不要让 Codex 猜上下文</a></div><div class="nav-group"><a class="main-link" href="#5-执行中怎么盯-看计划-看改动-及时纠偏">5 执行中怎么盯：看计划、看改动、及时纠偏</a></div><div class="nav-group"><a class="main-link" href="#6-权限怎么点-先看它要做什么">6 权限怎么点：先看它要做什么</a></div><div class="nav-group"><a class="main-link" href="#7-验收怎么做-打开结果-而不是听它说完成">7 验收怎么做：打开结果，而不是听它说完成</a></div><div class="nav-group"><a class="main-link" href="#8-从新手到能独立使用-三轮练习路线">8 从新手到能独立使用：三轮练习路线</a></div><div class="nav-group"><a class="main-link" href="#9-codex-实践教程">9 Codex 实践教程</a></div><div class="nav-group"><a class="main-link" href="#9-1-学习路线">9.1 学习路线</a></div><div class="nav-group"><a class="main-link" href="#9-2-了解-codex-基本组成">9.2 了解 Codex 基本组成</a></div><div class="nav-group"><a class="main-link" href="#9-3-用-codex-完成第一个任务">9.3 用 Codex 完成第一个任务</a></div><div class="nav-group"><a class="main-link" href="#9-4-任务的顺序执行和并行">9.4 任务的顺序执行和并行</a></div><div class="nav-group"><a class="main-link" href="#9-5-权限管理">9.5 权限管理</a></div><div class="nav-group"><a class="main-link" href="#9-6-skills-和-plugins">9.6 Skills 和 Plugins</a></div><div class="nav-group"><a class="main-link" href="#9-7-自动化">9.7 自动化</a></div><div class="nav-group"><a class="main-link" href="#9-8-如何设置自己的-codex-桌面宠物">9.8 如何设置自己的 Codex 桌面宠物</a></div><div class="nav-group"><a class="main-link" href="#9-9-第一次让-codex-改代码">9.9 第一次让 Codex 改代码</a></div><div class="nav-group"><a class="main-link" href="#9-10-在-vs-code-中使用-codex">9.10 在 VS Code 中使用 Codex</a></div><div class="nav-group"><a class="main-link" href="#9-11-agents-md">9.11 AGENTS.md</a></div><div class="nav-group"><a class="main-link" href="#9-12-沙盒与审批-codex-的安全护栏">9.12 沙盒与审批：Codex 的安全护栏</a></div><div class="nav-group"><a class="main-link" href="#9-13-codex-cloud-使用云端模式">9.13 Codex Cloud：使用云端模式</a></div><div class="nav-group"><a class="main-link" href="#9-14-hooks">9.14 Hooks</a></div><div class="nav-group"><a class="main-link" href="#9-15-排障手册">9.15 排障手册</a></div><div class="nav-group"><a class="main-link" href="#9-16-实践方法">9.16 实践方法</a></div><div class="nav-group"><a class="main-link" href="#9-17-任务设计">9.17 任务设计</a></div><div class="nav-group"><a class="main-link" href="#9-18-非开发工作流">9.18 非开发工作流</a></div><div class="nav-group"><a class="main-link" href="#9-19-团队实践">9.19 团队实践</a></div><div class="nav-group"><a class="main-link" href="#10-codex-实战案例">10 Codex 实战案例</a></div><div class="nav-group"><a class="main-link" href="#10-1-codex-ppt-skill-一句话生成演示文稿">10.1 Codex × PPT Skill：一句话生成演示文稿</a></div><div class="nav-group"><a class="main-link" href="#10-2-codex-draw-io-mcp-ai-自动绘制架构图">10.2 Codex × Draw.io MCP：AI 自动绘制架构图</a></div><div class="nav-group"><a class="main-link" href="#10-3-codex-playwright-mcp-让-ai-像人一样操控浏览器">10.3 Codex × Playwright MCP：让 AI 像人一样操控浏览器</a></div><div class="nav-group"><a class="main-link" href="#10-4-codex-hyperframes-用代码生成动画视频">10.4 Codex × HyperFrames：用代码生成动画视频</a></div><div class="nav-group"><a class="main-link" href="#10-5-codex-obsidian-在知识库中自动生成配图">10.5 Codex × Obsidian：在知识库中自动生成配图</a></div><div class="nav-group"><a class="main-link" href="#10-6-codex-飞书-cli-一句话处理飞书数据">10.6 Codex × 飞书 CLI：一句话处理飞书数据</a></div><div class="nav-group"><a class="main-link" href="#10-7-codex-llm-wiki-在-obsidian-中搭建-ai-知识库">10.7 Codex × LLM Wiki：在 Obsidian 中搭建 AI 知识库</a></div><div class="nav-group"><a class="main-link" href="#10-8-codex-figma-mcp-让-ai-读懂你的设计稿">10.8 Codex × Figma MCP：让 AI 读懂你的设计稿</a></div><div class="nav-group"><a class="main-link" href="#10-9-codex-notion-mcp-打通你的知识工作空间">10.9 Codex × Notion MCP：打通你的知识工作空间</a></div><div class="nav-group"><a class="main-link" href="#10-10-codex-dkfile-ai-网页一键发布到公网">10.10 Codex × DKFile：AI 网页一键发布到公网</a></div><div class="nav-group"><a class="main-link" href="#10-11-codex-云服务器-远程定位并修复-bug">10.11 Codex × 云服务器：远程定位并修复 Bug</a></div><div class="nav-group"><a class="main-link" href="#10-12-codex-chrome-让-ai-直接控制浏览器">10.12 Codex × Chrome：让 AI 直接控制浏览器</a></div><div class="nav-group"><a class="main-link" href="#10-13-codex-github-actions-ci-失败自动修复实测">10.13 Codex × GitHub Actions：CI 失败自动修复实测</a></div><div class="nav-group"><a class="main-link" href="#10-14-codex-临床文献综述-把医学问题整理成可复核证据表">10.14 Codex × 临床文献综述：把医学问题整理成可复核证据表</a></div><div class="nav-group"><a class="main-link" href="#10-15-codex-hatch-pet-用一张照片生成专属宠物">10.15 Codex × Hatch Pet：用一张照片生成专属宠物</a></div><div class="nav-group"><a class="main-link" href="#11-接下来怎么练">11 接下来怎么练</a></div></nav>
       <div class="sticker-note"><img src="./assets/chikiwa-note.jpg" alt="chikiwa note"/></div>
     </aside>
     <main>
       <section class="hero">
-        <div class="hero-content"><span class="hero-kicker">Codex Learning Guide</span><h2>Codex 入门学习站</h2><p>从第一次上手开始，先把任务说清楚、过程看明白、结果验收好。前面教方法，后面放完整教程和 15 个真实案例，读者可以按自己的需求跳着学。</p><div class="hero-stats"><span>第 1-8 节：先会用</span><span>第 9 节：查教程</span><span>第 10 节：看案例</span></div></div>
-        <img class="hero-sticker" src="./assets/chikiwa-side-transparent.png" alt="chikiwa sticker"/>
+        <div class="hero-content"><span class="hero-kicker">从第一次上手开始</span><h2>Codex 使用指南</h2><p>不用一次读完整页。先照着做一个小任务，学会怎么发任务、盯过程、验收结果；后面再按需要查完整教程和真实案例。</p><div class="hero-actions"><a class="primary" href="#2-第一次上手-10-分钟跑完一个小任务">开始做第一个任务</a><a href="#10-codex-实战案例">直接看实战案例</a></div></div>
+        <div class="hero-route"><div class="route-head"><div><h3>照这个顺序学</h3><p>读者第一次打开，也能知道先点哪里。</p></div><img class="hero-sticker" src="./assets/chikiwa-side-transparent.png" alt="chikiwa sticker"/></div><div class="route-item"><span>1</span><div><strong>先跑通</strong><em>10 分钟做完一个不会出错的小任务。</em></div></div><div class="route-item"><span>2</span><div><strong>再学会</strong><em>任务怎么说、材料怎么给、权限怎么点。</em></div></div><div class="route-item"><span>3</span><div><strong>最后查</strong><em>遇到具体场景，再看教程和 15 个案例。</em></div></div></div>
       </section>
       <div class="portal">
-        <a href="#1-先把-codex-当成会动手的同事"><span>01</span><strong>先会用</strong><em>不知道从哪里开始，就从这里读。</em></a>
-        <a href="#2-第一次上手-照着跑一遍"><span>02</span><strong>照着跑</strong><em>用一个小任务跑完整闭环。</em></a>
-        <a href="#9-codex-实践教程"><span>09</span><strong>查教程</strong><em>遇到权限、Skill、MCP、自动化再查。</em></a>
-        <a href="#10-codex-实战案例"><span>15</span><strong>看案例</strong><em>按真实场景学习别人怎么交代任务。</em></a>
+        <a href="#1-先搞清楚-codex-是怎么帮你干活的"><span>01</span><strong>先知道能做什么</strong><em>先建立正确预期，不用硬啃概念。</em></a>
+        <a href="#2-第一次上手-10-分钟跑完一个小任务"><span>02</span><strong>跑一遍小任务</strong><em>照着做，比只看说明更容易记住。</em></a>
+        <a href="#9-codex-实践教程"><span>09</span><strong>查完整教程</strong><em>权限、Skill、MCP、自动化都放这里。</em></a>
+        <a href="#10-codex-实战案例"><span>15</span><strong>看真实案例</strong><em>学别人怎么交代任务、怎么验收结果。</em></a>
       </div>
-      <article><blockquote>这份网页先教你怎么用 Codex，再放完整实践教程和 15 个实战案例。前半部分是给第一次接触 Codex 的人看的上手路线；第 9 节和第 10 节保留教程步骤和图片，方便你需要时逐条查。</blockquote>
-<section class="content-section" data-step="01"><div class="section-kicker">Chapter 01</div><h2 id="1-先把-codex-当成会动手的同事">1 先把 Codex 当成会动手的同事</h2>
-<p>不要把 Codex 当成普通聊天机器人。普通 AI 多数是在回答你；Codex 是可以进入工作区做事的助手。</p>
-<p>它能做这些事：</p>
-<ul>
-<li>读文件：看你给它的文档、代码、表格、截图说明。</li>
-<li>改文件：帮你改网页、改文案、改代码、整理资料。</li>
-<li>跑命令：启动项目、跑测试、检查构建结果。</li>
-<li>看页面：打开浏览器，检查桌面端和手机端效果。</li>
-<li>接工具：通过插件或 MCP 连接 Notion、Figma、飞书、GitHub 等工具。</li>
-</ul>
-<p>你不用先学一堆术语。新手只要记住一句话：<strong>你负责说清楚目标和验收标准，Codex 负责动手执行，但最后必须由你检查结果。</strong></p>
-<aside class="callout tip"><span>温馨提示</span><p>最容易失败的用法是只说“帮我弄好”。Codex 不怕任务难，怕你没说清楚什么叫好。</p></aside>
+      <article><blockquote>这份网页先教你怎么用 Codex：先学会把任务说清楚、把材料给清楚、把过程看明白、把结果验收好。第 9 节是 Codex 实践教程，第 10 节是 15 个实战案例；先学方法，再按需要查教程和案例。</blockquote>
+<section class="content-section" data-step="01"><div class="section-kicker">Chapter 01</div><h2 id="1-先搞清楚-codex-是怎么帮你干活的">1 先搞清楚：Codex 是怎么帮你干活的</h2>
+<p>你可以先把 Codex 理解成一个会进工作区动手的 AI 助手。它不是只回答问题，而是可以读文件、改文件、跑命令、打开浏览器检查结果。</p>
+<p>最重要的是分工：</p>
+<p>| 你负责 | Codex 负责 |</p>
+<p>| --- | --- |</p>
+<p>| 说清楚要什么结果 | 根据目标拆步骤 |</p>
+<p>| 给它材料和限制 | 读取文件、图片、链接和说明 |</p>
+<p>| 决定哪些操作可以做 | 创建、修改、运行、检查 |</p>
+<p>| 最后验收结果 | 报告它做了什么、哪里需要你确认 |</p>
+<p>新手先记住一句话：<strong>Codex 可以动手，但方向和验收标准必须由你给。</strong></p>
+<aside class="callout tip"><span>温馨提示</span><p>不要上来就说“帮我弄好”。你要告诉它：弄什么、用哪些材料、不要动哪里、最后怎么判断算做好。</p></aside>
 </section>
-<section class="content-section" data-step="02"><div class="section-kicker">Chapter 02</div><h2 id="2-第一次上手-照着跑一遍">2 第一次上手：照着跑一遍</h2>
-<p>第一次不要拿真实业务资料练。先建一个空文件夹，做一个不会出事故的小任务。</p>
+<section class="content-section" data-step="02"><div class="section-kicker">Chapter 02</div><h2 id="2-第一次上手-10-分钟跑完一个小任务">2 第一次上手：10 分钟跑完一个小任务</h2>
+<p>第一次不要拿重要资料练。先建一个空文件夹，跑一个不会出问题的小任务，体验完整闭环。</p>
 <p>照着做：</p>
 <ol>
 <li>新建一个文件夹，名字可以叫 <code>codex-practice</code>。</li>
 <li>在 Codex 里打开这个文件夹。</li>
 <li>复制下面这段话发给 Codex。</li>
-<li>等它做完，看它创建了什么文件。</li>
-<li>按它说的方法打开结果。</li>
-<li>如果不满意，继续在同一个对话里让它改。</li>
+<li>等它做完后，按它说的方法打开结果。</li>
+<li>不满意就继续在同一个对话里让它改。</li>
 </ol>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请在当前文件夹里做一个简单网页。
 
@@ -88,143 +86,126 @@
 - 文案要简单，不要像说明书
 - 风格清爽，适合新手阅读
 - 做完后告诉我文件名，以及我应该怎么打开检查</code></pre></div>
-<p>你要看的不是它说了多少话，而是三件事：</p>
+<p>跑完后只看三件事：</p>
 <ul>
 <li>它有没有真的创建文件。</li>
-<li>它有没有告诉你文件在哪里。</li>
-<li>你能不能真的打开页面看到结果。</li>
+<li>它有没有说明文件在哪里。</li>
+<li>你能不能打开页面看到结果。</li>
 </ul>
+<p>这三件事都对，说明你已经跑通了“发任务 → Codex 动手 → 你验收”的基本流程。</p>
 </section>
-<section class="content-section" data-step="03"><div class="section-kicker">Chapter 03</div><h2 id="3-发任务时-按这-5-件事说">3 发任务时，按这 5 件事说</h2>
-<p>Codex 能不能做对，很多时候取决于你有没有把任务说完整。最稳的格式是：目标、材料、限制、风格、验收。</p>
-<p>你可以直接套这个模板：</p>
-<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请处理：[一句话目标]
+<section class="content-section" data-step="03"><div class="section-kicker">Chapter 03</div><h2 id="3-发任务公式-目标-材料-限制-验收">3 发任务公式：目标、材料、限制、验收</h2>
+<p>Codex 做得好不好，通常不是看任务难不难，而是看你有没有把任务讲完整。</p>
+<p>以后发任务就按这 4 块写：</p>
+<p>| 要说清楚什么 | 你可以这样写 |</p>
+<p>| --- | --- |</p>
+<p>| 目标 | 最后要得到什么文件、页面、表格或结论 |</p>
+<p>| 材料 | 参考哪些文件、图片、链接、已有文字 |</p>
+<p>| 限制 | 哪些能改，哪些不能改，哪些内容必须保留 |</p>
+<p>| 验收 | 做完后要检查什么，怎么证明能用 |</p>
+<p>可以直接复制这个模板：</p>
+<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请处理：[一句话说明任务]
 
 目标：
 - 最后要交付什么
-- 给谁看/谁使用
+- 谁会看/谁会用
 
 材料：
-- 可以参考哪些文件、图片、链接或原文
-- 哪些内容必须保留
+- 参考这些文件/图片/链接：[列出来]
+- 这些内容必须保留：[列出来]
 
 限制：
-- 可以改哪里
-- 不要改哪里
-- 有没有不能删除的标题、图片、关键词
-
-风格：
-- 读者是谁
-- 要简单、正式、可爱、专业，还是适合领导看
+- 可以改：[范围]
+- 不要改：[范围]
+- 不要删除：[标题/图片/关键词]
 
 验收：
-- 最后要检查哪些页面、文件、链接、图片或命令
-- 检查完请告诉我结果</code></pre></div>
-<p>一个真实工作里的写法：</p>
-<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请把这个 Codex 教学网页改得更适合新手学习。
-
-材料：
-- 保留后面的 Codex 实践教程
-- 保留后面的 Codex 实战案例
-- 图片和案例步骤不要丢
-
-要求：
-- 前面先教怎么用 Codex
-- 语言要像带人上手，不要像复杂说明书
-- 左侧目录能跳转
-- 桌面端不要右边空一大块
-- 手机端不要横向滚动
-
-验收：
-- 用浏览器检查桌面端和手机端
-- 检查图片是否全部加载
-- 检查目录是否能跳转
-- 检查是否还有无关内容</code></pre></div>
+- 请实际检查：[页面/文件/命令/链接]
+- 检查完告诉我：改了什么、怎么检查的、还有什么需要我确认</code></pre></div>
+<p>如果你只写一句“帮我优化一下”，Codex 会自己猜。猜错以后再返工，反而更慢。</p>
 </section>
-<section class="content-section" data-step="04"><div class="section-kicker">Chapter 04</div><h2 id="4-什么任务适合交给-codex">4 什么任务适合交给 Codex</h2>
-<p>适合交给 Codex 的任务，通常有三个特点：有材料、有目标、有办法检查。</p>
-<p>| 任务类型 | 你可以怎么交代 |</p>
+<section class="content-section" data-step="04"><div class="section-kicker">Chapter 04</div><h2 id="4-把材料交清楚-不要让-codex-猜上下文">4 把材料交清楚：不要让 Codex 猜上下文</h2>
+<p>Codex 很适合处理已有材料，但你要告诉它哪些材料重要。</p>
+<p>常见材料可以这样给：</p>
+<p>| 材料类型 | 正确交法 |</p>
 <p>| --- | --- |</p>
-<p>| 改网页 | 给现有页面、参考图、必须保留的内容、桌面和手机端检查要求 |</p>
-<p>| 整理文档 | 给原文、读者、语气、结构，让它先整理大纲再改正文 |</p>
-<p>| 做教程 | 给步骤、截图、读者水平，让它改成照着做的版本 |</p>
-<p>| 查问题 | 让它打开页面、截图、指出具体错位或报错 |</p>
-<p>| 改代码 | 给目标、相关文件、不要动的范围、测试命令 |</p>
-<p>| 处理资料 | 给表格、文档、链接，让它输出清单、摘要或模板 |</p>
-<p>不适合一上来就交给 Codex 的任务：</p>
-<ul>
-<li>你自己也说不清最终结果长什么样。</li>
-<li>涉及付款、删除生产数据、批量发消息。</li>
-<li>没有验收标准，只要求“弄好看一点”。</li>
-</ul>
+<p>| 文档 | 说明哪一段必须保留，哪一段可以改写 |</p>
+<p>| 图片 | 说明图片用途，是示例、步骤图、封面还是贴纸 |</p>
+<p>| 网页 | 给它要检查的地址，并说明桌面端和手机端都要看 |</p>
+<p>| 代码 | 指定相关文件、测试命令、不要动的目录 |</p>
+<p>| 表格 | 告诉它要提取哪些列、输出什么格式 |</p>
+<p>更稳的说法：</p>
+<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>先不要直接改。
+请先阅读我给你的材料，然后告诉我：
+1. 你理解的任务目标
+2. 你准备改哪些地方
+3. 哪些内容你会保留不动
+4. 你需要我补充什么</code></pre></div>
+<p>等它复述对了，再让它开始做。</p>
 </section>
-<section class="content-section" data-step="05"><div class="section-kicker">Chapter 05</div><h2 id="5-执行过程中你要盯什么">5 执行过程中你要盯什么</h2>
-<p>Codex 工作时，不需要你每一步都插手，但你要会看关键点。</p>
+<section class="content-section" data-step="05"><div class="section-kicker">Chapter 05</div><h2 id="5-执行中怎么盯-看计划-看改动-及时纠偏">5 执行中怎么盯：看计划、看改动、及时纠偏</h2>
+<p>Codex 执行任务时，你不需要每一步都管，但要会看关键点。</p>
 <p>重点看这些：</p>
 <ul>
 <li>它读了哪些文件。</li>
 <li>它准备改哪些文件。</li>
-<li>它有没有先给计划。</li>
+<li>它有没有先说明计划。</li>
 <li>它有没有跑命令、测试或浏览器检查。</li>
-<li>它遇到失败时有没有解释原因。</li>
-<li>它最后有没有告诉你结果在哪里。</li>
+<li>它失败时有没有说明原因。</li>
+<li>它最后有没有说清楚结果在哪里。</li>
 </ul>
-<p>如果发现方向不对，不要重新开新任务，直接纠偏：</p>
+<p>发现方向不对，不要重新开一条任务，直接在原对话里纠偏：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>先停一下。
-你刚才改偏了：问题是 [具体问题]。
+你刚才的方向不对：问题是 [具体问题]。
 请只修这个问题，不要重写整页。
-修完后重新检查。</code></pre></div>
+修完后重新检查，并告诉我检查结果。</code></pre></div>
+<p>如果只是细节不满意，可以这样说：</p>
+<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>整体方向对，但这里要改：
+1. [第一处问题]
+2. [第二处问题]
+请保持其他内容不变，只改这几处。</code></pre></div>
 </section>
-<section class="content-section" data-step="06"><div class="section-kicker">Chapter 06</div><h2 id="6-权限和安全-不要乱点确认">6 权限和安全：不要乱点确认</h2>
-<p>Codex 经常会请求权限。新手不要看到确认就点，先看它要做什么。</p>
-<p>| 权限 | 代表什么 | 怎么处理 |</p>
+<section class="content-section" data-step="06"><div class="section-kicker">Chapter 06</div><h2 id="6-权限怎么点-先看它要做什么">6 权限怎么点：先看它要做什么</h2>
+<p>Codex 经常会请求权限。不要看到确认就点，先看它要做的动作。</p>
+<p>| 权限/动作 | 代表什么 | 怎么处理 |</p>
 <p>| --- | --- | --- |</p>
-<p>| 读取文件 | 看当前文件夹内容 | 通常可以允许 |</p>
-<p>| 修改文件 | 创建、编辑、删除文件 | 看清文件名和范围 |</p>
+<p>| 读取文件 | 看当前工作区内容 | 通常可以允许 |</p>
+<p>| 修改文件 | 创建、编辑、删除文件 | 先看文件名和范围 |</p>
 <p>| 运行命令 | 安装依赖、启动服务、跑测试 | 不懂就让它解释命令 |</p>
-<p>| 打开浏览器 | 检查页面、截图、点击 | 适合网页验收 |</p>
-<p>| 连接外部工具 | Notion、Figma、飞书、GitHub 等 | 确认账号和权限范围 |</p>
-<p>简单规则：</p>
+<p>| 打开浏览器 | 检查页面、截图、点击 | 网页任务通常需要 |</p>
+<p>| 连接外部工具 | 访问 Notion、Figma、飞书、GitHub 等 | 确认账号和权限范围 |</p>
+<p>简单判断：</p>
 <ul>
 <li>只读和检查，风险通常低。</li>
 <li>写文件和跑命令，要看清楚范围。</li>
 <li>删除、付款、发布、批量发送，必须人工确认。</li>
 </ul>
+<p>你看不懂命令时，直接问：</p>
+<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>这条命令会做什么？
+会不会删除、上传、发布或影响其他文件？
+请用一句话解释风险，再等我决定。</code></pre></div>
 </section>
-<section class="content-section" data-step="07"><div class="section-kicker">Chapter 07</div><h2 id="7-验收-不要只听它说完成">7 验收：不要只听它说完成</h2>
+<section class="content-section" data-step="07"><div class="section-kicker">Chapter 07</div><h2 id="7-验收怎么做-打开结果-而不是听它说完成">7 验收怎么做：打开结果，而不是听它说完成</h2>
 <p>Codex 说完成，只代表它认为完成。你要自己确认结果真的能用。</p>
-<p>网页任务检查：</p>
-<ul>
-<li>桌面端布局是否正常。</li>
-<li>手机端有没有挤出屏幕。</li>
-<li>图片是否清晰、位置合理。</li>
-<li>左侧目录或按钮能不能跳转。</li>
-<li>有没有文字重叠、断行很难看、右侧空一大块。</li>
-</ul>
-<p>文档任务检查：</p>
-<ul>
-<li>标题是否清楚。</li>
-<li>每节是否像“照着做”。</li>
-<li>有没有无关内容混进来。</li>
-<li>必须保留的文字和图片还在不在。</li>
-</ul>
-<p>代码任务检查：</p>
-<ul>
-<li>是否跑了测试。</li>
-<li>是否启动项目看页面。</li>
-<li>是否说明改了哪些文件。</li>
-<li>是否误改无关文件。</li>
-</ul>
-<p>你可以直接这样要求 Codex：</p>
+<p>不同任务的验收重点：</p>
+<p>| 任务 | 最少要检查什么 |</p>
+<p>| --- | --- |</p>
+<p>| 网页 | 桌面端、手机端、图片、目录跳转、文字是否挤压 |</p>
+<p>| 文档 | 标题是否清楚、步骤是否能照着做、无关内容是否删干净 |</p>
+<p>| 代码 | 测试是否通过、页面是否能启动、有没有误改无关文件 |</p>
+<p>| 数据整理 | 数量是否对、字段是否完整、格式是否能直接使用 |</p>
+<p>可以要求 Codex 用这个格式汇报：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请不要只说完成。
 请实际检查结果，并按下面格式回复：
 1. 你检查了哪些文件/页面
-2. 发现了什么问题
-3. 已经修复了什么
-4. 还有什么需要我人工确认</code></pre></div>
+2. 检查方法是什么
+3. 发现了什么问题
+4. 已经修复了什么
+5. 还有什么需要我人工确认</code></pre></div>
+<aside class="callout tip"><span>温馨提示</span><p>最稳的验收方法不是看它写了多少解释，而是打开结果、点一遍、跑一遍、对照你的要求检查一遍。</p></aside>
 </section>
-<section class="content-section" data-step="08"><div class="section-kicker">Chapter 08</div><h2 id="8-新手学习路线">8 新手学习路线</h2>
-<p>不要一上来把所有案例看完。按顺序练，会更快。</p>
+<section class="content-section" data-step="08"><div class="section-kicker">Chapter 08</div><h2 id="8-从新手到能独立使用-三轮练习路线">8 从新手到能独立使用：三轮练习路线</h2>
+<p>不要一上来把所有教程和案例看完。按下面三轮练，会更容易真正用起来。</p>
 <p>第一轮：会发任务</p>
 <ul>
 <li>完成第 2 节的小网页任务。</li>
@@ -234,7 +215,7 @@
 <p>第二轮：会验收</p>
 <ul>
 <li>让 Codex 打开浏览器检查网页。</li>
-<li>看桌面端和手机端截图。</li>
+<li>看桌面端和手机端结果。</li>
 <li>让它修一个具体排版问题。</li>
 </ul>
 <p>第三轮：会用工具</p>
@@ -243,11 +224,11 @@
 <li>按自己的岗位挑第 10 节里的 2-3 个案例练习。</li>
 <li>每次练习都留下输入、输出、截图和复盘。</li>
 </ul>
-<aside class="callout tip"><span>温馨提示</span><p>真正有用的训练不是“看了很多资料”，而是你能照着做、做完会检查、下次能复用。</p></aside>
+<p>真正有用的训练不是“看了很多资料”，而是你能照着做、做完会检查、下次能复用。</p>
 </section>
 <section class="content-section" data-step="09"><div class="section-kicker">Chapter 09</div><h2 id="9-codex-实践教程">9 Codex 实践教程</h2>
 <p>这一部分保留 Codex 实践教程的正文、步骤和图片。前面 8 节负责带你入门；这里适合当作完整手册查细节。</p>
-<div class="cards case-jump-cards"><a class="info-card" href="#9-1-学习路线"><span class="card-icon">01</span><strong>学习路线</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-2-了解-codex-基本组成"><span class="card-icon">02</span><strong>了解 Codex 基本组成</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-3-用-codex-完成第一个任务"><span class="card-icon">03</span><strong>用 Codex 完成第一个任务</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-4-任务的顺序执行和并行"><span class="card-icon">04</span><strong>任务的顺序执行和并行</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-5-权限管理"><span class="card-icon">05</span><strong>权限管理</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-6-skills-和-plugins"><span class="card-icon">06</span><strong>Skills 和 Plugins</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-7-自动化"><span class="card-icon">07</span><strong>自动化</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-8-如何设置自己的-codex-桌面宠物"><span class="card-icon">08</span><strong>如何设置自己的 Codex 桌面宠物</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-9-第一次让-codex-改代码"><span class="card-icon">09</span><strong>第一次让 Codex 改代码</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-10-在-vs-code-中使用-codex"><span class="card-icon">10</span><strong>在 VS Code 中使用 Codex</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-11-agents-md"><span class="card-icon">11</span><strong>AGENTS.md</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-12-沙盒与审批-codex-的安全护栏"><span class="card-icon">12</span><strong>沙盒与审批：Codex 的安全护栏</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-13-codex-cloud-使用云端模式"><span class="card-icon">13</span><strong>Codex Cloud：使用云端模式</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-14-hooks"><span class="card-icon">14</span><strong>Hooks</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-15-排障手册"><span class="card-icon">15</span><strong>排障手册</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-16-实践方法"><span class="card-icon">16</span><strong>实践方法</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-17-任务设计"><span class="card-icon">17</span><strong>任务设计</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-18-非开发工作流"><span class="card-icon">18</span><strong>非开发工作流</strong><em>原教程正文和图片</em></a><a class="info-card" href="#9-19-团队实践"><span class="card-icon">19</span><strong>团队实践</strong><em>原教程正文和图片</em></a></div>
+<div class="cards case-jump-cards"><a class="info-card" href="#9-1-学习路线"><span class="card-icon">01</span><strong>学习路线</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-2-了解-codex-基本组成"><span class="card-icon">02</span><strong>了解 Codex 基本组成</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-3-用-codex-完成第一个任务"><span class="card-icon">03</span><strong>用 Codex 完成第一个任务</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-4-任务的顺序执行和并行"><span class="card-icon">04</span><strong>任务的顺序执行和并行</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-5-权限管理"><span class="card-icon">05</span><strong>权限管理</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-6-skills-和-plugins"><span class="card-icon">06</span><strong>Skills 和 Plugins</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-7-自动化"><span class="card-icon">07</span><strong>自动化</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-8-如何设置自己的-codex-桌面宠物"><span class="card-icon">08</span><strong>如何设置自己的 Codex 桌面宠物</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-9-第一次让-codex-改代码"><span class="card-icon">09</span><strong>第一次让 Codex 改代码</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-10-在-vs-code-中使用-codex"><span class="card-icon">10</span><strong>在 VS Code 中使用 Codex</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-11-agents-md"><span class="card-icon">11</span><strong>AGENTS.md</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-12-沙盒与审批-codex-的安全护栏"><span class="card-icon">12</span><strong>沙盒与审批：Codex 的安全护栏</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-13-codex-cloud-使用云端模式"><span class="card-icon">13</span><strong>Codex Cloud：使用云端模式</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-14-hooks"><span class="card-icon">14</span><strong>Hooks</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-15-排障手册"><span class="card-icon">15</span><strong>排障手册</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-16-实践方法"><span class="card-icon">16</span><strong>实践方法</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-17-任务设计"><span class="card-icon">17</span><strong>任务设计</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-18-非开发工作流"><span class="card-icon">18</span><strong>非开发工作流</strong><em>教程正文和截图</em></a><a class="info-card" href="#9-19-团队实践"><span class="card-icon">19</span><strong>团队实践</strong><em>教程正文和截图</em></a></div>
 </section>
 <section class="content-section" data-step="10"><div class="section-kicker">Chapter 10</div><h2 id="9-1-学习路线">9.1 学习路线</h2>
 <aside class="callout tip"><span>温馨提示</span><p>最后核对 官方资料最后核对日期：2026-06-12。核心来源包括 <a href="https://openai.com/codex/" target="_blank" rel="noreferrer">OpenAI Codex 产品页</a>、<a href="https://developers.openai.com/codex/" target="_blank" rel="noreferrer">Codex 文档入口</a>、<a href="https://github.com/openai/codex" target="_blank" rel="noreferrer">Codex CLI 官方仓库</a> 与 <a href="https://help.openai.com/en/articles/11369540-codex-in-chatgpt" target="_blank" rel="noreferrer">Codex Help Center</a>。</p></aside>
@@ -363,11 +344,6 @@
 <p>自动化会执行你指定的命令，你可以指定工作树、项目地址和定时的间隔。在下图中输入你的指令，并且配置即可。</p>
 <figure class="article-image"><img src="./assets/codexguide/source/codex-automation-create.png" alt="Codex 创建自动化" loading="lazy"/><figcaption>Codex 创建自动化</figcaption></figure>
 <aside class="callout tip"><span>温馨提示</span><p>注意 自动化任务以默认沙盒设置运行。若工具调用需修改工作空间外文件、访问网络或操作电脑应用，该操作将执行失败。可通过规则选择性允许特定命令在沙盒外运行。</p></aside>
-<h3 id="设置面板">设置面板</h3>
-<p>点击左下角头像或设置图标可以打开设置面板。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-app-profile-menu-settings-billing.png" alt="设置入口" loading="lazy"/><figcaption>设置入口</figcaption></figure>
-<p>左侧是设置菜单。里面包含丰富的配置选项，详情如下：</p>
-<aside class="callout warning"><span>注意</span><p>先用默认配置 截图里的开关只是示例。尤其是「完全访问权限」、浏览器控制、电脑操控、钩子和 MCP 服务器，先按任务逐步开启。配置选项可参考如下。</p></aside>
 <h3 id="设置说明">设置说明</h3>
 <p>大部分情况下都是保持默认配置即可。配置很多时候都是按需开启。</p>
 <h4 id="个人">个人</h4>
@@ -2058,9 +2034,9 @@ if __name__ == &quot;__main__&quot;:
 </section>
 <section class="content-section" data-step="29"><div class="section-kicker">Chapter 29</div><h2 id="10-codex-实战案例">10 Codex 实战案例</h2>
 <p>这一部分保留 Codex 实战案例的正文、步骤和图片。读案例时重点看三件事：任务怎么说、Codex 怎么执行、最后怎么验收。</p>
-<div class="cards case-jump-cards"><a class="info-card" href="#10-1-codex-ppt-skill-一句话生成演示文稿"><span class="card-icon">01</span><strong>PPT Skill：一句话生成演示文稿</strong><em>原案例正文和图片</em></a><a class="info-card" href="#10-2-codex-draw-io-mcp-ai-自动绘制架构图"><span class="card-icon">02</span><strong>Draw.io MCP：AI 自动绘制架构图</strong><em>原案例正文和图片</em></a><a class="info-card" href="#10-3-codex-playwright-mcp-让-ai-像人一样操控浏览器"><span class="card-icon">03</span><strong>Playwright MCP：让 AI 像人一样操控浏览器</strong><em>原案例正文和图片</em></a><a class="info-card" href="#10-4-codex-hyperframes-用代码生成动画视频"><span class="card-icon">04</span><strong>HyperFrames：用代码生成动画视频</strong><em>原案例正文和图片</em></a><a class="info-card" href="#10-5-codex-obsidian-在知识库中自动生成配图"><span class="card-icon">05</span><strong>Obsidian：在知识库中自动生成配图</strong><em>原案例正文和图片</em></a><a class="info-card" href="#10-6-codex-飞书-cli-一句话处理飞书数据"><span class="card-icon">06</span><strong>飞书 CLI：一句话处理飞书数据</strong><em>原案例正文和图片</em></a><a class="info-card" href="#10-7-codex-llm-wiki-在-obsidian-中搭建-ai-知识库"><span class="card-icon">07</span><strong>LLM Wiki：在 Obsidian 中搭建 AI 知识库</strong><em>原案例正文和图片</em></a><a class="info-card" href="#10-8-codex-figma-mcp-让-ai-读懂你的设计稿"><span class="card-icon">08</span><strong>Figma MCP：让 AI 读懂你的设计稿</strong><em>原案例正文和图片</em></a><a class="info-card" href="#10-9-codex-notion-mcp-打通你的知识工作空间"><span class="card-icon">09</span><strong>Notion MCP：打通你的知识工作空间</strong><em>原案例正文和图片</em></a><a class="info-card" href="#10-10-codex-dkfile-ai-网页一键发布到公网"><span class="card-icon">10</span><strong>DKFile：AI 网页一键发布到公网</strong><em>原案例正文和图片</em></a><a class="info-card" href="#10-11-codex-云服务器-远程定位并修复-bug"><span class="card-icon">11</span><strong>云服务器：远程定位并修复 Bug</strong><em>原案例正文和图片</em></a><a class="info-card" href="#10-12-codex-chrome-让-ai-直接控制浏览器"><span class="card-icon">12</span><strong>Chrome：让 AI 直接控制浏览器</strong><em>原案例正文和图片</em></a><a class="info-card" href="#10-13-codex-github-actions-ci-失败自动修复实测"><span class="card-icon">13</span><strong>GitHub Actions：CI 失败自动修复实测</strong><em>原案例正文和图片</em></a><a class="info-card" href="#10-14-codex-临床文献综述-把医学问题整理成可复核证据表"><span class="card-icon">14</span><strong>临床文献综述：把医学问题整理成可复核证据表</strong><em>原案例正文和图片</em></a><a class="info-card" href="#10-15-codex-hatch-pet-用一张照片生成专属宠物"><span class="card-icon">15</span><strong>Hatch Pet：用一张照片生成专属宠物</strong><em>原案例正文和图片</em></a></div>
+<div class="cards case-jump-cards"><a class="info-card" href="#10-1-codex-ppt-skill-一句话生成演示文稿"><span class="card-icon">01</span><strong>PPT Skill：一句话生成演示文稿</strong><em>案例正文和截图</em></a><a class="info-card" href="#10-2-codex-draw-io-mcp-ai-自动绘制架构图"><span class="card-icon">02</span><strong>Draw.io MCP：AI 自动绘制架构图</strong><em>案例正文和截图</em></a><a class="info-card" href="#10-3-codex-playwright-mcp-让-ai-像人一样操控浏览器"><span class="card-icon">03</span><strong>Playwright MCP：让 AI 像人一样操控浏览器</strong><em>案例正文和截图</em></a><a class="info-card" href="#10-4-codex-hyperframes-用代码生成动画视频"><span class="card-icon">04</span><strong>HyperFrames：用代码生成动画视频</strong><em>案例正文和截图</em></a><a class="info-card" href="#10-5-codex-obsidian-在知识库中自动生成配图"><span class="card-icon">05</span><strong>Obsidian：在知识库中自动生成配图</strong><em>案例正文和截图</em></a><a class="info-card" href="#10-6-codex-飞书-cli-一句话处理飞书数据"><span class="card-icon">06</span><strong>飞书 CLI：一句话处理飞书数据</strong><em>案例正文和截图</em></a><a class="info-card" href="#10-7-codex-llm-wiki-在-obsidian-中搭建-ai-知识库"><span class="card-icon">07</span><strong>LLM Wiki：在 Obsidian 中搭建 AI 知识库</strong><em>案例正文和截图</em></a><a class="info-card" href="#10-8-codex-figma-mcp-让-ai-读懂你的设计稿"><span class="card-icon">08</span><strong>Figma MCP：让 AI 读懂你的设计稿</strong><em>案例正文和截图</em></a><a class="info-card" href="#10-9-codex-notion-mcp-打通你的知识工作空间"><span class="card-icon">09</span><strong>Notion MCP：打通你的知识工作空间</strong><em>案例正文和截图</em></a><a class="info-card" href="#10-10-codex-dkfile-ai-网页一键发布到公网"><span class="card-icon">10</span><strong>DKFile：AI 网页一键发布到公网</strong><em>案例正文和截图</em></a><a class="info-card" href="#10-11-codex-云服务器-远程定位并修复-bug"><span class="card-icon">11</span><strong>云服务器：远程定位并修复 Bug</strong><em>案例正文和截图</em></a><a class="info-card" href="#10-12-codex-chrome-让-ai-直接控制浏览器"><span class="card-icon">12</span><strong>Chrome：让 AI 直接控制浏览器</strong><em>案例正文和截图</em></a><a class="info-card" href="#10-13-codex-github-actions-ci-失败自动修复实测"><span class="card-icon">13</span><strong>GitHub Actions：CI 失败自动修复实测</strong><em>案例正文和截图</em></a><a class="info-card" href="#10-14-codex-临床文献综述-把医学问题整理成可复核证据表"><span class="card-icon">14</span><strong>临床文献综述：把医学问题整理成可复核证据表</strong><em>案例正文和截图</em></a><a class="info-card" href="#10-15-codex-hatch-pet-用一张照片生成专属宠物"><span class="card-icon">15</span><strong>Hatch Pet：用一张照片生成专属宠物</strong><em>案例正文和截图</em></a></div>
 <h3 id="10-0-案例目录">10.0 案例目录</h3>
-<p>下面 15 个案例按原案例正文、步骤和图片展开。案例是辅助练习，不是学习主线；建议先看前 8 节，再按岗位选择案例练。</p>
+<p>下面 15 个案例按正文、步骤和图片展开。案例是辅助练习，不是学习主线；建议先看前 8 节，再按自己的任务选择案例练。</p>
 <div class="table-wrap"><table><tr><th>编号</th><th>实战案例</th></tr>
 <tr><td data-label="编号">01</td><td data-label="实战案例">PPT Skill：一句话生成演示文稿</td></tr>
 <tr><td data-label="编号">02</td><td data-label="实战案例">Draw.io MCP：AI 自动绘制架构图</td></tr>
@@ -3014,14 +2990,14 @@ PMID or DOI:</code></pre></div>
 <h4 id="如何删除自定义宠物">如何删除自定义宠物？</h4>
 <p>进入 <code>~/.codex/pet</code> 目录，删除对应的宠物文件夹即可。</p>
 </section>
-<section class="content-section" data-step="45"><div class="section-kicker">Chapter 45</div><h2 id="11-团队怎么落地">11 团队怎么落地</h2>
-<p>给多人学习时，不要要求一次读完。更稳的做法是：</p>
+<section class="content-section" data-step="45"><div class="section-kicker">Chapter 45</div><h2 id="11-接下来怎么练">11 接下来怎么练</h2>
+<p>不要要求自己一次读完。更稳的做法是：</p>
 <ol>
 <li>先完成前 8 节，跑通一个小任务。</li>
 <li>再查第 9 节实践教程，补齐工具和权限知识。</li>
-<li>按岗位挑第 10 节里的案例练习。</li>
+<li>按你正在做的事情挑第 10 节里的案例练习。</li>
 <li>每次练习都保留输入、输出、截图和复盘。</li>
-<li>高频流程沉淀成模板、Skill 或团队 SOP。</li>
+<li>高频流程沉淀成模板、Skill 或固定 SOP。</li>
 </ol>
 </section></article>
     </main>
