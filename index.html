@@ -31,6 +31,10 @@
     @media(max-width:1060px){.layout{display:block}.sidebar{position:relative;height:auto;padding:12px 14px;border-right:0;border-bottom:1px solid var(--line)}.brand{grid-template-columns:42px minmax(0,1fr)}.brand img{width:42px;height:42px}.nav-search,.progress,.sticker-note{display:none}.nav{display:flex;flex-direction:row;gap:8px;overflow-x:auto;padding-bottom:4px}.nav-group{flex:0 0 auto;border-bottom:0;padding:0}.main-link{border:1px solid #d5dde6;background:#fff}.sub-links{display:none}main{padding:22px 16px 58px}.hero{display:block;min-height:auto;padding:28px 22px;border-radius:18px;background:#fff}.hero-content{max-width:none}.hero h2{font-size:38px}.hero p{font-size:15px;max-width:none}.hero-actions{margin-top:18px}.hero-mini{grid-template-columns:1fr;margin-top:18px}.hero-route{margin-top:20px;padding:14px}.hero-sticker{width:54px;height:54px}.portal{margin:16px 0 26px;grid-template-columns:repeat(2,minmax(0,1fr))}article{padding:18px 18px 30px;border-radius:15px}.content-section{padding:28px 0 34px}h2{font-size:25px}h3{font-size:19px}.cards,.cards.portal-cards,.resources,.tree-list,.tree-group:nth-child(2) .tree-items{grid-template-columns:1fr}.cards.case-jump-cards{grid-template-columns:repeat(2,minmax(0,1fr));padding:10px}.feature-card{grid-template-columns:1fr}.case-body{grid-template-columns:1fr}.case-point,.case-point:nth-child(2n),.case-point:nth-last-child(-n+2){border-right:0;border-bottom:1px solid #e4eaf0}.case-point:last-child{border-bottom:0}.shot-card img{max-height:520px}table{min-width:640px}}
     @media(max-width:640px){.table-wrap{overflow:visible;border:0;background:transparent}.table-wrap table{display:block;min-width:0}.table-wrap tbody{display:grid;gap:10px}.table-wrap tr{display:block;border:1px solid #e0e6ed;border-radius:12px;background:#fff;overflow:hidden}.table-wrap tr:first-child{display:none}.table-wrap td{display:grid;grid-template-columns:92px minmax(0,1fr);gap:10px;padding:10px 12px;border-bottom:1px solid #eef2f6;font-size:14px;word-break:break-word}.table-wrap td:last-child{border-bottom:0}.table-wrap td:before{content:attr(data-label);color:#607080;font-size:12px;font-weight:900;line-height:1.6}.table-wrap th{display:none}}
     @media(max-width:520px){.portal,.cards.case-jump-cards{grid-template-columns:1fr}.hero{padding:24px 18px}.hero h2{font-size:33px;max-width:none}.hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.hero-actions a{width:auto;min-height:41px;padding:0 10px}.hero-actions a.primary{grid-column:1/-1}.hero-mini{display:none}.hero-route{margin-top:16px}.route-head{align-items:flex-start}.route-head p{display:none}.route-item{grid-template-columns:36px minmax(0,1fr);padding:10px}.route-item span{width:30px;height:30px}.route-item em{font-size:12px;line-height:1.4}p,li{font-size:15px}}
+    .hero{grid-template-columns:minmax(0,1fr) 330px;min-height:300px;padding:34px 38px 32px;border-radius:18px;background:linear-gradient(115deg,#fff 0%,#fff 66%,#eef9f5 66%,#f7fbff 100%)}.hero h2{margin:14px 0 10px;font-size:clamp(42px,4.1vw,60px)}.hero p{max-width:710px;font-size:16px;line-height:1.72}.hero-mini{display:none}.hero-route{align-self:center;gap:0;padding:18px;border-radius:16px;background:#fff;box-shadow:0 12px 28px rgba(14,15,18,.06)}.route-head{margin-bottom:8px}.route-item{grid-template-columns:32px minmax(0,1fr);gap:10px;padding:9px 0;border:0;border-top:1px solid #edf1f5;border-radius:0}.route-head+.route-item{border-top:0}.route-item span{width:26px;height:26px;border-radius:8px;font-size:12px}.route-item em{display:none}.portal a{min-height:102px}
+    @media(max-width:1060px){.hero{padding:24px 20px;border-radius:18px;background:#fff}.hero h2{font-size:36px}.hero p{line-height:1.65}.hero-route{margin-top:16px;padding:14px}.portal a{min-height:auto}}
+    @media(max-width:520px){.hero{padding:20px 18px}.hero-kicker{height:26px}.hero h2{margin:12px 0 8px;font-size:31px}.hero-actions{grid-template-columns:1fr;gap:8px;margin-top:16px}.hero-actions a.primary{grid-column:auto}.hero-route{margin-top:14px;padding:12px 14px}.route-head{margin-bottom:4px}.route-head h3{font-size:15px}.route-head p,.hero-sticker{display:none}.route-item{grid-template-columns:28px minmax(0,1fr);padding:7px 0}.route-item strong{font-size:14px}.portal{margin:12px 0 20px}.portal a{padding:13px 14px}}
+    @media(max-width:520px){.portal{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.portal a{min-height:72px;padding:11px 10px}.portal span{height:22px;min-width:0;margin-bottom:6px;padding:0 6px;font-size:12px}.portal strong{margin:0;font-size:14px;line-height:1.3}.portal em{display:none}}
   </style>
 </head>
 <body>
@@ -44,8 +48,8 @@
     </aside>
     <main>
       <section class="hero">
-        <div class="hero-content"><span class="hero-kicker">给第一次使用 Codex 的人</span><h2>Codex 使用指南</h2><p>这页按“先照着做，再查教程和案例”的方式写。你不用从头背概念，先跑一个小任务，知道怎么发需求、怎么看过程、怎么验收结果。</p><div class="hero-actions"><a class="primary" href="#2-第一次上手-先跑一个不会出错的小任务">先做第一个任务</a><a href="#9-codex-实践教程">查看完整教程</a><a href="#10-codex-实战案例">看真实案例</a></div><div class="hero-mini"><div><strong>不用一次读完</strong><span>先学会一个完整闭环。</span></div><div><strong>教程在前</strong><span>案例是辅助练习。</span></div><div><strong>随时跳转</strong><span>左侧目录直接查问题。</span></div></div></div>
-        <div class="hero-route"><div class="route-head"><div><h3>打开后先看这 3 步</h3><p>按需要跳，不用把整页当说明书读。</p></div><img class="hero-sticker" src="./assets/chikiwa-side-transparent.png" alt="chikiwa sticker"/></div><div class="route-item"><span>1</span><div><strong>先跑通</strong><em>照第 2 节做一个小任务，知道 Codex 怎么交付。</em></div></div><div class="route-item"><span>2</span><div><strong>会表达</strong><em>学会目标、材料、限制、验收怎么说清楚。</em></div></div><div class="route-item"><span>3</span><div><strong>再查案例</strong><em>遇到具体场景，再去第 9、10 节查教程和案例。</em></div></div></div>
+        <div class="hero-content"><span class="hero-kicker">给第一次用 Codex 的人</span><h2>Codex 使用指南</h2><p>先跑通一个小任务，再学会发需求、看过程、验收结果。教程和 15 个案例都在后面，需要时再查，不用一次读完。</p><div class="hero-actions"><a class="primary" href="#2-第一次上手-先跑一个不会出错的小任务">先做第一个任务</a><a href="#9-codex-实践教程">查看完整教程</a><a href="#10-codex-实战案例">看真实案例</a></div><div class="hero-mini"><div><strong>不用一次读完</strong><span>先学会一个完整闭环。</span></div><div><strong>教程在前</strong><span>案例是辅助练习。</span></div><div><strong>随时跳转</strong><span>左侧目录直接查问题。</span></div></div></div>
+        <div class="hero-route"><div class="route-head"><div><h3>先按这 3 步走</h3><p>看不懂时直接跳到对应章节。</p></div><img class="hero-sticker" src="./assets/chikiwa-side-transparent.png" alt="chikiwa sticker"/></div><div class="route-item"><span>1</span><div><strong>先跑通</strong><em>照第 2 节做一个小任务。</em></div></div><div class="route-item"><span>2</span><div><strong>会表达</strong><em>学会目标、材料、限制、验收怎么说。</em></div></div><div class="route-item"><span>3</span><div><strong>会验收</strong><em>检查结果，再按场景看案例。</em></div></div></div>
       </section>
       <div class="portal">
         <a href="#1-先搞清楚-codex-到底在帮你做什么"><span>先看</span><strong>Codex 能帮你做什么</strong><em>先建立正确预期，不硬啃概念。</em></a>
@@ -53,78 +57,76 @@
         <a href="#7-验收怎么做-不要只听它说-完成"><span>验收</span><strong>学会检查结果</strong><em>不要只听它说完成。</em></a>
         <a href="#10-codex-实战案例"><span>案例</span><strong>按场景查案例</strong><em>案例放后面，用来辅助练习。</em></a>
       </div>
-      <article><blockquote>这份网页先教你怎么用 Codex。前 8 节是上手课：照着做、会提需求、会看过程、会验收。第 9 节是完整实践教程，第 10 节是 15 个实战案例；需要细节时再查，不用一口气读完。</blockquote>
+      <article><blockquote>这份网页先教你怎么用 Codex。前 8 节是上手课：照着做、会发需求、会看过程、会验收。第 9 节是 Codex 实践教程，第 10 节是实战案例；需要细节时再查，不用一口气读完。</blockquote>
 <section class="content-section" data-step="01"><div class="section-kicker">Chapter 01</div><h2 id="1-先搞清楚-codex-到底在帮你做什么">1 先搞清楚：Codex 到底在帮你做什么</h2>
-<p>你可以把 Codex 理解成“会进文件夹动手的 AI 助手”。普通聊天 AI 主要回答问题，Codex 除了回答，还可以读文件、改文件、跑命令、打开浏览器检查结果。</p>
-<p>第一次用时，不要先记一堆术语。先记住这 4 件事：</p>
-<div class="table-wrap"><table><tr><th>你要给清楚</th><th>Codex 会去做</th></tr>
-<tr><td data-label="你要给清楚">你最后想要什么</td><td data-label="Codex 会去做">把目标拆成步骤</td></tr>
-<tr><td data-label="你要给清楚">哪些材料能用</td><td data-label="Codex 会去做">读取文档、图片、网页、代码</td></tr>
-<tr><td data-label="你要给清楚">哪些地方不能碰</td><td data-label="Codex 会去做">控制修改范围和风险</td></tr>
-<tr><td data-label="你要给清楚">怎么算完成</td><td data-label="Codex 会去做">执行检查并汇报结果</td></tr></table></div>
-<p>最容易出错的地方，是把 Codex 当成“自己会猜需求的人”。它可以动手，但方向、边界和验收标准必须由你给。</p>
-<aside class="callout tip"><span>温馨提示</span><p>不要上来就说“帮我弄好”。更好的说法是：我要什么结果、参考哪些材料、哪些不能动、做完怎么检查。</p></aside>
-<p>一个简单判断：如果你自己都说不清“最后要交付什么”，Codex 大概率也会做偏。先把结果说清楚，再让它动手。</p>
-<p>哪些任务适合先交给 Codex？</p>
+<p>Codex 不是只会聊天的 AI。你可以把它理解成一个会进文件夹动手做事的 AI 助手：它能读资料、改文件、跑命令、打开浏览器检查结果，也能把做过的事情说清楚。</p>
+<p>第一次用时，不要先背概念。先记住这 4 件事：</p>
+<div class="table-wrap"><table><tr><th>你要说清楚</th><th>Codex 会去做</th></tr>
+<tr><td data-label="你要说清楚">最后要交付什么</td><td data-label="Codex 会去做">把目标拆成步骤</td></tr>
+<tr><td data-label="你要说清楚">哪些资料可以用</td><td data-label="Codex 会去做">读取文档、图片、网页、代码</td></tr>
+<tr><td data-label="你要说清楚">哪些地方不能动</td><td data-label="Codex 会去做">控制修改范围和风险</td></tr>
+<tr><td data-label="你要说清楚">怎么算完成</td><td data-label="Codex 会去做">检查结果并汇报</td></tr></table></div>
+<p>最容易出错的地方，是把 Codex 当成“会自动猜需求的人”。它可以动手，但方向、边界和验收标准要由你给。</p>
+<aside class="callout tip"><span>温馨提示</span><p>不要一上来只说“帮我优化一下”。更好的说法是：我要什么结果、参考哪些资料、哪些不能动、做完怎么检查。</p></aside>
+<p>适合先交给 Codex 的任务，通常有三个特点：</p>
 <ul>
-<li>有明确输入：一篇文章、一组截图、一个文件夹、一个网页、一个项目。</li>
-<li>有明确输出：整理后的文档、可打开的网页、修好的 bug、生成的表格、检查报告。</li>
-<li>有办法验收：能打开、能运行、能对照、能数数量、能看 diff。</li>
+<li>有明确输入：一篇文章、几张截图、一个文件夹、一个网页、一个项目。</li>
+<li>有明确输出：整理后的文档、可打开的网页、修好的问题、生成的表格、检查报告。</li>
+<li>有办法验收：能打开、能运行、能对照、能数数量、能看改动。</li>
 </ul>
-<p>哪些任务不适合一上来就交给 Codex？</p>
+<p>不适合一开始就交给 Codex 的任务：</p>
 <ul>
-<li>你还没想清楚目标，只是觉得“哪里怪怪的”。</li>
-<li>需要你做业务判断，但你没有给判断标准。</li>
-<li>涉及付款、删除、发布、生产数据、隐私资料，但你没有准备全程复核。</li>
+<li>你自己还没想清楚目标，只觉得“哪里不对”。</li>
+<li>需要业务判断，但没有给判断标准。</li>
+<li>涉及付款、删除、发布、生产数据或隐私资料，但没有准备人工复核。</li>
 </ul>
-<p>如果不确定任务能不能交给 Codex，可以先问它：</p>
+<p>如果不确定一件事能不能交给 Codex，先这样问：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>我想做这件事：[描述任务]。
 请先判断它适不适合交给 Codex 做。
-如果适合，请告诉我应该准备哪些材料、怎么发任务、最后怎么验收。
+如果适合，请告诉我应该准备哪些资料、怎么发任务、最后怎么验收。
 先不要动手。</code></pre></div>
 </section>
 <section class="content-section" data-step="02"><div class="section-kicker">Chapter 02</div><h2 id="2-第一次上手-先跑一个不会出错的小任务">2 第一次上手：先跑一个不会出错的小任务</h2>
-<p>第一次不要拿重要文件练。先建一个空文件夹，做一个简单网页，体验完整流程：发任务、看它执行、打开结果、让它返工。</p>
+<p>第一次不要拿重要文件练。先新建一个空文件夹，做一个简单网页，体验完整流程：发任务、看它执行、打开结果、让它返工。</p>
 <p>照着做：</p>
 <ol>
-<li>新建一个空文件夹，名字可以叫 <code>codex-practice</code>。</li>
+<li>新建一个空文件夹，比如 <code>codex-practice</code>。</li>
 <li>在 Codex 里打开这个文件夹。</li>
-<li>把下面这段提示词复制进去。</li>
+<li>复制下面这段任务。</li>
 <li>等它完成后，按它给的方法打开文件。</li>
-<li>如果不满意，直接在同一条对话里让它改。</li>
+<li>如果不满意，直接在同一个对话里让它改。</li>
 </ol>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请在当前文件夹里做一个简单网页。
 
 主题：第一次使用 Codex 的步骤
-
 要求：
 - 只创建一个 HTML 文件
 - 页面要有标题、3 个步骤、1 个温馨提示
 - 文案要简单，不要像说明书
 - 风格清爽，适合第一次使用的人阅读
 - 做完后告诉我文件名，以及我应该怎么打开检查</code></pre></div>
-<p>完成后，先别急着看它解释了多少。只检查三件事：</p>
+<p>完成后先检查三件事：</p>
 <ul>
 <li>文件夹里有没有真的出现 HTML 文件。</li>
 <li>Codex 有没有说清楚文件名和打开方式。</li>
 <li>你打开后能不能看到页面。</li>
 </ul>
 <p>如果页面能打开，就说明你已经跑通了最核心的闭环。后面所有复杂任务，本质上都是这个闭环的放大版。</p>
-<p>如果它做偏了，不要重新开新任务。直接补一句：</p>
+<p>如果结果不满意，不要重新开新任务，直接补一句：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>整体可以，但请改成更适合完全没用过 Codex 的人看。
 不要新增文件，只改刚才那个 HTML。
 改完后再告诉我怎么检查。</code></pre></div>
 </section>
 <section class="content-section" data-step="03"><div class="section-kicker">Chapter 03</div><h2 id="3-发任务公式-一句话目标-三个清单">3 发任务公式：一句话目标 + 三个清单</h2>
-<p>Codex 做得好不好，很多时候取决于你任务发得清不清楚。新手不用追求提示词很高级，先把结构写完整。</p>
-<p>最稳的任务格式是：</p>
+<p>Codex 做得好不好，很大程度取决于你任务说得清不清楚。新手不用追求高级提示词，先把结构写完整。</p>
+<p>最稳的任务格式：</p>
 <ol>
 <li>一句话说目标。</li>
 <li>列出材料。</li>
 <li>列出限制。</li>
 <li>列出验收方式。</li>
 </ol>
-<p>可以直接复制这个模板：</p>
+<p>直接复制这个模板：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请处理：[一句话说明你要做什么]
 
 目标：
@@ -145,16 +147,16 @@
 - 检查完告诉我：改了什么、怎么检查的、还有什么需要我确认</code></pre></div>
 <p>对比一下：</p>
 <div class="table-wrap"><table><tr><th>容易做偏的说法</th><th>更稳的说法</th></tr>
-<tr><td data-label="容易做偏的说法">帮我优化一下</td><td data-label="更稳的说法">请把这篇教程改得更适合第一次使用的人阅读，保留原有图片和步骤</td></tr>
+<tr><td data-label="容易做偏的说法">帮我优化一下</td><td data-label="更稳的说法">请把这篇教程改得更适合第一次使用的人阅读，保留已有图片和步骤</td></tr>
 <tr><td data-label="容易做偏的说法">帮我做得好看点</td><td data-label="更稳的说法">请只调整首页 UI，不改正文内容；检查桌面端和手机端</td></tr>
-<tr><td data-label="容易做偏的说法">帮我整理资料</td><td data-label="更稳的说法">请把这些资料整理成“步骤、提示词、验收清单”三部分</td></tr></table></div>
-<p>你不需要把话说得很专业，但要把“不要动什么”说清楚。Codex 最怕的不是任务复杂，而是边界模糊。</p>
+<tr><td data-label="容易做偏的说法">帮我整理资料</td><td data-label="更稳的说法">请整理成“步骤、提示词、验收清单”三部分</td></tr></table></div>
+<p>你不需要说得很专业，但要把“不想要什么”说清楚。Codex 最怕的不是任务复杂，而是边界模糊。</p>
 </section>
 <section class="content-section" data-step="04"><div class="section-kicker">Chapter 04</div><h2 id="4-材料怎么给-让-codex-少猜一点">4 材料怎么给：让 Codex 少猜一点</h2>
-<p>Codex 很适合处理已有材料，但你要告诉它每份材料的作用。尤其是文章、图片、截图、网页这些内容，不能只丢过去不解释。</p>
-<p>常见材料可以这样交：</p>
+<p>Codex 很适合处理已有材料，但你要告诉它每份材料的作用。文章、图片、截图、网页这些内容，不能只丢过去不解释。</p>
+<p>常见材料可以这样给：</p>
 <div class="table-wrap"><table><tr><th>材料类型</th><th>你要补一句什么</th></tr>
-<tr><td data-label="材料类型">文章/笔记</td><td data-label="你要补一句什么">哪些文案必须保留，哪些可以改写</td></tr>
+<tr><td data-label="材料类型">文章/笔记</td><td data-label="你要补一句什么">哪些内容必须保留，哪些可以改写</td></tr>
 <tr><td data-label="材料类型">图片/截图</td><td data-label="你要补一句什么">这张图是步骤图、案例图、封面，还是装饰贴纸</td></tr>
 <tr><td data-label="材料类型">网页链接</td><td data-label="你要补一句什么">要看哪一页，桌面端和手机端是否都要检查</td></tr>
 <tr><td data-label="材料类型">表格</td><td data-label="你要补一句什么">要提取哪些列，最后输出什么格式</td></tr>
@@ -168,19 +170,20 @@
 4. 哪些地方你不确定，需要我补充
 
 等我确认后你再开始改。</code></pre></div>
-<p>如果材料很多，可以先让它做“材料清单”：</p>
+<p>如果材料很多，先让它做材料清单：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请先把我给你的资料整理成清单：
 - 每份资料是什么
 - 里面哪些内容有用
 - 哪些内容和本次任务无关
 - 你建议保留哪些图片
+
 先不要写正文。</code></pre></div>
-<p>这样做会慢一点点，但能避免后面大面积返工。</p>
+<p>这样会慢一点，但能避免后面大面积返工。</p>
 </section>
 <section class="content-section" data-step="05"><div class="section-kicker">Chapter 05</div><h2 id="5-执行中怎么看-只盯-5-个关键点">5 执行中怎么看：只盯 5 个关键点</h2>
-<p>Codex 工作时会显示计划、命令、改动和检查结果。你不需要每一行都看懂，但要盯住 5 个关键点。</p>
+<p>Codex 工作时会显示计划、命令、改动和检查结果。你不需要每一行都看懂，但要盯住 5 个关键点：</p>
 <div class="table-wrap"><table><tr><th>你要看什么</th><th>为什么重要</th></tr>
-<tr><td data-label="你要看什么">它读了哪些文件</td><td data-label="为什么重要">防止它漏看关键材料</td></tr>
+<tr><td data-label="你要看什么">它读了哪些文件</td><td data-label="为什么重要">防止漏看关键材料</td></tr>
 <tr><td data-label="你要看什么">它准备改哪些文件</td><td data-label="为什么重要">防止误改无关内容</td></tr>
 <tr><td data-label="你要看什么">它要运行什么命令</td><td data-label="为什么重要">防止执行高风险操作</td></tr>
 <tr><td data-label="你要看什么">它有没有实际检查</td><td data-label="为什么重要">防止只写完不验证</td></tr>
@@ -190,29 +193,15 @@
 你刚才的方向不对：问题是 [具体问题]。
 请只修这个问题，不要重写整页。
 修完后重新检查，并告诉我检查结果。</code></pre></div>
-<p>如果只是局部不满意，可以这样说：</p>
+<p>如果只是局部不满意：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>整体方向对，但只改这几处：
 1. [第一处问题]
 2. [第二处问题]
 3. [第三处问题]
 
-其他内容保持不变。改完后告诉我你改了哪些文件。</code></pre></div>
+其他内容保持不变。
+改完后告诉我你改了哪些文件。</code></pre></div>
 <p>不要等它全部做完才说“不是我要的”。越早纠偏，返工越小。</p>
-<p>执行过程中常见的信号，可以这样看：</p>
-<div class="table-wrap"><table><tr><th>看到什么</th><th>说明什么</th><th>你要不要管</th></tr>
-<tr><td data-label="看到什么">它先列计划</td><td data-label="说明什么">正常，说明它准备拆步骤</td><td data-label="你要不要管">看计划方向对不对</td></tr>
-<tr><td data-label="看到什么">它读取文件</td><td data-label="说明什么">正常，说明它在找上下文</td><td data-label="你要不要管">看有没有漏关键文件</td></tr>
-<tr><td data-label="看到什么">它修改多个文件</td><td data-label="说明什么">需要注意，影响范围变大</td><td data-label="你要不要管">看这些文件是否都和任务有关</td></tr>
-<tr><td data-label="看到什么">它运行命令失败</td><td data-label="说明什么">不一定是坏事，可能是环境缺依赖</td><td data-label="你要不要管">看它有没有解释原因和下一步</td></tr>
-<tr><td data-label="看到什么">它一直绕圈解释</td><td data-label="说明什么">可能没抓住重点</td><td data-label="你要不要管">直接让它停下，重说目标</td></tr></table></div>
-<p>一个很实用的纠偏句：</p>
-<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请先总结当前状态：
-1. 你已经完成了什么
-2. 还剩什么没完成
-3. 卡在哪里
-4. 下一步你准备怎么做
-先总结，不要继续改。</code></pre></div>
-<p>这句话适合在任务变乱、改动变多、你看不懂它在做什么时使用。</p>
 </section>
 <section class="content-section" data-step="06"><div class="section-kicker">Chapter 06</div><h2 id="6-权限怎么点-先判断风险-再决定放不放">6 权限怎么点：先判断风险，再决定放不放</h2>
 <p>Codex 有时会请求权限，比如读取文件、写文件、运行命令、打开浏览器、连接外部工具。不要看到确认就点，先看它要做什么。</p>
@@ -235,14 +224,14 @@
 </section>
 <section class="content-section" data-step="07"><div class="section-kicker">Chapter 07</div><h2 id="7-验收怎么做-不要只听它说-完成">7 验收怎么做：不要只听它说“完成”</h2>
 <p>Codex 说完成，只代表它认为完成。真正的验收，是你能打开、能运行、能看懂、能交付。</p>
-<p>不同任务最少检查这些：</p>
+<p>不同任务至少检查这些：</p>
 <div class="table-wrap"><table><tr><th>任务</th><th>最少要检查什么</th></tr>
 <tr><td data-label="任务">网页</td><td data-label="最少要检查什么">桌面端、手机端、图片、目录跳转、文字是否挤压</td></tr>
 <tr><td data-label="任务">文档</td><td data-label="最少要检查什么">标题是否清楚、步骤是否能照着做、无关内容是否删干净</td></tr>
 <tr><td data-label="任务">表格</td><td data-label="最少要检查什么">数量是否对、字段是否完整、格式是否能直接用</td></tr>
 <tr><td data-label="任务">代码</td><td data-label="最少要检查什么">页面能否启动、测试是否通过、有没有误改无关文件</td></tr>
-<tr><td data-label="任务">外部工具任务</td><td data-label="最少要检查什么">是否连到了正确账号、有没有越权操作、结果是否可复查</td></tr></table></div>
-<p>让 Codex 自己汇报时，要求它按这个格式：</p>
+<tr><td data-label="任务">外部工具任务</td><td data-label="最少要检查什么">是否连到正确账号、有没有越权操作、结果是否可复查</td></tr></table></div>
+<p>让 Codex 汇报时，要求它按这个格式：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请不要只说完成。
 请实际检查结果，并按下面格式回复：
 1. 你检查了哪些文件/页面
@@ -250,11 +239,11 @@
 3. 发现了什么问题
 4. 已经修复了什么
 5. 还有什么需要我人工确认</code></pre></div>
-<p>你自己验收时，可以按这 4 步：</p>
+<p>你自己验收时，按 4 步：</p>
 <ol>
 <li>打开最终文件或网页。</li>
-<li>从头看一遍最重要的流程。</li>
-<li>随便挑 2-3 个细节核对。</li>
+<li>从头走一遍最重要的流程。</li>
+<li>随机挑 2-3 个细节核对。</li>
 <li>不满意就回到原对话继续改。</li>
 </ol>
 <aside class="callout tip"><span>温馨提示</span><p>最稳的验收方法不是看它写了多少解释，而是打开结果、点一遍、跑一遍、对照你的要求检查一遍。</p></aside>
@@ -285,17 +274,16 @@
 <li>第 10 节适合看真实任务：PPT、Draw.io、Playwright、飞书、Notion、GitHub Actions 等。</li>
 <li>每次只挑一个和你当前任务最像的案例，不用全部读完。</li>
 </ul>
-<p>如果你想按天练，可以这样安排：</p>
-<div class="table-wrap"><table><tr><th>时间</th><th>练什么</th><th>做完算通过</th></tr>
-<tr><td data-label="时间">第 1 天</td><td data-label="练什么">跑通第 2 节的小网页任务</td><td data-label="做完算通过">能打开文件，能让 Codex 改一次</td></tr>
-<tr><td data-label="时间">第 2 天</td><td data-label="练什么">用第 3 节模板发一个真实小任务</td><td data-label="做完算通过">任务里有目标、材料、限制、验收</td></tr>
-<tr><td data-label="时间">第 3 天</td><td data-label="练什么">给 Codex 一篇文章或几张截图</td><td data-label="做完算通过">它能先复述材料，再开始整理</td></tr>
-<tr><td data-label="时间">第 4 天</td><td data-label="练什么">让它检查一个网页或文档</td><td data-label="做完算通过">它能说清楚检查方法和问题</td></tr>
-<tr><td data-label="时间">第 5 天</td><td data-label="练什么">看第 9 节里权限和 Skill 相关内容</td><td data-label="做完算通过">知道什么时候要放行，什么时候要停</td></tr>
-<tr><td data-label="时间">第 6 天</td><td data-label="练什么">从第 10 节挑一个最像你的案例</td><td data-label="做完算通过">能照着案例改写成自己的任务</td></tr>
-<tr><td data-label="时间">第 7 天</td><td data-label="练什么">复盘一次完整任务</td><td data-label="做完算通过">留下提示词、输出结果和验收记录</td></tr></table></div>
-<p>练习时不要追求一次做大任务。每次只练一个动作：发任务、给材料、看过程、点权限、验收、返工。动作熟了，复杂任务自然会顺。</p>
-<p>最后给自己留一份“常用提示词小抄”：</p>
+<p>如果按天练，可以这样安排：</p>
+<div class="table-wrap"><table><tr><th>时间</th><th>练什么</th><th>做完怎么算通过</th></tr>
+<tr><td data-label="时间">第 1 天</td><td data-label="练什么">跑通第 2 节的小网页任务</td><td data-label="做完怎么算通过">能打开文件，能让 Codex 改一次</td></tr>
+<tr><td data-label="时间">第 2 天</td><td data-label="练什么">用第 3 节模板发一个真实小任务</td><td data-label="做完怎么算通过">任务里有目标、材料、限制、验收</td></tr>
+<tr><td data-label="时间">第 3 天</td><td data-label="练什么">给 Codex 一篇文章或几张截图</td><td data-label="做完怎么算通过">它能先复述材料，再开始整理</td></tr>
+<tr><td data-label="时间">第 4 天</td><td data-label="练什么">让它检查一个网页或文档</td><td data-label="做完怎么算通过">它能说清楚检查方法和问题</td></tr>
+<tr><td data-label="时间">第 5 天</td><td data-label="练什么">看第 9 节里权限和 Skill 相关内容</td><td data-label="做完怎么算通过">知道什么时候放行，什么时候停</td></tr>
+<tr><td data-label="时间">第 6 天</td><td data-label="练什么">从第 10 节挑一个最像你的案例</td><td data-label="做完怎么算通过">能照着案例改写成自己的任务</td></tr>
+<tr><td data-label="时间">第 7 天</td><td data-label="练什么">复盘一次完整任务</td><td data-label="做完怎么算通过">留下提示词、输出结果和验收记录</td></tr></table></div>
+<p>最后给自己留一份常用提示词：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>我这次要做：[任务]
 请先复述你的理解和计划，确认后再动手。
 动手时不要修改无关文件。
@@ -308,7 +296,7 @@
 </section>
 <section class="content-section" data-step="10"><div class="section-kicker">Chapter 10</div><h2 id="9-1-学习路线">9.1 学习路线</h2>
 <aside class="callout tip"><span>温馨提示</span><p>最后核对 官方资料最后核对日期：2026-06-12。核心来源包括 <a href="https://openai.com/codex/" target="_blank" rel="noreferrer">OpenAI Codex 产品页</a>、<a href="https://developers.openai.com/codex/" target="_blank" rel="noreferrer">Codex 文档入口</a>、<a href="https://github.com/openai/codex" target="_blank" rel="noreferrer">Codex CLI 官方仓库</a> 与 <a href="https://help.openai.com/en/articles/11369540-codex-in-chatgpt" target="_blank" rel="noreferrer">Codex Help Center</a>。</p></aside>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-surfaces.svg" alt="Codex 使用入口地图" loading="lazy"/><figcaption>Codex 使用入口地图</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-surfaces.svg" alt="Codex 使用入口地图" loading="eager"/><figcaption>Codex 使用入口地图</figcaption></figure>
 <h3 id="codex-的产品形态">Codex 的产品形态</h3>
 <p>Codex 有桌面 App、命令行、编辑器插件和网页几种形态。</p>
 <ul>
@@ -387,12 +375,12 @@
 <aside class="callout tip"><span>温馨提示</span><p>最后核对 官方资料最后核对日期：2026-06-13。本章参考 <a href="https://developers.openai.com/codex/app" target="_blank" rel="noreferrer">Codex App docs</a>、<a href="https://developers.openai.com/codex/app/settings" target="_blank" rel="noreferrer">Settings</a>、<a href="https://developers.openai.com/codex/agent-approvals-security" target="_blank" rel="noreferrer">Agent approvals and security</a> 等官方资料。界面说明以当前 Codex 桌面 App 实际版本为准，不同系统、地区、客户端版本和账号套餐下显示可能略有差异。</p></aside>
 <h3 id="认识对话和项目">认识对话和项目</h3>
 <p>打开 Codex，左侧栏就两个入口：<strong>Chat（对话）</strong> 和 <strong>Project（项目）</strong>。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-app-main-chat-home.png" alt="Codex 桌面 App 主界面" loading="lazy"/><figcaption>Codex 桌面 App 主界面</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-app-main-chat-home.png" alt="Codex 桌面 App 主界面" loading="eager"/><figcaption>Codex 桌面 App 主界面</figcaption></figure>
 <p><strong>Chat 对话</strong></p>
 <p>和 ChatGPT 网页版差不多，随手问问题。各对话互不相干，也不共享文件夹。</p>
 <p><strong>Project 项目</strong></p>
 <p>需要动本地文件时用它——写代码、改文档、做 PPT 都可以。项目里的所有对话共用同一个文件夹，方便一起管理。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-app-project-workspace-selection.png" alt="Project 工作区界面" loading="lazy"/><figcaption>Project 工作区界面</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-app-project-workspace-selection.png" alt="Project 工作区界面" loading="eager"/><figcaption>Project 工作区界面</figcaption></figure>
 <p>在项目里下达指令后，Codex 的修改会直接应用到你本地文件夹中的文件。</p>
 <h3 id="对话框功能说明">对话框功能说明</h3>
 <p>Codex 的对话框和 ChatGPT 网页版类似，支持：</p>
@@ -405,19 +393,19 @@
 <li><strong>控制权限</strong>：设定 Codex 在当前任务中的操作权限</li>
 <li><strong>选择工作目录</strong>：指定 Codex 在哪个本地文件夹下执行任务</li>
 </ol>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-app-composer-controls.png" alt="对话框功能区" loading="lazy"/><figcaption>对话框功能区</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-app-composer-controls.png" alt="对话框功能区" loading="eager"/><figcaption>对话框功能区</figcaption></figure>
 <h3 id="插件与技能">插件与技能</h3>
 <p>包括 OpenAI 官方定制或推荐的插件与技能。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-plugin-marketplace.png" alt="Codex 插件与技能" loading="lazy"/><figcaption>Codex 插件与技能</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-plugin-marketplace.png" alt="Codex 插件与技能" loading="eager"/><figcaption>Codex 插件与技能</figcaption></figure>
 <p>Skills 默认包含 Skills Creator、Skills Installer、OpenAI Docs 等技能，用来创建、安装技能，或获取 OpenAI 官方最新文档。在对话框中使用 <code>$</code> 即可调用 Skills：</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-skills-command.png" alt="Codex Skills 调用" loading="lazy"/><figcaption>Codex Skills 调用</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-skills-command.png" alt="Codex Skills 调用" loading="eager"/><figcaption>Codex Skills 调用</figcaption></figure>
 <p>插件是 OpenAI 定义的外部工具入口，也可能包含 Skills、MCP、脚本等能力。常见插件包括 Computer Use、Browser Use、PPT、Docs、Excel、Slack、GitHub 等。不同插件可能有额外配置。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-plugin-config.png" alt="Codex 插件配置" loading="lazy"/><figcaption>Codex 插件配置</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-plugin-config.png" alt="Codex 插件配置" loading="eager"/><figcaption>Codex 插件配置</figcaption></figure>
 <h3 id="自动化">自动化</h3>
 <p>Codex 支持自动化执行任务，包括使用 MCP 服务器、钩子和插件等。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-automation-overview.png" alt="Codex 自动化总览" loading="lazy"/><figcaption>Codex 自动化总览</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-automation-overview.png" alt="Codex 自动化总览" loading="eager"/><figcaption>Codex 自动化总览</figcaption></figure>
 <p>自动化会执行你指定的命令，你可以指定工作树、项目地址和定时的间隔。在下图中输入你的指令，并且配置即可。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-automation-create.png" alt="Codex 创建自动化" loading="lazy"/><figcaption>Codex 创建自动化</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-automation-create.png" alt="Codex 创建自动化" loading="eager"/><figcaption>Codex 创建自动化</figcaption></figure>
 <aside class="callout tip"><span>温馨提示</span><p>注意 自动化任务以默认沙盒设置运行。若工具调用需修改工作空间外文件、访问网络或操作电脑应用，该操作将执行失败。可通过规则选择性允许特定命令在沙盒外运行。</p></aside>
 <div class="section-break"></div>
 </section>
@@ -427,7 +415,7 @@
 <h3 id="第一步-创建本地工作文件夹">第一步：创建本地工作文件夹</h3>
 <p>在本地新建一个空文件夹，作为 Codex 的工作目录。Codex 生成的所有文件都会保存在这里。</p>
 <aside class="callout warning"><span>注意</span><p>文件夹路径中尽量不要包含中文，避免部分工具出现兼容性问题。</p></aside>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-first-task-local-folder.png" alt="新建本地文件夹" loading="lazy"/><figcaption>新建本地文件夹</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-first-task-local-folder.png" alt="新建本地文件夹" loading="eager"/><figcaption>新建本地文件夹</figcaption></figure>
 <h3 id="第二步-选择对话还是项目">第二步：选择对话还是项目</h3>
 <p>打开 Codex 桌面 App 后，你需要选择用&quot;对话&quot;还是&quot;项目&quot;来开始任务。</p>
 <ul>
@@ -437,22 +425,22 @@
 <p>如果你不确定选哪个，<strong>优先选择项目</strong>——后续扩展任务时更灵活，工作目录也只需要配置一次。</p>
 <h3 id="第三步-添加工作目录">第三步：添加工作目录</h3>
 <p>选择项目后，点击&quot;使用现有文件夹&quot;，选中刚才创建的文件夹。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-first-task-add-workspace-folder.png" alt="选择工作目录" loading="lazy"/><figcaption>选择工作目录</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-first-task-add-workspace-folder.png" alt="选择工作目录" loading="eager"/><figcaption>选择工作目录</figcaption></figure>
 <p>选择完成后，对话框左下角会显示当前工作目录的路径，确认路径正确即可。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-first-task-selected-workspace.png" alt="确认工作目录" loading="lazy"/><figcaption>确认工作目录</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-first-task-selected-workspace.png" alt="确认工作目录" loading="eager"/><figcaption>确认工作目录</figcaption></figure>
 <h3 id="第四步-输入任务描述-开始执行">第四步：输入任务描述，开始执行</h3>
 <p>在对话框中输入你的需求，点击发送，Codex 就会开始执行任务。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-first-task-prompt-input.png" alt="输入任务并发送" loading="lazy"/><figcaption>输入任务并发送</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-first-task-prompt-input.png" alt="输入任务并发送" loading="eager"/><figcaption>输入任务并发送</figcaption></figure>
 <p>任务完成后，Codex 会在对话中展示结果，同时将生成的文件写入工作目录。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-first-task-completion.png" alt="任务完成" loading="lazy"/><figcaption>任务完成</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-first-task-completion.png" alt="任务完成" loading="eager"/><figcaption>任务完成</figcaption></figure>
 <p>如果生成的是网页文件，可以直接点击 Codex 弹出的&quot;打开&quot;按钮，在 App 内置浏览器中预览效果，无需手动打开文件夹。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-first-task-browser-preview.png" alt="内置浏览器预览" loading="lazy"/><figcaption>内置浏览器预览</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-first-task-browser-preview.png" alt="内置浏览器预览" loading="eager"/><figcaption>内置浏览器预览</figcaption></figure>
 <h3 id="第五步-逐步迭代">第五步：逐步迭代</h3>
 <p>对结果不满意时，直接在当前对话框中继续描述修改需求，Codex 会在已有基础上进行调整。</p>
 <p>随着对话轮次增加，上下文窗口会逐渐被填满。点击对话框右下角的小圆圈图标，可以查看当前上下文使用情况。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-first-task-context-usage.png" alt="上下文使用情况" loading="lazy"/><figcaption>上下文使用情况</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-first-task-context-usage.png" alt="上下文使用情况" loading="eager"/><figcaption>上下文使用情况</figcaption></figure>
 <aside class="callout info"><span>说明</span><p>什么是上下文窗口？ 每次对话都有容量上限，每一轮问答都会占用一定空间。当上下文接近满载时，建议在项目中新建一个对话继续处理后续任务——新对话仍然共享同一工作目录，不需要重新配置。</p></aside>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-first-task-new-chat-in-project.png" alt="项目中新建对话" loading="lazy"/><figcaption>项目中新建对话</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-first-task-new-chat-in-project.png" alt="项目中新建对话" loading="eager"/><figcaption>项目中新建对话</figcaption></figure>
 <p>如果使用的是&quot;对话&quot;模式而非项目，新建对话时需要重新指定工作目录，两个对话之间也是相互隔离的，不方便统一管理。这也是推荐使用项目的主要原因之一。</p>
 <div class="section-break"></div>
 </section>
@@ -462,11 +450,11 @@
 <h3 id="1-顺序执行">1.顺序执行</h3>
 <p>选择本地项目/创建新的项目，该项目实际上就对应我们本地的一个文件夹，它存储在我们的本地。</p>
 <p>然后点击创建新的对话。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-task-sequential-new-chat.png" alt="codex-task-sequential-new-chat" loading="lazy"/><figcaption>codex-task-sequential-new-chat</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-task-sequential-new-chat.png" alt="codex-task-sequential-new-chat" loading="eager"/><figcaption>codex-task-sequential-new-chat</figcaption></figure>
 <p>我们向 CodeX 发送任务，让他帮我们设计一个网站，这个时候他就会开始执行。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-task-sequential-first-prompt.png" alt="codex-task-sequential-first-prompt" loading="lazy"/><figcaption>codex-task-sequential-first-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-task-sequential-first-prompt.png" alt="codex-task-sequential-first-prompt" loading="eager"/><figcaption>codex-task-sequential-first-prompt</figcaption></figure>
 <p>在这个任务没有执行的过程中，如果我们去给他下达新的命令，就只能等待。显示的是下面这种情况：</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-task-sequential-queued-tasks.png" alt="codex-task-sequential-queued-tasks" loading="lazy"/><figcaption>codex-task-sequential-queued-tasks</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-task-sequential-queued-tasks.png" alt="codex-task-sequential-queued-tasks" loading="eager"/><figcaption>codex-task-sequential-queued-tasks</figcaption></figure>
 <p>这种相当于当前他正在执行一个任务，我们给他的另外两个命令就需要排队，必须等前面的任务执行完成之后才能执行。</p>
 <p>但是如果我们想修改一下要求，比如想让他明确这个网站的背景风格为“手绘风格”，如果等他设计完成之后再去修改就会比较麻烦。我希望他在正在设计的时候就知道我的风格要求。</p>
 <p>这时候，我们可以点击<strong>引导</strong>选项。这样操作后，他就会执行一个“插队”的操作：</p>
@@ -482,7 +470,7 @@
 <p>   我们想让“手绘风格”在设计过程中就发挥作用，通过点击引导提示，这个任务就会直接插队到当前正在执行的任务当中。</p>
 <p>这实际上就是通过这样一个过程，演示如何对顺序执行的任务进行管理以及相关的插队操作。</p>
 <h3 id="2-如何并行">2.如何并行</h3>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-task-parallel-example.png" alt="Codex 任务并行示例" loading="lazy"/><figcaption>Codex 任务并行示例</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-task-parallel-example.png" alt="Codex 任务并行示例" loading="eager"/><figcaption>Codex 任务并行示例</figcaption></figure>
 <p>实际上就是一个项目（Project）里面，我们同时去执行多个任务。</p>
 <p>这个时候，我们只需要在左侧边栏点击“新建对话”就可以了。这样的话，它的几个任务就会并行执行，互不干扰。</p>
 <div class="section-break"></div>
@@ -503,7 +491,7 @@
 <li><code>Full access</code>（完全访问）</li>
 <li><code>Custom (config.toml)</code>（自定义配置）</li>
 </ol>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-app-permissions-selector-menu.png" alt="Codex App 权限选择器示例" loading="lazy"/><figcaption>Codex App 权限选择器示例</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-app-permissions-selector-menu.png" alt="Codex App 权限选择器示例" loading="eager"/><figcaption>Codex App 权限选择器示例</figcaption></figure>
 <p>对于 CLI 而言，权限配置的细粒度和复杂度都会更高。这里不做展开。</p>
 <h4 id="默认权限">默认权限</h4>
 <p>又称：请求批准。</p>
@@ -525,7 +513,7 @@
 <p>又称：替我审批。</p>
 <p>自动审核适合希望减少手动审批打断、但又不愿完全放开权限的场景。执行命令时，Codex 会将请求转给 <strong>reviewer agent</strong>（一个专门负责风险评估的助手）判断。低风险或中风险直接放行；高风险仍需要用户明确同意。</p>
 <p>这是最<strong>推荐</strong>的权限机制。保证安全性的同时也能兼顾用户体验和工作效率。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-app-auto-review-rejection.png" alt="Codex App 自动审核拒绝高风险操作示例" loading="lazy"/><figcaption>Codex App 自动审核拒绝高风险操作示例</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-app-auto-review-rejection.png" alt="Codex App 自动审核拒绝高风险操作示例" loading="eager"/><figcaption>Codex App 自动审核拒绝高风险操作示例</figcaption></figure>
 <p><strong>适用场景：</strong></p>
 <ul>
 <li>项目经常需要访问当前文件夹以外的资源，如调用本机 CLI、联网查询，且风险可控。</li>
@@ -553,7 +541,7 @@
 <tr><td data-label="选项"><code>approvals_reviewer = &quot;user&quot;</code></td><td data-label="大致含义">审批提示交给用户</td><td data-label="App 里怎么理解">默认权限</td></tr>
 <tr><td data-label="选项"><code>approvals_reviewer = &quot;auto_review&quot;</code></td><td data-label="大致含义">符合条件的审批请求交给 reviewer agent</td><td data-label="App 里怎么理解">自动审核 / 替我审批</td></tr>
 <tr><td data-label="选项"><code>sandbox_workspace_write.writable_roots</code></td><td data-label="大致含义">给 <code>workspace-write</code> 增加可写目录</td><td data-label="App 里怎么理解">需要跨目录时，优先考虑</td></tr></table></div>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-app-config-toml-settings.png" alt="Codex App config.toml 配置示例" loading="lazy"/><figcaption>Codex App config.toml 配置示例</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-app-config-toml-settings.png" alt="Codex App config.toml 配置示例" loading="eager"/><figcaption>Codex App config.toml 配置示例</figcaption></figure>
 <p>上表仅展示部分常见配置选项，更多请查看<a href="https://developers.openai.com/codex/permissions" target="_blank" rel="noreferrer">OpenAI Premission</a>。</p>
 <h3 id="推荐">推荐</h3>
 <ol>
@@ -581,7 +569,7 @@
 </ul>
 <aside class="callout tip"><span>温馨提示</span><p>最后核对 官方资料最后核对日期：2026-06-20。本文参考 <a href="https://agentskills.io/" target="_blank" rel="noreferrer">Agent Skills 标准</a>、<a href="https://developers.openai.com/codex/skills" target="_blank" rel="noreferrer">Codex Skills</a>、<a href="https://developers.openai.com/codex/plugins" target="_blank" rel="noreferrer">Codex Plugins</a> 与 <a href="https://developers.openai.com/codex/plugins/build" target="_blank" rel="noreferrer">Build plugins</a>。如果你的界面与本文截图不完全一致，请优先以当前客户端和工作区可用功能为准。</p></aside>
 <p>如果你在 App 中看到了和技能、插件相关的入口，可以先用这张图定位它们：</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-skills-plugins-entry-page.png" alt="codex-skills-plugins-entry-page" loading="lazy"/><figcaption>codex-skills-plugins-entry-page</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-skills-plugins-entry-page.png" alt="codex-skills-plugins-entry-page" loading="eager"/><figcaption>codex-skills-plugins-entry-page</figcaption></figure>
 <h3 id="三个核心概念">三个核心概念</h3>
 <p>理解这三者最快的方式，是把 <code>AGENTS.md</code>、<code>Skill</code>、<code>Plugin</code> 放在一起看：</p>
 <div class="table-wrap"><table><tr><th>概念</th><th>解决什么问题</th><th>更像什么</th></tr>
@@ -642,12 +630,12 @@ Report concrete issues before rewriting.</code></pre></div>
 <tr><td data-label="主题">分发方式</td><td data-label="Agent Skills 标准">标准本身只描述 Skill 包</td><td data-label="Codex 实现">Codex 推荐用 Plugin 分发可复用 Skills，或把 Skills 和 App / MCP / Hooks 一起打包</td></tr>
 <tr><td data-label="主题">隐式调用</td><td data-label="Agent Skills 标准">标准鼓励写好 <code>description</code> 方便 agent 判断</td><td data-label="Codex 实现">Codex 支持显式 <code>$skill</code> 和基于 <code>description</code> 的隐式调用（即AI自主判断是否使用），并可用 <code>agents/openai.yaml</code> 关闭隐式调用</td></tr></table></div>
 <p>所以写给 Codex 的 Skill，最好先按 Agent Skills 标准写通用结构，再按需加入 Codex 扩展。这样 Codex 能稳定识别，迁移到其他支持该标准的工具也更容易。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-skills-list.png" alt="codex-skills-list" loading="lazy"/><figcaption>codex-skills-list</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-skills-list.png" alt="codex-skills-list" loading="eager"/><figcaption>codex-skills-list</figcaption></figure>
 <h3 id="codex-如何使用-skills">Codex 如何使用 Skills</h3>
 <p>和其他Agent一样，Codex 使用渐进式加载（progressive disclosure）：启动时只把可用 Skills 的 <code>name</code>、<code>description</code> 和路径放入上下文，选中后再按需读取完整内容。之后如果 <code>SKILL.md</code> 提到脚本、参考资料或模板，Codex 也会按需读取或执行。</p>
 <p>这样做的好处是，你可以安装很多 Skills，却不会让每个 Skill 的完整说明一开始就占满上下文预算。</p>
 <p>Codex 启用 Skill 的方式有两种：显式调用（在提示词里写 <code>$skill-name</code>，或用 <code>/</code> 打开 Skills 菜单选择）和隐式匹配（任务描述与某个 Skill 的 <code>description</code> 匹配时，Codex 自动选择）。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-skills-slash-command-list.png" alt="codex-skills-slash-command-list" loading="lazy"/><figcaption>codex-skills-slash-command-list</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-skills-slash-command-list.png" alt="codex-skills-slash-command-list" loading="eager"/><figcaption>codex-skills-slash-command-list</figcaption></figure>
 <h3 id="skill-存放位置">Skill 存放位置</h3>
 <p>Codex 会从多个位置发现 Skills，主要分两类目录：<code>.agents</code> 更偏通用 Agent Skills 规范，适合写进仓库和跨工具复用；<code>.codex</code> 更偏 Codex 客户端自己的本地管理、安装和插件缓存。</p>
 <p>官方当前推荐的通用发现位置以 <code>.agents/skills</code> 为主：</p>
@@ -706,9 +694,9 @@ Report concrete issues before rewriting.</code></pre></div>
 <li>Hooks：在生命周期事件里自动运行检查或补充上下文。</li>
 <li>assets：图标、logo、截图等展示素材。</li>
 </ul>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-plugins-at-command-list.png" alt="codex-plugins-at-command-list" loading="lazy"/><figcaption>codex-plugins-at-command-list</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-plugins-at-command-list.png" alt="codex-plugins-at-command-list" loading="eager"/><figcaption>codex-plugins-at-command-list</figcaption></figure>
 <p>安装或导入插件时，Codex 通常会要求你确认来源和能力范围：</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-plugin-install-github-prompt.png" alt="codex-plugin-install-github-prompt" loading="lazy"/><figcaption>codex-plugin-install-github-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-plugin-install-github-prompt.png" alt="codex-plugin-install-github-prompt" loading="eager"/><figcaption>codex-plugin-install-github-prompt</figcaption></figure>
 <h3 id="plugin-目录结构">Plugin 目录结构</h3>
 <p>一个典型 Plugin 的目录结构长这样：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>my-plugin/
@@ -820,7 +808,7 @@ Report concrete issues before rewriting.</code></pre></div>
 <li>第一次配置时，建议先从低风险、只读型任务开始。</li>
 <li>如果自动化会写文件、访问外部系统或触发通知，最好先确认权限边界和人工复核方式。</li>
 </ul>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-automation-create-dialog.png" alt="codex-automation-create-dialog" loading="lazy"/><figcaption>codex-automation-create-dialog</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-automation-create-dialog.png" alt="codex-automation-create-dialog" loading="eager"/><figcaption>codex-automation-create-dialog</figcaption></figure>
 <div class="section-break"></div>
 </section>
 <section class="content-section" data-step="17"><div class="section-kicker">Chapter 17</div><h2 id="9-8-如何设置自己的-codex-桌面宠物">9.8 如何设置自己的 Codex 桌面宠物</h2>
@@ -836,16 +824,16 @@ Report concrete issues before rewriting.</code></pre></div>
 <div class="section-break"></div>
 <h3 id="1-安装">1. 安装</h3>
 <p>打开”<strong>设置</strong>” → “<strong>外观</strong>”，往下滑到”<strong>宠物</strong>”这一栏。在这里可以选择喜欢的宠物类型并点击”<strong>唤醒</strong>”，桌面上就会出现选定的小宠物了。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-desktop-pet-plugin-install.png" alt="codex-desktop-pet-plugin-install" loading="lazy"/><figcaption>codex-desktop-pet-plugin-install</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-desktop-pet-plugin-install.png" alt="codex-desktop-pet-plugin-install" loading="eager"/><figcaption>codex-desktop-pet-plugin-install</figcaption></figure>
 <p><strong>快捷命令方式：</strong> 如果不想进设置，也可以直接在聊天框中输入 <code>/</code>，选择”<strong>宠物</strong>”选项，同样可以唤醒或收起桌面宠物。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-desktop-pet-slash-command.png" alt="codex-desktop-pet-slash-command" loading="lazy"/><figcaption>codex-desktop-pet-slash-command</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-desktop-pet-slash-command.png" alt="codex-desktop-pet-slash-command" loading="eager"/><figcaption>codex-desktop-pet-slash-command</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="2-使用">2. 使用</h3>
 <p>唤醒之后，像平常一样下达指令，然后去做其他事情。小宠物会在屏幕上陪伴着你，实时显示任务完成进度。</p>
 <p>比如下面这个情况：它正在进行搜索，并执行我们的任务。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-desktop-pet-task-bubble.png" alt="codex-desktop-pet-task-bubble" loading="lazy"/><figcaption>codex-desktop-pet-task-bubble</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-desktop-pet-task-bubble.png" alt="codex-desktop-pet-task-bubble" loading="eager"/><figcaption>codex-desktop-pet-task-bubble</figcaption></figure>
 <p>任务完成之后，会显示一个<strong>绿色对勾</strong>，提示任务已完成。也就是说，我们可以实时看到它的执行过程以及完成结果，完全不需要盯着 Codex 窗口等待。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-desktop-pet-completed-task-bubble.png" alt="codex-desktop-pet-completed-task-bubble" loading="lazy"/><figcaption>codex-desktop-pet-completed-task-bubble</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-desktop-pet-completed-task-bubble.png" alt="codex-desktop-pet-completed-task-bubble" loading="eager"/><figcaption>codex-desktop-pet-completed-task-bubble</figcaption></figure>
 <div class="section-break"></div>
 </section>
 <section class="content-section" data-step="18"><div class="section-kicker">Chapter 18</div><h2 id="9-9-第一次让-codex-改代码">9.9 第一次让 Codex 改代码</h2>
@@ -879,7 +867,7 @@ Report concrete issues before rewriting.</code></pre></div>
 3. 安装、测试、构建命令
 4. 当前任务适合从哪里开始
 5. 你建议我第一次交给你的低风险任务</code></pre></div>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-cli-repo-overview-response.png" alt="codex-cli-repo-overview-response" loading="lazy"/><figcaption>codex-cli-repo-overview-response</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-cli-repo-overview-response.png" alt="codex-cli-repo-overview-response" loading="eager"/><figcaption>codex-cli-repo-overview-response</figcaption></figure>
 <h3 id="第二步-给出小任务">第二步：给出小任务</h3>
 <p>推荐复制这个模板：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请修复当前仓库中最小范围的一个测试失败。
@@ -899,7 +887,7 @@ Report concrete issues before rewriting.</code></pre></div>
 3. 涉及操作步骤时添加截图占位。
 4. 修改后运行文档站构建。
 5. 最后列出来源链接和需要人工补图的位置。</code></pre></div>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-cli-small-task-response.png" alt="codex-cli-small-task-response" loading="lazy"/><figcaption>codex-cli-small-task-response</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-cli-small-task-response.png" alt="codex-cli-small-task-response" loading="eager"/><figcaption>codex-cli-small-task-response</figcaption></figure>
 <h3 id="第三步-观察过程">第三步：观察过程</h3>
 <p>重点观察五件事：</p>
 <div class="table-wrap"><table><tr><th>观察点</th><th>说明</th></tr>
@@ -919,7 +907,7 @@ Report concrete issues before rewriting.</code></pre></div>
 2. 是否遗漏测试
 3. 是否引入安全或兼容风险
 4. 是否还有未验证的地方</code></pre></div>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-cli-review-diff-result.png" alt="codex-cli-review-diff-result" loading="lazy"/><figcaption>codex-cli-review-diff-result</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-cli-review-diff-result.png" alt="codex-cli-review-diff-result" loading="eager"/><figcaption>codex-cli-review-diff-result</figcaption></figure>
 <h3 id="第五步-提交前记录">第五步：提交前记录</h3>
 <p>提交前让 Codex 给出一段摘要：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请用提交前摘要格式输出：
@@ -957,16 +945,16 @@ git commit -m &quot;fix: resolve failing test&quot;</code></pre></div>
 <h3 id="安装-codex-插件">安装 Codex 插件</h3>
 <p>打开 VS Code，点击左侧边栏的「扩展」图标，在搜索框中输入 <strong>Codex</strong>，选择第一个结果，点击「安装」即可。</p>
 <aside class="callout tip"><span>温馨提示</span><p>这里安装的是 OpenAI 官方发布的 ChatGPT 插件，其中集成了 Codex 的对话与代码辅助能力。</p></aside>
-<figure class="article-image"><img src="./assets/codexguide/source/vscode-codex-extension-marketplace.png" alt="搜索并安装 Codex 插件" loading="lazy"/><figcaption>搜索并安装 Codex 插件</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/vscode-codex-extension-marketplace.png" alt="搜索并安装 Codex 插件" loading="eager"/><figcaption>搜索并安装 Codex 插件</figcaption></figure>
 <h3 id="打开插件对话窗口">打开插件对话窗口</h3>
 <p>安装完成后，在 VS Code 中打开任意一个项目文件，右上角会出现 ChatGPT 的图标。点击该图标，右侧边栏就会展开 Codex 的对话窗口。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/vscode-codex-extension-icon.png" alt="文件右上角的插件图标" loading="lazy"/><figcaption>文件右上角的插件图标</figcaption></figure>
-<figure class="article-image"><img src="./assets/codexguide/source/vscode-codex-chat-panel.png" alt="展开后的对话窗口" loading="lazy"/><figcaption>展开后的对话窗口</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/vscode-codex-extension-icon.png" alt="文件右上角的插件图标" loading="eager"/><figcaption>文件右上角的插件图标</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/vscode-codex-chat-panel.png" alt="展开后的对话窗口" loading="eager"/><figcaption>展开后的对话窗口</figcaption></figure>
 <h3 id="开始使用">开始使用</h3>
 <p>对话窗口打开后，直接输入需求，Codex 就会开始辅助完成开发任务，用法与 Codex 桌面 App 基本一致。</p>
 <p><strong>使用 <code>@</code> 指定文件：</strong></p>
 <p>在对话框中输入 <code>@</code> 后选择具体文件，Codex 会直接定位到该文件进行分析或修改，比让它全局搜索更快、更准确。建议在任务目标明确时优先使用 <code>@</code> 指定相关文件。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/vscode-codex-file-reference.png" alt="使用 @ 指定文件" loading="lazy"/><figcaption>使用 @ 指定文件</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/vscode-codex-file-reference.png" alt="使用 @ 指定文件" loading="eager"/><figcaption>使用 @ 指定文件</figcaption></figure>
 <h3 id="app-与-vs-code-插件怎么选">App 与 VS Code 插件怎么选</h3>
 <div class="table-wrap"><table><tr><th></th><th>Codex 桌面 App</th><th>VS Code 插件</th></tr>
 <tr><td>适合场景</td><td data-label="Codex 桌面 App">多任务管理、Skills、Automations</td><td data-label="VS Code 插件">边写代码边调用，贴近编辑器工作流</td></tr>
@@ -991,14 +979,14 @@ git commit -m &quot;fix: resolve failing test&quot;</code></pre></div>
 <h3 id="存放位置与读取机制">存放位置与读取机制</h3>
 <h4 id="文件位置">文件位置</h4>
 <p>对于普通项目，最推荐的做法是在项目根目录创建 <code>AGENTS.md</code>。Codex 在开始处理任务前会自动读取它，并把内容作为工作上下文带入新的对话。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/agents-md-editor-rule-example.png" alt="agents-md-editor-rule-example" loading="lazy"/><figcaption>agents-md-editor-rule-example</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/agents-md-editor-rule-example.png" alt="agents-md-editor-rule-example" loading="eager"/><figcaption>agents-md-editor-rule-example</figcaption></figure>
 <p>若希望全局生效，可以撰写 Codex 的全局指令：</p>
 <ol>
 <li>在 Codex_Home 目录中创建 <code>AGENTS.md</code>。默认位置通常是 <code>~/.codex/AGENTS.md</code>；如果设置了 <code>CODEX_HOME</code>，则以对应目录为准。</li>
 <li>在 Codex 桌面 App 里配置个人偏好或自定义指令。本质上也是写入 Codex_Home 的 <code>AGENTS.md</code>，与上述方法等价。</li>
 </ol>
 <p>设置全局规则后，它会影响你打开的所有项目；项目级 <code>AGENTS.md</code> 只影响当前仓库。两者作用域不同，要分清。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-app-personalization-settings.png" alt="codex-app-personalization-settings" loading="lazy"/><figcaption>codex-app-personalization-settings</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-app-personalization-settings.png" alt="codex-app-personalization-settings" loading="eager"/><figcaption>codex-app-personalization-settings</figcaption></figure>
 <p>请确保文件名始终为 <code>AGENTS.md</code>，并确认<strong>大小写</strong>是否正确。否则 Codex 不会自动识别。</p>
 <h4 id="读取顺序与合并规则">读取顺序与合并规则</h4>
 <p>Codex 读取 <code>AGENTS.md</code> 遵循以下顺序：</p>
@@ -1110,7 +1098,7 @@ codex-agents-local sync --cwd . --json</code></pre></div>
 <p>沙盒和审批就是这套边界。</p>
 <p>对于绝大多数人而言，只需要把 <code>Auto-Reivew</code> 模式打开就够了。本文章旨在让你更好地理解 Codex 的沙盒机制和审批策略，同时补充一些进阶用法。</p>
 <p>当你在利用沙盒和权限机制来约束 Codex 行为的时候，你已经在实践 <code>Harness Engineering </code>，即“约束工程” 。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-safety-layers.svg" alt="Codex 沙盒、审批策略、审批人与配置项关系图" loading="lazy"/><figcaption>Codex 沙盒、审批策略、审批人与配置项关系图</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-safety-layers.svg" alt="Codex 沙盒、审批策略、审批人与配置项关系图" loading="eager"/><figcaption>Codex 沙盒、审批策略、审批人与配置项关系图</figcaption></figure>
 <aside class="callout tip"><span>温馨提示</span><p>最后核对 官方资料最后核对日期：2026-06-18。本文依据 <a href="https://developers.openai.com/codex/concepts/sandboxing" target="_blank" rel="noreferrer">Codex Sandboxing</a>、<a href="https://developers.openai.com/codex/agent-approvals-security" target="_blank" rel="noreferrer">Agent approvals &amp; security</a>、<a href="https://developers.openai.com/codex/permissions" target="_blank" rel="noreferrer">Permissions</a>、<a href="https://developers.openai.com/codex/rules" target="_blank" rel="noreferrer">Rules</a>、<a href="https://developers.openai.com/codex/windows" target="_blank" rel="noreferrer">Windows</a> 和 <a href="https://developers.openai.com/codex/concepts/sandboxing/auto-review" target="_blank" rel="noreferrer">Auto-review</a> 整理。</p></aside>
 <h3 id="三个概念">三个概念</h3>
 <p>想象 Codex 在你的电脑里工作，就像在一个有玻璃墙和门禁的实验室里操作。</p>
@@ -1153,7 +1141,7 @@ approvals_reviewer = &quot;user&quot;</code></pre></div>
 <tr><td data-label="模式">只读</td><td data-label="对应英文"><code>read-only</code> / <code>:read-only</code></td><td data-label="范围">主要用于读文件和回答问题；命令执行也受只读边界限制</td><td data-label="审批触发条件">修改文件、执行需要写入的命令或联网时触发审批</td></tr>
 <tr><td data-label="模式">工作区写入</td><td data-label="对应英文"><code>workspace-write</code> / <code>:workspace</code></td><td data-label="范围">可以在项目里读、写、运行常规命令</td><td data-label="审批触发条件">联网或写到项目外时触发审批</td></tr>
 <tr><td data-label="模式">完全访问</td><td data-label="对应英文"><code>danger-full-access</code> / <code>:danger-full-access</code></td><td data-label="范围">没有沙盒限制，可以访问任何位置</td><td data-label="审批触发条件">取决于审批策略</td></tr></table></div>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-config-sandbox-settings.png" alt="Codex 配置中的沙盒设置选项" loading="lazy"/><figcaption>Codex 配置中的沙盒设置选项</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-config-sandbox-settings.png" alt="Codex 配置中的沙盒设置选项" loading="eager"/><figcaption>Codex 配置中的沙盒设置选项</figcaption></figure>
 <p><strong>日常默认用工作区。</strong> 它为 Codex 提供足够的操作空间完成普通开发任务，同时守住项目边界。</p>
 <p><strong>不要轻易使用完全访问。</strong> 它等于拆掉了所有沙盒限制，Codex 可以写入系统文件、访问任意网络。如果正在做删除数据、部署到生产环境或批量修改文件之类的操作，用完全访问会把风险放大。CLI 里的 <code>--dangerously-bypass-approvals-and-sandbox</code>（别名 <code>--yolo</code>）就是这个模式。</p>
 <p>另外，即使在「工作区」模式下，下面这些路径也会被只读保护：</p>
@@ -1170,7 +1158,7 @@ approvals_reviewer = &quot;user&quot;</code></pre></div>
 <tr><td data-label="策略"><code>on-failure</code>（失败时）</td><td data-label="触发条件">命令执行失败时</td><td data-label="说明">先在当前权限下尝试执行；失败后再请求确认。这个选项在部分 App 配置界面中可见，但不是当前官方文档的默认推荐</td></tr>
 <tr><td data-label="策略"><code>on-request</code>（按请求）</td><td data-label="触发条件">操作越过沙盒边界</td><td data-label="说明">默认推荐。沙盒内自动执行，越界时请求确认</td></tr>
 <tr><td data-label="策略"><code>never</code>（从不）</td><td data-label="触发条件">不触发</td><td data-label="说明">Codex 在既有权限内自行处理，不弹出审批</td></tr></table></div>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-config-approval-policy.png" alt="Codex 配置中的审批策略选项" loading="lazy"/><figcaption>Codex 配置中的审批策略选项</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-config-approval-policy.png" alt="Codex 配置中的审批策略选项" loading="eager"/><figcaption>Codex 配置中的审批策略选项</figcaption></figure>
 <p><strong><code>on-request</code>（按请求）是新手最友好的选择。</strong> 沙盒内自动执行，越界时暂停并请求确认。不需要审批每一个文件修改，只需要在关键时刻把关。</p>
 <p><strong><code>never</code> 不是「自动变安全」。</strong> 它只是不请求确认。安全取决于沙盒边界是否足够窄。比如 <code>read-only + never</code> 是安全的，因为 Codex 本来就不能改东西；但 <code>danger-full-access + never</code> 是官方标注的高风险组合——没有沙盒限制，也没人确认。</p>
 <h3 id="auto-review">Auto-review</h3>
@@ -1340,17 +1328,17 @@ enabled = true
 <h3 id="如何使用">如何使用</h3>
 <h4 id="第-1-步-打开-codex-cloud">第 1 步：打开 Codex Cloud</h4>
 <p>访问：<a href="https://chatgpt.com/codex/cloud" target="_blank" rel="noreferrer">https://chatgpt.com/codex/cloud</a></p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-cloud-connect-github-button.png" alt="codex-cloud-connect-github-button" loading="lazy"/><figcaption>codex-cloud-connect-github-button</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-cloud-connect-github-button.png" alt="codex-cloud-connect-github-button" loading="eager"/><figcaption>codex-cloud-connect-github-button</figcaption></figure>
 <p>连接成功后会跳转到任务页面：</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-cloud-start-task-page.png" alt="codex-cloud-start-task-page" loading="lazy"/><figcaption>codex-cloud-start-task-page</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-cloud-start-task-page.png" alt="codex-cloud-start-task-page" loading="eager"/><figcaption>codex-cloud-start-task-page</figcaption></figure>
 <h4 id="第-2-步-授权并选择仓库">第 2 步：授权并选择仓库</h4>
 <p>Cloud 模式直接在 GitHub 仓库中运行，需要先完成授权。你可以授权全部仓库，也可以只选择特定仓库：</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-cloud-github-repository-authorization.png" alt="codex-cloud-github-repository-authorization" loading="lazy"/><figcaption>codex-cloud-github-repository-authorization</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-cloud-github-repository-authorization.png" alt="codex-cloud-github-repository-authorization" loading="eager"/><figcaption>codex-cloud-github-repository-authorization</figcaption></figure>
 <h4 id="第-3-步-下达指令-查看任务进度">第 3 步：下达指令，查看任务进度</h4>
 <p>下达指令后，Codex 会在云端执行任务，进度显示在页面下方的任务列表里：</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-cloud-repository-context-prompt.png" alt="codex-cloud-repository-context-prompt" loading="lazy"/><figcaption>codex-cloud-repository-context-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-cloud-repository-context-prompt.png" alt="codex-cloud-repository-context-prompt" loading="eager"/><figcaption>codex-cloud-repository-context-prompt</figcaption></figure>
 <p>点击任务可以查看每一步的执行过程和中间状态。任务完成后也可以查看最终回答和产出内容：</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-cloud-task-progress-result.png" alt="codex-cloud-task-progress-result" loading="lazy"/><figcaption>codex-cloud-task-progress-result</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-cloud-task-progress-result.png" alt="codex-cloud-task-progress-result" loading="eager"/><figcaption>codex-cloud-task-progress-result</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="与桌面-app-模式的区别">与桌面 App 模式的区别</h3>
 <div class="table-wrap"><table><tr><th></th><th>Codex 桌面 App</th><th>Codex Cloud</th></tr>
@@ -1565,7 +1553,7 @@ manual|auto</code></pre></div>
 }</code></pre></div>
 <p>这不是拒绝本轮结果，而是告诉 Codex 继续一轮，并把 <code>reason</code> 作为新的继续提示词。</p>
 <h3 id="审查与信任">审查与信任</h3>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-hooks-trust-review.png" alt="Codex Hooks 审查与信任界面" loading="lazy"/><figcaption>Codex Hooks 审查与信任界面</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-hooks-trust-review.png" alt="Codex Hooks 审查与信任界面" loading="eager"/><figcaption>Codex Hooks 审查与信任界面</figcaption></figure>
 <p>非托管 command Hook 在运行前需要被审查和信任。Codex 会根据 Hook 当前定义计算 hash；Hook 修改后，会重新进入待审查状态，在信任前会被跳过。</p>
 <p>CLI 里可以用：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>/hooks</code></pre></div>
@@ -1757,7 +1745,7 @@ if __name__ == &quot;__main__&quot;:
 </section>
 <section class="content-section" data-step="25"><div class="section-kicker">Chapter 25</div><h2 id="9-16-实践方法">9.16 实践方法</h2>
 <p>Codex 的学习重点不只在命令和界面。更关键的是把任务设计、上下文管理、安全边界和验证闭环训练成习惯。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-workflow-loop.svg" alt="Codex 高质量任务闭环" loading="lazy"/><figcaption>Codex 高质量任务闭环</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-workflow-loop.svg" alt="Codex 高质量任务闭环" loading="eager"/><figcaption>Codex 高质量任务闭环</figcaption></figure>
 <h3 id="方法地图">方法地图</h3>
 <div class="table-wrap"><table><tr><th>主题</th><th>解决什么问题</th></tr>
 <tr><td data-label="主题">任务设计</td><td data-label="解决什么问题">如何把模糊需求写成 Codex 能稳定执行的任务</td></tr>
@@ -1907,7 +1895,7 @@ if __name__ == &quot;__main__&quot;:
 </section>
 <section class="content-section" data-step="28"><div class="section-kicker">Chapter 28</div><h2 id="9-19-团队实践">9.19 团队实践</h2>
 <p>团队使用 Codex 的关键是把规则写清楚、把验证跑起来、把案例沉淀下来。</p>
-<figure class="article-image"><img src="./assets/codexguide/source/codex-safety-layers.svg" alt="Codex 安全边界分层" loading="lazy"/><figcaption>Codex 安全边界分层</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/source/codex-safety-layers.svg" alt="Codex 安全边界分层" loading="eager"/><figcaption>Codex 安全边界分层</figcaption></figure>
 <h3 id="团队接入清单">团队接入清单</h3>
 <div class="table-wrap"><table><tr><th>项目</th><th>建议</th></tr>
 <tr><td data-label="项目"><code>AGENTS.md</code></td><td data-label="建议">写清项目结构、命令、风格、安全边界</td></tr>
@@ -1996,20 +1984,20 @@ if __name__ == &quot;__main__&quot;:
 <p>例如：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请帮我安装这个 Skill：https://github.com/op7418/guizang-ppt-skill
 安装完成后，告诉我它的用途、依赖要求，以及应该如何调用。</code></pre></div>
-<figure class="article-image"><img src="./assets/codexguide/ppt-skill-walkthrough-01-ppt-skill-install-prompt.png" alt="ppt-skill-install-prompt" loading="lazy"/><figcaption>ppt-skill-install-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/ppt-skill-walkthrough-01-ppt-skill-install-prompt.png" alt="ppt-skill-install-prompt" loading="eager"/><figcaption>ppt-skill-install-prompt</figcaption></figure>
 <p>不同工作区里，安装方式可能不完全一样。有些会直接支持安装，有些则会先分析仓库结构，再提示你确认放置位置或依赖要求。</p>
 <h3 id="第二步-调用使用">第二步：调用使用</h3>
 <p>安装完成后，可以直接让 Codex 调用这个 Skill 去完成一项真实任务。</p>
 <p>如果这个 Skill 已经提前安装过，你通常也可以通过斜杠命令、技能选择器，或者在任务里明确点名的方式来调用它。</p>
-<figure class="article-image"><img src="./assets/codexguide/ppt-skill-walkthrough-02-ppt-skill-installation-result.png" alt="ppt-skill-installation-result" loading="lazy"/><figcaption>ppt-skill-installation-result</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/ppt-skill-walkthrough-02-ppt-skill-installation-result.png" alt="ppt-skill-installation-result" loading="eager"/><figcaption>ppt-skill-installation-result</figcaption></figure>
 <p>例如：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请使用刚刚安装的 PPT Skill，根据“AI 编程工具入门”这个主题生成一份适合分享的演示稿。先告诉我还缺哪些关键信息。</code></pre></div>
 <p>如果你没有给足上下文，Codex 往往会先回到这个 Skill 的操作手册里，看看它需要什么输入，然后再向你追问必要信息。</p>
-<figure class="article-image"><img src="./assets/codexguide/ppt-skill-walkthrough-03-ppt-skill-user-input-menu.png" alt="ppt-skill-user-input-menu" loading="lazy"/><figcaption>ppt-skill-user-input-menu</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/ppt-skill-walkthrough-03-ppt-skill-user-input-menu.png" alt="ppt-skill-user-input-menu" loading="eager"/><figcaption>ppt-skill-user-input-menu</figcaption></figure>
 <p>当你补齐背景、主题、受众或风格要求后，它会按该 Skill 的流程去读取 README、模板和相关文档，再生成结果。</p>
-<figure class="article-image"><img src="./assets/codexguide/ppt-skill-walkthrough-04-ppt-skill-generated-file-result.png" alt="ppt-skill-generated-file-result" loading="lazy"/><figcaption>ppt-skill-generated-file-result</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/ppt-skill-walkthrough-04-ppt-skill-generated-file-result.png" alt="ppt-skill-generated-file-result" loading="eager"/><figcaption>ppt-skill-generated-file-result</figcaption></figure>
 <p>如果这个 Skill 的默认产物是 HTML 演示稿，你通常可以直接在 Codex 内置浏览器里打开预览。</p>
-<figure class="article-image"><img src="./assets/codexguide/ppt-skill-walkthrough-05-ppt-skill-html-preview.png" alt="ppt-skill-html-preview" loading="lazy"/><figcaption>ppt-skill-html-preview</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/ppt-skill-walkthrough-05-ppt-skill-html-preview.png" alt="ppt-skill-html-preview" loading="eager"/><figcaption>ppt-skill-html-preview</figcaption></figure>
 <h3 id="你要重点检查什么">你要重点检查什么</h3>
 <ul>
 <li>Codex 安装的是不是你指定的那个 Skill，而不是名称相似的别的仓库。</li>
@@ -2038,28 +2026,28 @@ if __name__ == &quot;__main__&quot;:
 </ol>
 <p>很多程序员、产品经理、架构师都会用它来表达复杂系统之间的关系。前段时间，Draw.io 官方发布了自己的 MCP。</p>
 <p>GitHub 地址：https://github.com/jgraph/drawio-mcp</p>
-<figure class="article-image"><img src="./assets/codexguide/drawio-mcp-01-drawio-mcp-github-repository.png" alt="drawio-mcp-github-repository" loading="lazy"/><figcaption>drawio-mcp-github-repository</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/drawio-mcp-01-drawio-mcp-github-repository.png" alt="drawio-mcp-github-repository" loading="eager"/><figcaption>drawio-mcp-github-repository</figcaption></figure>
 <p>本章节介绍如何使用 Codex 安装、使用 Draw.io 的 MCP 工具，去绘制信息图或架构图。</p>
 <div class="section-break"></div>
 <h3 id="1-安装-2">1. 安装</h3>
 <p>可以在设置里面添加，但需要填写对应的配置选项：</p>
-<figure class="article-image"><img src="./assets/codexguide/drawio-mcp-02-drawio-mcp-add-server-settings.png" alt="drawio-mcp-add-server-settings" loading="lazy"/><figcaption>drawio-mcp-add-server-settings</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/drawio-mcp-02-drawio-mcp-add-server-settings.png" alt="drawio-mcp-add-server-settings" loading="eager"/><figcaption>drawio-mcp-add-server-settings</figcaption></figure>
 <p>更简单的方法是<strong>直接把 Draw.io MCP 的 GitHub 仓库链接丢给 Codex，让 Codex 帮我们完成安装</strong>。</p>
-<figure class="article-image"><img src="./assets/codexguide/drawio-mcp-03-drawio-mcp-install-prompt.png" alt="drawio-mcp-install-prompt" loading="lazy"/><figcaption>drawio-mcp-install-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/drawio-mcp-03-drawio-mcp-install-prompt.png" alt="drawio-mcp-install-prompt" loading="eager"/><figcaption>drawio-mcp-install-prompt</figcaption></figure>
 <p>如果它没有理解你的需求，就让它直接安装，说：&quot;安装之后，请确保我可以直接使用。&quot;它就会帮你完成安装的过程。</p>
 <p>安装完成之后，确认一下即可：</p>
-<figure class="article-image"><img src="./assets/codexguide/drawio-mcp-04-drawio-mcp-install-command-result.png" alt="drawio-mcp-install-command-result" loading="lazy"/><figcaption>drawio-mcp-install-command-result</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/drawio-mcp-04-drawio-mcp-install-command-result.png" alt="drawio-mcp-install-command-result" loading="eager"/><figcaption>drawio-mcp-install-command-result</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="2-开始使用">2. 开始使用</h3>
 <p>我选择一本书的内容，让 Draw.io 根据这本书的核心观点，绘制一张中文信息图。</p>
-<figure class="article-image"><img src="./assets/codexguide/drawio-mcp-05-drawio-mcp-permission-model-prompt.png" alt="drawio-mcp-permission-model-prompt" loading="lazy"/><figcaption>drawio-mcp-permission-model-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/drawio-mcp-05-drawio-mcp-permission-model-prompt.png" alt="drawio-mcp-permission-model-prompt" loading="eager"/><figcaption>drawio-mcp-permission-model-prompt</figcaption></figure>
 <p>你可以随意要求它，自定义要绘制的内容、主题、风格等相关要求。</p>
 <blockquote><strong>提示：</strong> 在提示词里一定要强调使用 <strong>Draw.io 的 MCP</strong> 去完成任务，这样它才会调用这个工具。</blockquote>
-<figure class="article-image"><img src="./assets/codexguide/drawio-mcp-06-drawio-mcp-permission-model-source-links.png" alt="drawio-mcp-permission-model-source-links" loading="lazy"/><figcaption>drawio-mcp-permission-model-source-links</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/drawio-mcp-06-drawio-mcp-permission-model-source-links.png" alt="drawio-mcp-permission-model-source-links" loading="eager"/><figcaption>drawio-mcp-permission-model-source-links</figcaption></figure>
 <p>绘制完成之后，它会针对本次任务进行总结，并且<strong>自动打开浏览器显示绘图结果</strong>。</p>
-<figure class="article-image"><img src="./assets/codexguide/drawio-mcp-07-drawio-mcp-read-write-own-summary.png" alt="drawio-mcp-read-write-own-summary" loading="lazy"/><figcaption>drawio-mcp-read-write-own-summary</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/drawio-mcp-07-drawio-mcp-read-write-own-summary.png" alt="drawio-mcp-read-write-own-summary" loading="eager"/><figcaption>drawio-mcp-read-write-own-summary</figcaption></figure>
 <p>绘图结果如图所示：</p>
-<figure class="article-image"><img src="./assets/codexguide/drawio-mcp-08-drawio-mcp-read-write-own-diagram.png" alt="drawio-mcp-read-write-own-diagram" loading="lazy"/><figcaption>drawio-mcp-read-write-own-diagram</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/drawio-mcp-08-drawio-mcp-read-write-own-diagram.png" alt="drawio-mcp-read-write-own-diagram" loading="eager"/><figcaption>drawio-mcp-read-write-own-diagram</figcaption></figure>
 <div class="section-break"></div>
 <div class="section-break"></div>
 </section>
@@ -2071,10 +2059,10 @@ if __name__ == &quot;__main__&quot;:
 <h3 id="1-安装-3">1. 安装</h3>
 <p>运行以下命令完成安装：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>codex mcp add playwright npx @playwright/mcp@latest</code></pre></div>
-<figure class="article-image"><img src="./assets/codexguide/playwright-mcp-01-playwright-mcp-add-command.png" alt="playwright-mcp-add-command" loading="lazy"/><figcaption>playwright-mcp-add-command</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/playwright-mcp-01-playwright-mcp-add-command.png" alt="playwright-mcp-add-command" loading="eager"/><figcaption>playwright-mcp-add-command</figcaption></figure>
 <p><strong>验证安装是否成功：</strong> 进入 Codex，使用 <code>/mcp</code> 命令列出当前已经安装的 MCP 服务列表。</p>
-<figure class="article-image"><img src="./assets/codexguide/playwright-mcp-02-playwright-mcp-server-list.png" alt="playwright-mcp-server-list" loading="lazy"/><figcaption>playwright-mcp-server-list</figcaption></figure>
-<figure class="article-image"><img src="./assets/codexguide/playwright-mcp-03-playwright-mcp-list-command.png" alt="playwright-mcp-list-command" loading="lazy"/><figcaption>playwright-mcp-list-command</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/playwright-mcp-02-playwright-mcp-server-list.png" alt="playwright-mcp-server-list" loading="eager"/><figcaption>playwright-mcp-server-list</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/playwright-mcp-03-playwright-mcp-list-command.png" alt="playwright-mcp-list-command" loading="eager"/><figcaption>playwright-mcp-list-command</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="2-如何使用">2. 如何使用</h3>
 <p>通过 <code>/mcp</code> 命令确认安装成功之后，我们使用 Playwright MCP 来完成一个测试任务：</p>
@@ -2085,7 +2073,7 @@ if __name__ == &quot;__main__&quot;:
 </ol>
 <p>提示词：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请打开浏览器，到百度搜索&quot;什么是 MCP&quot;，选择两篇优质内容阅读，并整理成一个 markdown 文件保存在当前目录。</code></pre></div>
-<figure class="article-image"><img src="./assets/codexguide/playwright-mcp-04-playwright-mcp-browser-search-prompt.png" alt="playwright-mcp-browser-search-prompt" loading="lazy"/><figcaption>playwright-mcp-browser-search-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/playwright-mcp-04-playwright-mcp-browser-search-prompt.png" alt="playwright-mcp-browser-search-prompt" loading="eager"/><figcaption>playwright-mcp-browser-search-prompt</figcaption></figure>
 <p>在执行过程中，需要我们放开一些权限，让它去调用相关工具。比如：</p>
 <ul>
 <li>填写搜索框</li>
@@ -2093,13 +2081,13 @@ if __name__ == &quot;__main__&quot;:
 <li>打开网页</li>
 </ul>
 <blockquote>这些操作在未授权的情况下，需要<strong>手动放行</strong>。</blockquote>
-<figure class="article-image"><img src="./assets/codexguide/playwright-mcp-05-playwright-mcp-permission-prompt.png" alt="playwright-mcp-permission-prompt" loading="lazy"/><figcaption>playwright-mcp-permission-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/playwright-mcp-05-playwright-mcp-permission-prompt.png" alt="playwright-mcp-permission-prompt" loading="eager"/><figcaption>playwright-mcp-permission-prompt</figcaption></figure>
 <p>在执行过程中，你确实会发现它打开了浏览器，并且搜索了相关内容，还打开了两篇文章，这些都是可以看到的。</p>
-<figure class="article-image"><img src="./assets/codexguide/playwright-mcp-06-playwright-mcp-baidu-search-results.png" alt="playwright-mcp-baidu-search-results" loading="lazy"/><figcaption>playwright-mcp-baidu-search-results</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/playwright-mcp-06-playwright-mcp-baidu-search-results.png" alt="playwright-mcp-baidu-search-results" loading="eager"/><figcaption>playwright-mcp-baidu-search-results</figcaption></figure>
 <p>最终它会把得到的结果总结输出给我们，然后<strong>写入到本地的 Markdown 文件</strong>里。</p>
-<figure class="article-image"><img src="./assets/codexguide/playwright-mcp-07-playwright-mcp-collected-search-summary.png" alt="playwright-mcp-collected-search-summary" loading="lazy"/><figcaption>playwright-mcp-collected-search-summary</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/playwright-mcp-07-playwright-mcp-collected-search-summary.png" alt="playwright-mcp-collected-search-summary" loading="eager"/><figcaption>playwright-mcp-collected-search-summary</figcaption></figure>
 <p>Codex 根据搜索到的两篇文章的内容进行总结，给我们进行相关的阐述说明。</p>
-<figure class="article-image"><img src="./assets/codexguide/playwright-mcp-08-playwright-mcp-markdown-file-created.png" alt="playwright-mcp-markdown-file-created" loading="lazy"/><figcaption>playwright-mcp-markdown-file-created</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/playwright-mcp-08-playwright-mcp-markdown-file-created.png" alt="playwright-mcp-markdown-file-created" loading="eager"/><figcaption>playwright-mcp-markdown-file-created</figcaption></figure>
 <div class="section-break"></div>
 <div class="section-break"></div>
 </section>
@@ -2113,16 +2101,16 @@ if __name__ == &quot;__main__&quot;:
 <div class="section-break"></div>
 <h3 id="1-安装插件">1. 安装插件</h3>
 <p>打开 Codex 桌面 App 的左侧边栏，找到&quot;<strong>插件和技能</strong>&quot;。进入后搜索 <strong>HyperFrames</strong> 即可找到该插件，直接安装即可。</p>
-<figure class="article-image"><img src="./assets/codexguide/hyperframes-animation-01-hyperframes-plugin-search.png" alt="hyperframes-plugin-search" loading="lazy"/><figcaption>hyperframes-plugin-search</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/hyperframes-animation-01-hyperframes-plugin-search.png" alt="hyperframes-plugin-search" loading="eager"/><figcaption>hyperframes-plugin-search</figcaption></figure>
 <blockquote>HyperFrames 也有对应的 <strong>Skill</strong>（技能），两者都可以使用。大家可以选择合适的或自己喜欢的方式进行安装。</blockquote>
 <div class="section-break"></div>
 <h3 id="2-如何使用-2">2. 如何使用</h3>
 <p>我直接给了它一本书的内容，然后让它根据这本书的内容去制作视频，它就会调用这个技能去完成对应的任务。</p>
-<figure class="article-image"><img src="./assets/codexguide/hyperframes-animation-02-hyperframes-book-content-prompt.png" alt="hyperframes-book-content-prompt" loading="lazy"/><figcaption>hyperframes-book-content-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/hyperframes-animation-02-hyperframes-book-content-prompt.png" alt="hyperframes-book-content-prompt" loading="eager"/><figcaption>hyperframes-book-content-prompt</figcaption></figure>
 <p>任务完成之后，它会告诉我们<strong>返回本地文件的地址</strong>，点击即可跳转查看具体内容。</p>
-<figure class="article-image"><img src="./assets/codexguide/hyperframes-animation-03-hyperframes-local-output-summary.png" alt="hyperframes-local-output-summary" loading="lazy"/><figcaption>hyperframes-local-output-summary</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/hyperframes-animation-03-hyperframes-local-output-summary.png" alt="hyperframes-local-output-summary" loading="eager"/><figcaption>hyperframes-local-output-summary</figcaption></figure>
 <p>如果你仔细观察，会发现实际上它是<strong>生成了几张 JPEG 格式的图片，然后将图片组装成视频</strong>。大概是这样一个过程。</p>
-<figure class="article-image"><img src="./assets/codexguide/hyperframes-animation-04-hyperframes-generated-frame-files.png" alt="hyperframes-generated-frame-files" loading="lazy"/><figcaption>hyperframes-generated-frame-files</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/hyperframes-animation-04-hyperframes-generated-frame-files.png" alt="hyperframes-generated-frame-files" loading="eager"/><figcaption>hyperframes-generated-frame-files</figcaption></figure>
 <p>第一次生成的视频可能并没有想象的那么完美，这时需要继续增加需求。</p>
 <p>比如针对以下方面进行多次迭代，效果可能就会更好：</p>
 <ol>
@@ -2131,7 +2119,7 @@ if __name__ == &quot;__main__&quot;:
 <li>每一页的文案、配色、背景等具体细节</li>
 </ol>
 <p>这需要我们的耐心和一步一步的尝试。</p>
-<figure class="article-image"><img src="./assets/codexguide/hyperframes-animation-05-hyperframes-refinement-prompt.png" alt="hyperframes-refinement-prompt" loading="lazy"/><figcaption>hyperframes-refinement-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/hyperframes-animation-05-hyperframes-refinement-prompt.png" alt="hyperframes-refinement-prompt" loading="eager"/><figcaption>hyperframes-refinement-prompt</figcaption></figure>
 <blockquote><strong>技巧：</strong> 如果你有目标视频，可以直接把成品的视频效果发给它，让它模仿去制作，做出来的效果可能会更加符合要求。</blockquote>
 <p>如果你对于 Remotion 制作视频的方式感兴趣，那么我推荐王老师在 GitHub 上分享的开源项目 Remotion的skill，你可以进行参考学习。</p>
 <p>地址：https://github.com/wshuyi/remotion-video-skill</p>
@@ -2148,21 +2136,21 @@ if __name__ == &quot;__main__&quot;:
 <div class="section-break"></div>
 <h3 id="1-在-obsidian-里安装-terminal-插件">1. 在 Obsidian 里安装 Terminal 插件</h3>
 <p>首先安装 <strong>Terminal</strong> 插件，如图所示：</p>
-<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-01-obsidian-terminal-plugin-search.png" alt="obsidian-terminal-plugin-search" loading="lazy"/><figcaption>obsidian-terminal-plugin-search</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-01-obsidian-terminal-plugin-search.png" alt="obsidian-terminal-plugin-search" loading="eager"/><figcaption>obsidian-terminal-plugin-search</figcaption></figure>
 <p>安装完成后需要进行配置，否则无法正常使用：</p>
-<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-02-obsidian-terminal-plugin-settings.png" alt="obsidian-terminal-plugin-settings" loading="lazy"/><figcaption>obsidian-terminal-plugin-settings</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-02-obsidian-terminal-plugin-settings.png" alt="obsidian-terminal-plugin-settings" loading="eager"/><figcaption>obsidian-terminal-plugin-settings</figcaption></figure>
 <p>在配置中选择想要的终端输入方式：</p>
-<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-03-obsidian-terminal-profiles-config.png" alt="obsidian-terminal-profiles-config" loading="lazy"/><figcaption>obsidian-terminal-profiles-config</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-03-obsidian-terminal-profiles-config.png" alt="obsidian-terminal-profiles-config" loading="eager"/><figcaption>obsidian-terminal-profiles-config</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="2-打开终端">2. 打开终端</h3>
 <p>按 <code>Cmd+P</code> 调出命令面板，输入&quot;终端&quot;，选择<strong>整合式</strong>：</p>
-<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-04-obsidian-command-palette-integrated-terminal.png" alt="obsidian-command-palette-integrated-terminal" loading="lazy"/><figcaption>obsidian-command-palette-integrated-terminal</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-04-obsidian-command-palette-integrated-terminal.png" alt="obsidian-command-palette-integrated-terminal" loading="eager"/><figcaption>obsidian-command-palette-integrated-terminal</figcaption></figure>
 <p>此时页面下方会出现一个命令行界面：</p>
-<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-05-obsidian-embedded-terminal-open.png" alt="obsidian-embedded-terminal-open" loading="lazy"/><figcaption>obsidian-embedded-terminal-open</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-05-obsidian-embedded-terminal-open.png" alt="obsidian-embedded-terminal-open" loading="eager"/><figcaption>obsidian-embedded-terminal-open</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="3-登录-codex">3. 登录 Codex</h3>
 <p>如果之前已经登录过 Codex，直接在这个终端里输入 <code>codex</code> 即可使用。如果没有登录过，参照本教程第二部分（CLI 使用 Codex）完成配置：</p>
-<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-06-obsidian-codex-terminal-start.png" alt="obsidian-codex-terminal-start" loading="lazy"/><figcaption>obsidian-codex-terminal-start</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-06-obsidian-codex-terminal-start.png" alt="obsidian-codex-terminal-start" loading="eager"/><figcaption>obsidian-codex-terminal-start</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="4-开始使用">4. 开始使用</h3>
 <p>登录成功后，Codex 已经可以完整读取你本地 Obsidian 仓库里的所有内容，并执行以下操作：</p>
@@ -2170,16 +2158,16 @@ if __name__ == &quot;__main__&quot;:
 <li><strong>写入文档</strong> — 直接在仓库中新建或修改 Markdown 文件</li>
 <li><strong>生成配图</strong> — 指定文章内容，让 Codex 根据正文自动生成配图并插入对应位置</li>
 </ol>
-<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-07-obsidian-codex-image-generation-prompt.png" alt="obsidian-codex-image-generation-prompt" loading="lazy"/><figcaption>obsidian-codex-image-generation-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-07-obsidian-codex-image-generation-prompt.png" alt="obsidian-codex-image-generation-prompt" loading="eager"/><figcaption>obsidian-codex-image-generation-prompt</figcaption></figure>
 <p>成功出图：</p>
-<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-08-obsidian-codex-image-generation-result-url.png" alt="obsidian-codex-image-generation-result-url" loading="lazy"/><figcaption>obsidian-codex-image-generation-result-url</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-08-obsidian-codex-image-generation-result-url.png" alt="obsidian-codex-image-generation-result-url" loading="eager"/><figcaption>obsidian-codex-image-generation-result-url</figcaption></figure>
 <p>生成效果如图所示：</p>
-<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-09-obsidian-codex-llm-wiki-concept-image.png" alt="obsidian-codex-llm-wiki-concept-image" loading="lazy"/><figcaption>obsidian-codex-llm-wiki-concept-image</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-09-obsidian-codex-llm-wiki-concept-image.png" alt="obsidian-codex-llm-wiki-concept-image" loading="eager"/><figcaption>obsidian-codex-llm-wiki-concept-image</figcaption></figure>
 <p><strong>监听图床自动上传</strong> — 如果你使用对象存储（如 PicGo），可以告诉 Codex 监听图片存储事件，识别后自动上传</p>
 <p>如果他没有上传的话，你就可以告诉他，让他去你的本地查找你有哪些图床。他会搜索所有的图床类别，如果你想让他快点找到的话，就直接告诉他你用的是什么图床、用的是什么上传工具，这样的话他就会快速定位。</p>
-<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-10-obsidian-codex-image-upload-tools-search.png" alt="obsidian-codex-image-upload-tools-search" loading="lazy"/><figcaption>obsidian-codex-image-upload-tools-search</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-10-obsidian-codex-image-upload-tools-search.png" alt="obsidian-codex-image-upload-tools-search" loading="eager"/><figcaption>obsidian-codex-image-upload-tools-search</figcaption></figure>
 <p>然后它会自己自动完成这个任务，最后返回给我们一个对应图床的链接。</p>
-<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-11-obsidian-codex-image-upload-link-result.png" alt="obsidian-codex-image-upload-link-result" loading="lazy"/><figcaption>obsidian-codex-image-upload-link-result</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/obsidian-codex-11-obsidian-codex-image-upload-link-result.png" alt="obsidian-codex-image-upload-link-result" loading="eager"/><figcaption>obsidian-codex-image-upload-link-result</figcaption></figure>
 <p>大家可以尽情尝试，把 Obsidian 变成真正由 AI 驱动的创作工作台。</p>
 <div class="section-break"></div>
 <div class="section-break"></div>
@@ -2192,31 +2180,31 @@ if __name__ == &quot;__main__&quot;:
 <h3 id="1-安装飞书-cli">1. 安装飞书 CLI</h3>
 <p>把飞书 CLI 的 GitHub README 链接丢给 Codex，让它帮你完成所有安装：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>帮我装一下所有的东西：https://github.com/larksuite/cli/blob/main/README.zh.md</code></pre></div>
-<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-01-feishu-cli-install-result.png" alt="feishu-cli-install-result" loading="lazy"/><figcaption>feishu-cli-install-result</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-01-feishu-cli-install-result.png" alt="feishu-cli-install-result" loading="eager"/><figcaption>feishu-cli-install-result</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="2-提供飞书应用凭证">2. 提供飞书应用凭证</h3>
 <p>使用飞书 CLI 需要提供<strong>飞书开放平台应用凭证</strong>（App ID 和 App Secret）。</p>
 <p>不用担心不知道怎么获取——直接问 Codex，它会告诉你飞书开放平台的地址，并引导你在浏览器里创建应用。</p>
-<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-02-feishu-cli-create-app-prompt.png" alt="feishu-cli-create-app-prompt" loading="lazy"/><figcaption>feishu-cli-create-app-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-02-feishu-cli-create-app-prompt.png" alt="feishu-cli-create-app-prompt" loading="eager"/><figcaption>feishu-cli-create-app-prompt</figcaption></figure>
 <p>打开链接，创建应用：</p>
-<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-03-feishu-cli-create-custom-app-modal.png" alt="feishu-cli-create-custom-app-modal" loading="lazy"/><figcaption>feishu-cli-create-custom-app-modal</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-03-feishu-cli-create-custom-app-modal.png" alt="feishu-cli-create-custom-app-modal" loading="eager"/><figcaption>feishu-cli-create-custom-app-modal</figcaption></figure>
 <p>按照它的指引创建应用之后，把 App ID 和 App Secret 发给它，Codex 会自动完成飞书应用配置和权限申请。</p>
-<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-04-feishu-cli-doc-export-tools-result.png" alt="feishu-cli-doc-export-tools-result" loading="lazy"/><figcaption>feishu-cli-doc-export-tools-result</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-04-feishu-cli-doc-export-tools-result.png" alt="feishu-cli-doc-export-tools-result" loading="eager"/><figcaption>feishu-cli-doc-export-tools-result</figcaption></figure>
 <blockquote>过程中会涉及<strong>手动授权</strong>操作。Codex 会提供跳转链接，点击在浏览器里放行对应权限即可，这样它才能读取和操作你的飞书数据。</blockquote>
-<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-05-feishu-cli-oauth-login-link.png" alt="feishu-cli-oauth-login-link" loading="lazy"/><figcaption>feishu-cli-oauth-login-link</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-05-feishu-cli-oauth-login-link.png" alt="feishu-cli-oauth-login-link" loading="eager"/><figcaption>feishu-cli-oauth-login-link</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="3-开始使用">3. 开始使用</h3>
 <p>配置完成后，Codex 就具备了非常丰富的飞书操作能力。让它列举一下可以访问的内容：</p>
-<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-06-feishu-cli-document-list-result.png" alt="feishu-cli-document-list-result" loading="lazy"/><figcaption>feishu-cli-document-list-result</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-06-feishu-cli-document-list-result.png" alt="feishu-cli-document-list-result" loading="eager"/><figcaption>feishu-cli-document-list-result</figcaption></figure>
 <p>Codex 还会贴心地告诉你第一次应该怎么用，连提示词都帮你准备好了。</p>
-<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-07-feishu-cli-command-examples.png" alt="feishu-cli-command-examples" loading="lazy"/><figcaption>feishu-cli-command-examples</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-07-feishu-cli-command-examples.png" alt="feishu-cli-command-examples" loading="eager"/><figcaption>feishu-cli-command-examples</figcaption></figure>
 <p><strong>实战演示：</strong> 我让它读取飞书云盘里一个关于&quot;知识管理&quot;的文件夹（共 14 篇文档），读取完成后直接调用 GPT 最新的生图模型，生成一张中文信息图。</p>
 <p>从处理过程中可以看到，它确实能够完整读取云盘内容，访问是正常的。</p>
 <p>执行到生图步骤时，它要求我提供 OpenAI 的 API Key：</p>
-<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-08-feishu-cli-image-generation-prompt.png" alt="feishu-cli-image-generation-prompt" loading="lazy"/><figcaption>feishu-cli-image-generation-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-08-feishu-cli-image-generation-prompt.png" alt="feishu-cli-image-generation-prompt" loading="eager"/><figcaption>feishu-cli-image-generation-prompt</figcaption></figure>
 <p>这其实是不合理的。<strong>订阅 Codex 和 ChatGPT Plus 之后，在 Codex 里可以直接调用 GPT 生图模型，完全不需要单独提供 API Key。</strong> 这时候直接反驳它就好了。</p>
 <p>反驳之后，它就会正确调用 <strong>GPT-Image-2</strong> 生成信息图，无需任何额外的 API Key。</p>
-<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-09-feishu-cli-generated-image-preview.png" alt="feishu-cli-generated-image-preview" loading="lazy"/><figcaption>feishu-cli-generated-image-preview</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/feishu-cli-codex-09-feishu-cli-generated-image-preview.png" alt="feishu-cli-generated-image-preview" loading="eager"/><figcaption>feishu-cli-generated-image-preview</figcaption></figure>
 <div class="section-break"></div>
 <div class="section-break"></div>
 </section>
@@ -2234,7 +2222,7 @@ if __name__ == &quot;__main__&quot;:
 创建拥有完整规则的系统。落地过程严格参考以下 GitHub 仓库的内容：
 https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f</code></pre></div>
 <p>Codex 会根据内容帮你创建一套符合 LLM Wiki 理念的本地知识库结构：</p>
-<figure class="article-image"><img src="./assets/codexguide/llm-wiki-codex-02-llm-wiki-codex-create-vault-command.png" alt="llm-wiki-codex-create-vault-command" loading="lazy"/><figcaption>llm-wiki-codex-create-vault-command</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/llm-wiki-codex-02-llm-wiki-codex-create-vault-command.png" alt="llm-wiki-codex-create-vault-command" loading="eager"/><figcaption>llm-wiki-codex-create-vault-command</figcaption></figure>
 <p>创建完成后，仓库里会生成以下文件和文件夹：</p>
 <ul>
 <li><code>concept/</code></li>
@@ -2249,15 +2237,15 @@ https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f</code></pre></
 <h3 id="3-如何使用">3. 如何使用</h3>
 <h4 id="安装-obsidian-web-clipper">安装 Obsidian Web Clipper</h4>
 <p>首先安装浏览器插件 <strong>Obsidian Web Clipper</strong>。它的作用是将浏览器中的文章、视频、网页内容自动提取并下载到本地仓库，方便让 Codex 进行处理和拆分。</p>
-<figure class="article-image"><img src="./assets/codexguide/llm-wiki-codex-03-llm-wiki-obsidian-web-clipper-search.png" alt="llm-wiki-obsidian-web-clipper-search" loading="lazy"/><figcaption>llm-wiki-obsidian-web-clipper-search</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/llm-wiki-codex-03-llm-wiki-obsidian-web-clipper-search.png" alt="llm-wiki-obsidian-web-clipper-search" loading="eager"/><figcaption>llm-wiki-obsidian-web-clipper-search</figcaption></figure>
 <h4 id="抓取文章到-raw-文件夹">抓取文章到 raw 文件夹</h4>
 <p>找一篇想纳入知识库的文章，用插件将其保存到仓库里的 <code>raw/</code> 文件夹（在 Karpathy 的理念中，<code>raw/</code> 专门存放原始素材）。点击&quot;添加到 Obsidian&quot;即可。</p>
-<figure class="article-image"><img src="./assets/codexguide/llm-wiki-codex-04-llm-wiki-clip-article-to-raw.png" alt="llm-wiki-clip-article-to-raw" loading="lazy"/><figcaption>llm-wiki-clip-article-to-raw</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/llm-wiki-codex-04-llm-wiki-clip-article-to-raw.png" alt="llm-wiki-clip-article-to-raw" loading="eager"/><figcaption>llm-wiki-clip-article-to-raw</figcaption></figure>
 <h4 id="让-codex-完成入库">让 Codex 完成入库</h4>
 <p>打开 Obsidian，让 Codex 读取这篇文章：</p>
-<figure class="article-image"><img src="./assets/codexguide/llm-wiki-codex-05-llm-wiki-codex-import-article-prompt.png" alt="llm-wiki-codex-import-article-prompt" loading="lazy"/><figcaption>llm-wiki-codex-import-article-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/llm-wiki-codex-05-llm-wiki-codex-import-article-prompt.png" alt="llm-wiki-codex-import-article-prompt" loading="eager"/><figcaption>llm-wiki-codex-import-article-prompt</figcaption></figure>
 <p>Codex 会自动阅读内容，按照 LLM Wiki 的理念进行拆分，新增摘要、实体、关联引用等页面。完成后，它会告诉你具体新增了哪些内容，这篇文章就正式入库了。</p>
-<figure class="article-image"><img src="./assets/codexguide/llm-wiki-codex-06-llm-wiki-codex-generated-pages.png" alt="llm-wiki-codex-generated-pages" loading="lazy"/><figcaption>llm-wiki-codex-generated-pages</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/llm-wiki-codex-06-llm-wiki-codex-generated-pages.png" alt="llm-wiki-codex-generated-pages" loading="eager"/><figcaption>llm-wiki-codex-generated-pages</figcaption></figure>
 <h4 id="持续迭代">持续迭代</h4>
 <p>后续想研究同一主题的更多内容，重复以下流程即可：</p>
 <ol>
@@ -2274,20 +2262,20 @@ https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f</code></pre></
 <h3 id="1-安装-4">1. 安装</h3>
 <p>在 Codex 桌面 App 的插件市场搜索 <strong>Figma</strong>，点击安装。</p>
 <p>安装后会跳转到浏览器页面完成授权（流程和 Notion MCP 类似，按提示操作即可）。</p>
-<figure class="article-image"><img src="./assets/codexguide/figma-mcp-codex-01-figma-mcp-plugin-permissions.png" alt="figma-mcp-plugin-permissions" loading="lazy"/><figcaption>figma-mcp-plugin-permissions</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/figma-mcp-codex-01-figma-mcp-plugin-permissions.png" alt="figma-mcp-plugin-permissions" loading="eager"/><figcaption>figma-mcp-plugin-permissions</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="2-如何使用-3">2. 如何使用</h3>
 <p>新建对话，用 <code>@</code> 符号调用 Figma MCP，然后直接描述你的需求。</p>
 <p><strong>示例一：生成流程图</strong></p>
 <p>让它生成一个包含基本操作步骤的用户登录流程图：</p>
-<figure class="article-image"><img src="./assets/codexguide/figma-mcp-codex-02-figma-mcp-generate-flowchart-prompt.png" alt="figma-mcp-generate-flowchart-prompt" loading="lazy"/><figcaption>figma-mcp-generate-flowchart-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/figma-mcp-codex-02-figma-mcp-generate-flowchart-prompt.png" alt="figma-mcp-generate-flowchart-prompt" loading="eager"/><figcaption>figma-mcp-generate-flowchart-prompt</figcaption></figure>
 <p>点击返回的链接，在浏览器里查看生成的登录注册流程图效果：</p>
-<figure class="article-image"><img src="./assets/codexguide/figma-mcp-codex-03-figma-mcp-user-login-flowchart.png" alt="figma-mcp-user-login-flowchart" loading="lazy"/><figcaption>figma-mcp-user-login-flowchart</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/figma-mcp-codex-03-figma-mcp-user-login-flowchart.png" alt="figma-mcp-user-login-flowchart" loading="eager"/><figcaption>figma-mcp-user-login-flowchart</figcaption></figure>
 <p><strong>示例二：生成高保真 UI 设计图</strong></p>
 <p>如果你觉得流程图太偏技术，可以让它设计产品功能架构图，或者生成海报式的高保真 UI。直接发提示词即可：</p>
-<figure class="article-image"><img src="./assets/codexguide/figma-mcp-codex-04-figma-mcp-high-fidelity-ui-prompt.png" alt="figma-mcp-high-fidelity-ui-prompt" loading="lazy"/><figcaption>figma-mcp-high-fidelity-ui-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/figma-mcp-codex-04-figma-mcp-high-fidelity-ui-prompt.png" alt="figma-mcp-high-fidelity-ui-prompt" loading="eager"/><figcaption>figma-mcp-high-fidelity-ui-prompt</figcaption></figure>
 <p>点击链接查看效果，整体呈现非常不错：</p>
-<figure class="article-image"><img src="./assets/codexguide/figma-mcp-codex-05-figma-mcp-ai-product-ui-design.png" alt="figma-mcp-ai-product-ui-design" loading="lazy"/><figcaption>figma-mcp-ai-product-ui-design</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/figma-mcp-codex-05-figma-mcp-ai-product-ui-design.png" alt="figma-mcp-ai-product-ui-design" loading="eager"/><figcaption>figma-mcp-ai-product-ui-design</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="总结">总结</h3>
 <p>Figma MCP 特别适合有设计需求的朋友。在 Codex 里装上这个插件，就可以用对话的方式完成以前需要专业设计技能才能做的事情。</p>
@@ -2305,7 +2293,7 @@ https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f</code></pre></
 <div class="section-break"></div>
 <h3 id="1-安装-5">1. 安装</h3>
 <p>打开 Codex 插件市场，搜索 <strong>Notion</strong>，点击安装。</p>
-<figure class="article-image"><img src="./assets/codexguide/notion-mcp-codex-01-notion-mcp-plugin-search.png" alt="notion-mcp-plugin-search" loading="lazy"/><figcaption>notion-mcp-plugin-search</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/notion-mcp-codex-01-notion-mcp-plugin-search.png" alt="notion-mcp-plugin-search" loading="eager"/><figcaption>notion-mcp-plugin-search</figcaption></figure>
 <p>Notion 的权限涉及较多，安装时会跳转到浏览器，需要登录你的 Notion 账号并完成授权，让 Codex 可以通过 MCP 访问你的工作空间：</p>
 <ol>
 <li>按照提示完成手动授权</li>
@@ -2313,21 +2301,21 @@ https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f</code></pre></
 <li>Codex 自动完成配置</li>
 </ol>
 <p>设置完成后，直接用 <code>@</code> 调用 Notion 插件即可。</p>
-<figure class="article-image"><img src="./assets/codexguide/notion-mcp-codex-02-notion-mcp-authorization.png" alt="notion-mcp-authorization" loading="lazy"/><figcaption>notion-mcp-authorization</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/notion-mcp-codex-02-notion-mcp-authorization.png" alt="notion-mcp-authorization" loading="eager"/><figcaption>notion-mcp-authorization</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="2-如何使用-4">2. 如何使用</h3>
 <h4 id="读取工作空间内容">读取工作空间内容</h4>
 <p>先让 Codex 调用 Notion MCP，验证它能否正常读取你的工作空间内容。成功返回说明连接没有问题：</p>
-<figure class="article-image"><img src="./assets/codexguide/notion-mcp-codex-03-notion-mcp-workspace-read-result.png" alt="notion-mcp-workspace-read-result" loading="lazy"/><figcaption>notion-mcp-workspace-read-result</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/notion-mcp-codex-03-notion-mcp-workspace-read-result.png" alt="notion-mcp-workspace-read-result" loading="eager"/><figcaption>notion-mcp-workspace-read-result</figcaption></figure>
 <h4 id="读取其他工作空间">读取其他工作空间</h4>
 <p>如果你加入了其他人的工作空间，只要对方提供了对应的 API 文档，把文档给 Codex，让它完成连接操作即可。</p>
 <p>下图是让 Codex 查看我加入的一个工作空间<strong>昨天更新的内容</strong>，在授权范围内，读取完全正常：</p>
-<figure class="article-image"><img src="./assets/codexguide/notion-mcp-codex-04-notion-mcp-updated-content-query-result.png" alt="notion-mcp-updated-content-query-result" loading="lazy"/><figcaption>notion-mcp-updated-content-query-result</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/notion-mcp-codex-04-notion-mcp-updated-content-query-result.png" alt="notion-mcp-updated-content-query-result" loading="eager"/><figcaption>notion-mcp-updated-content-query-result</figcaption></figure>
 <h4 id="总结与写入">总结与写入</h4>
 <p>读取到内容之后，可以让 Codex 直接进行总结。如果对话中产生了不错的想法，也可以让它<strong>直接写入到你的 Notion 工作空间</strong>，完成后会返回一个写入成功的链接：</p>
-<figure class="article-image"><img src="./assets/codexguide/notion-mcp-codex-05-notion-mcp-write-summary-result.png" alt="notion-mcp-write-summary-result" loading="lazy"/><figcaption>notion-mcp-write-summary-result</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/notion-mcp-codex-05-notion-mcp-write-summary-result.png" alt="notion-mcp-write-summary-result" loading="eager"/><figcaption>notion-mcp-write-summary-result</figcaption></figure>
 <p>点击链接跳转到 Notion 查看写入结果，内容完全正常：</p>
-<figure class="article-image"><img src="./assets/codexguide/notion-mcp-codex-06-notion-mcp-created-summary-page.png" alt="notion-mcp-created-summary-page" loading="lazy"/><figcaption>notion-mcp-created-summary-page</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/notion-mcp-codex-06-notion-mcp-created-summary-page.png" alt="notion-mcp-created-summary-page" loading="eager"/><figcaption>notion-mcp-created-summary-page</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="总结-2">总结</h3>
 <p>Notion MCP 让 Codex 真正成为你知识管理的助手——不只是聊天，而是可以<strong>读取、理解、写入</strong>你的工作空间。对于重度 Notion 用户来说，这是一个值得上手的组合。</p>
@@ -2349,14 +2337,14 @@ https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f</code></pre></
 <p>先去 DKFile 注册账号（有免费额度，普通用户完全够用）：</p>
 <blockquote>注册地址：<a href="https://dkfile.net/register?code=ZHUZHAOYU" target="_blank" rel="noreferrer">https://dkfile.net/register?code=ZHUZHAOYU</a></blockquote>
 <p>注册完成后，用 AI 设计好 HTML 页面，点击右下角的&quot;<strong>上传文件</strong>&quot;：</p>
-<figure class="article-image"><img src="./assets/codexguide/dkfile-deploy-codex-01-dkfile-upload-home.png" alt="dkfile-upload-home" loading="lazy"/><figcaption>dkfile-upload-home</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/dkfile-deploy-codex-01-dkfile-upload-home.png" alt="dkfile-upload-home" loading="eager"/><figcaption>dkfile-upload-home</figcaption></figure>
 <p>操作流程：</p>
 <ol>
 <li>点击&quot;上传文件&quot;，选择本地的 HTML 文件</li>
 <li>点击&quot;上传&quot;，系统自动完成托管</li>
 <li>上传完成后<strong>直接获得公网访问链接</strong>，即可分享给任何人</li>
 </ol>
-<figure class="article-image"><img src="./assets/codexguide/dkfile-deploy-codex-02-dkfile-upload-dropzone.png" alt="dkfile-upload-dropzone" loading="lazy"/><figcaption>dkfile-upload-dropzone</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/dkfile-deploy-codex-02-dkfile-upload-dropzone.png" alt="dkfile-upload-dropzone" loading="eager"/><figcaption>dkfile-upload-dropzone</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="2-codex-dkfile-api-全自动化">2. Codex + DKFile API 全自动化</h3>
 <p>手动上传还是要打开网站、找文件、点按钮。其实这个流程可以完全交给 Codex 自动完成。</p>
@@ -2369,13 +2357,13 @@ https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f</code></pre></
 <p><strong>整个过程你不需要打开浏览器，不需要手动上传，全部自动化。</strong></p>
 <h4 id="具体步骤">具体步骤</h4>
 <p>首先让 Codex 阅读 API 文档，它会告诉你需要准备什么（主要是你的 <strong>API Key</strong>）：</p>
-<figure class="article-image"><img src="./assets/codexguide/dkfile-deploy-codex-03-dkfile-help-tools-section.png" alt="dkfile-help-tools-section" loading="lazy"/><figcaption>dkfile-help-tools-section</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/dkfile-deploy-codex-03-dkfile-help-tools-section.png" alt="dkfile-help-tools-section" loading="eager"/><figcaption>dkfile-help-tools-section</figcaption></figure>
 <p>点击 DKFile 后台的&quot;API 对接文档&quot;，按照说明创建自己的 API Key（不懂直接问 Codex，它会引导你）。</p>
 <p>然后把你的 API Key 和设计需求一起发给 Codex，比如：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>帮我设计一个 Obsidian 新手使用教程的 HTML 网页，
 设计完成后使用 DKFile API（Key: xxx）自动上传并返回公网链接。</code></pre></div>
 <p>Codex 会自动完成设计、调用 API 上传，最后告诉你文件位置和<strong>可直接访问的公网链接</strong>：</p>
-<figure class="article-image"><img src="./assets/codexguide/dkfile-deploy-codex-04-dkfile-codex-task-result.png" alt="dkfile-codex-task-result" loading="lazy"/><figcaption>dkfile-codex-task-result</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/dkfile-deploy-codex-04-dkfile-codex-task-result.png" alt="dkfile-codex-task-result" loading="eager"/><figcaption>dkfile-codex-task-result</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="总结-3">总结</h3>
 <div class="table-wrap"><table><tr><th>方式</th><th>适合人群</th><th>操作难度</th></tr>
@@ -2419,7 +2407,7 @@ https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f</code></pre></
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>python3 container_health.py</code></pre></div>
 <p>💥 报错：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>KeyError: 'status'</code></pre></div>
-<figure class="article-image"><img src="./assets/codexguide/remote-bug-fix-01-remote-bug-fix-keyerror-traceback.png" alt="remote-bug-fix-keyerror-traceback" loading="lazy"/><figcaption>remote-bug-fix-keyerror-traceback</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/remote-bug-fix-01-remote-bug-fix-keyerror-traceback.png" alt="remote-bug-fix-keyerror-traceback" loading="eager"/><figcaption>remote-bug-fix-keyerror-traceback</figcaption></figure>
 <p>跑测试也一样挂：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>pytest -q</code></pre></div>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>FAILED - KeyError: 'status'</code></pre></div>
@@ -2438,7 +2426,7 @@ codex app-server --listen ws://0.0.0.0:9001</code></pre></div>
   listening on: ws://0.0.0.0:9001
   readyz: http://0.0.0.0:9001/readyz
   healthz: http://0.0.0.0:9001/healthz</code></pre></div>
-<figure class="article-image"><img src="./assets/codexguide/remote-bug-fix-02-remote-bug-fix-package-install-error.png" alt="remote-bug-fix-package-install-error" loading="lazy"/><figcaption>remote-bug-fix-package-install-error</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/remote-bug-fix-02-remote-bug-fix-package-install-error.png" alt="remote-bug-fix-package-install-error" loading="eager"/><figcaption>remote-bug-fix-package-install-error</figcaption></figure>
 <blockquote>⚠️ 注意：不要加 <code>--ws-auth</code> 参数。通过 SSH 隧道连接时，安全性由 SSH 本身保证，不需要额外的 WebSocket 认证。</blockquote>
 <h4 id="第-2-步-本地建立-ssh-端口转发">第 2 步：本地建立 SSH 端口转发</h4>
 <p>在 Mac 上<strong>新开一个终端窗口</strong>，建立 SSH 隧道把远程的 9001 端口映射到本地：</p>
@@ -2447,7 +2435,7 @@ codex app-server --listen ws://0.0.0.0:9001</code></pre></div>
 <p>可以验证一下隧道是否通畅：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>curl -i http://127.0.0.1:9001/healthz</code></pre></div>
 <p>返回 <code>HTTP/1.1 200 OK</code> 就说明隧道没问题。</p>
-<figure class="article-image"><img src="./assets/codexguide/remote-bug-fix-03-remote-bug-fix-healthcheck-curl-success.png" alt="remote-bug-fix-healthcheck-curl-success" loading="lazy"/><figcaption>remote-bug-fix-healthcheck-curl-success</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/remote-bug-fix-03-remote-bug-fix-healthcheck-curl-success.png" alt="remote-bug-fix-healthcheck-curl-success" loading="eager"/><figcaption>remote-bug-fix-healthcheck-curl-success</figcaption></figure>
 <h4 id="第-3-步-本地登录-codex-仅首次需要">第 3 步：本地登录 Codex（仅首次需要）</h4>
 <p>如果你从来没在本地登录过 Codex CLI，需要先完成一次登录：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>codex auth login</code></pre></div>
@@ -2461,12 +2449,12 @@ codex app-server --listen ws://0.0.0.0:9001</code></pre></div>
 
 model:     gpt-5.5   /model to change
 directory: /workspace/docker-health-demo</code></pre></div>
-<figure class="article-image"><img src="./assets/codexguide/remote-bug-fix-04-remote-bug-fix-codex-login-check.png" alt="remote-bug-fix-codex-login-check" loading="lazy"/><figcaption>remote-bug-fix-codex-login-check</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/remote-bug-fix-04-remote-bug-fix-codex-login-check.png" alt="remote-bug-fix-codex-login-check" loading="eager"/><figcaption>remote-bug-fix-codex-login-check</figcaption></figure>
 <p>到这里，远程连接就成功了。你本地的 Codex 已经&quot;站在&quot;远程服务器的项目目录里了。</p>
 <h4 id="第-5-步-让-codex-修复-bug">第 5 步：让 Codex 修复 Bug</h4>
 <p>在 Codex 的输入框里输入提示词：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>find and fix the bug in container_health.py, then run pytest to verify</code></pre></div>
-<figure class="article-image"><img src="./assets/codexguide/remote-bug-fix-05-remote-bug-fix-remote-session-start.png" alt="remote-bug-fix-remote-session-start" loading="lazy"/><figcaption>remote-bug-fix-remote-session-start</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/remote-bug-fix-05-remote-bug-fix-remote-session-start.png" alt="remote-bug-fix-remote-session-start" loading="eager"/><figcaption>remote-bug-fix-remote-session-start</figcaption></figure>
 <p>Codex 会自动完成以下步骤：</p>
 <ol>
 <li>读取 <code>container_health.py</code> 和 <code>containers.json</code></li>
@@ -2483,7 +2471,7 @@ exited=2
 unhealthy=redis-cache,old-api</code></pre></div>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>pytest -q</code></pre></div>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>1 passed in 0.00s</code></pre></div>
-<figure class="article-image"><img src="./assets/codexguide/remote-bug-fix-06-remote-bug-fix-tests-pass.png" alt="remote-bug-fix-tests-pass" loading="lazy"/><figcaption>remote-bug-fix-tests-pass</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/remote-bug-fix-06-remote-bug-fix-tests-pass.png" alt="remote-bug-fix-tests-pass" loading="eager"/><figcaption>remote-bug-fix-tests-pass</figcaption></figure>
 <p>Done。一个远程 Bug 修复的完整闭环。</p>
 <div class="section-break"></div>
 <h3 id="五-总结">五、总结</h3>
@@ -2529,9 +2517,9 @@ unhealthy=redis-cache,old-api</code></pre></div>
 <li>按引导完成浏览器侧的插件安装或连接配置。</li>
 <li>回到任务中，明确描述目标网页、搜索词和预期输出。</li>
 </ol>
-<figure class="article-image"><img src="./assets/codexguide/chrome-browser-plugin-01-chrome-codex-extension-page-summary-prompt.png" alt="chrome-codex-extension-page-summary-prompt" loading="lazy"/><figcaption>chrome-codex-extension-page-summary-prompt</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/chrome-browser-plugin-01-chrome-codex-extension-page-summary-prompt.png" alt="chrome-codex-extension-page-summary-prompt" loading="eager"/><figcaption>chrome-codex-extension-page-summary-prompt</figcaption></figure>
 <p>第一次点击后会跳转到浏览器插件安装页，点击添加扩展即可</p>
-<figure class="article-image"><img src="./assets/codexguide/chrome-browser-plugin-02-chrome-web-store-codex-extension.png" alt="chrome-web-store-codex-extension" loading="lazy"/><figcaption>chrome-web-store-codex-extension</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/chrome-browser-plugin-02-chrome-web-store-codex-extension.png" alt="chrome-web-store-codex-extension" loading="eager"/><figcaption>chrome-web-store-codex-extension</figcaption></figure>
 <h3 id="任务示例">任务示例</h3>
 <p>你可以像下面这样给出一个明确任务：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请使用浏览器能力打开 Bilibili，搜索“Codex 入门教程”，找一个适合新手入门的视频，并把标题和链接返回给我。</code></pre></div>
@@ -2542,7 +2530,7 @@ unhealthy=redis-cache,old-api</code></pre></div>
 <li>进入相关结果页。</li>
 <li>把它认为最合适的结果链接返回给你。</li>
 </ol>
-<figure class="article-image"><img src="./assets/codexguide/chrome-browser-plugin-03-chrome-codex-extension-summary-result.png" alt="chrome-codex-extension-summary-result" loading="lazy"/><figcaption>chrome-codex-extension-summary-result</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/chrome-browser-plugin-03-chrome-codex-extension-summary-result.png" alt="chrome-codex-extension-summary-result" loading="eager"/><figcaption>chrome-codex-extension-summary-result</figcaption></figure>
 <h3 id="你要重点检查什么-2">你要重点检查什么</h3>
 <ul>
 <li>它打开的网站是不是你指定的那个站点。</li>
@@ -2579,9 +2567,9 @@ if (total &gt;= 100) {
 <p>------</p>
 <h3 id="提交后-ci-报了什么错">提交后 CI 报了什么错</h3>
 <p>代码推到 GitHub 后，CI 自动跑测试，大约一分钟后失败。</p>
-<figure class="article-image"><img src="./assets/codexguide/github-actions-ci-fix-01-github-actions-workflow-failure-list.png" alt="github-actions-workflow-failure-list" loading="lazy"/><figcaption>github-actions-workflow-failure-list</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/github-actions-ci-fix-01-github-actions-workflow-failure-list.png" alt="github-actions-workflow-failure-list" loading="eager"/><figcaption>github-actions-workflow-failure-list</figcaption></figure>
 <p>点进去看报错：</p>
-<figure class="article-image"><img src="./assets/codexguide/github-actions-ci-fix-02-github-actions-failing-test-log.png" alt="github-actions-failing-test-log" loading="lazy"/><figcaption>github-actions-failing-test-log</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/github-actions-ci-fix-02-github-actions-failing-test-log.png" alt="github-actions-failing-test-log" loading="eager"/><figcaption>github-actions-failing-test-log</figcaption></figure>
 <p>测试期望拿到 100，实际拿到 140。错误直接指向了折扣计算的问题，非常明确。</p>
 <p>------</p>
 <h3 id="配置文件长什么样">配置文件长什么样</h3>
@@ -2648,7 +2636,7 @@ jobs:
 <p>------</p>
 <h3 id="告诉-codex-去做什么">告诉 Codex 去做什么</h3>
 <p>CI 失败后，配置好的 Codex 工作流自动触发。它做了三件事：读取仓库代码、运行测试套件、定位问题并修改。</p>
-<figure class="article-image"><img src="./assets/codexguide/github-actions-ci-fix-03-github-actions-workflow-annotations.png" alt="github-actions-workflow-annotations" loading="lazy"/><figcaption>github-actions-workflow-annotations</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/github-actions-ci-fix-03-github-actions-workflow-annotations.png" alt="github-actions-workflow-annotations" loading="eager"/><figcaption>github-actions-workflow-annotations</figcaption></figure>
 <p>整个过程大约一分钟。</p>
 <p>------</p>
 <h3 id="修复过程中遇到了什么问题">修复过程中遇到了什么问题</h3>
@@ -2657,7 +2645,7 @@ jobs:
 <p>Codex 改好了代码，但开 PR 那步报错：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>Error: GitHub Actions is not permitted to create or approve pull requests.</code></pre></div>
 <p>GitHub 仓库默认不允许 Actions 创建 PR，需要在 Settings 里手动开启。</p>
-<figure class="article-image"><img src="./assets/codexguide/github-actions-ci-fix-04-github-actions-workflow-permissions-settings.png" alt="github-actions-workflow-permissions-settings" loading="lazy"/><figcaption>github-actions-workflow-permissions-settings</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/github-actions-ci-fix-04-github-actions-workflow-permissions-settings.png" alt="github-actions-workflow-permissions-settings" loading="eager"/><figcaption>github-actions-workflow-permissions-settings</figcaption></figure>
 <p>开启后重新触发，正常。</p>
 <p><strong>第二个坑：失败也计费</strong></p>
 <p>调试阶段反复触发了几次，最终账单是 $0.40。</p>
@@ -2665,9 +2653,9 @@ jobs:
 <p>------</p>
 <h3 id="修复成功后的结果">修复成功后的结果</h3>
 <p>工作流跑完变绿，Pull Requests 页面出现一条自动生成的 PR。</p>
-<figure class="article-image"><img src="./assets/codexguide/github-actions-ci-fix-05-github-actions-auto-fix-pr-list.png" alt="github-actions-auto-fix-pr-list" loading="lazy"/><figcaption>github-actions-auto-fix-pr-list</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/github-actions-ci-fix-05-github-actions-auto-fix-pr-list.png" alt="github-actions-auto-fix-pr-list" loading="eager"/><figcaption>github-actions-auto-fix-pr-list</figcaption></figure>
 <p>点进去看它改了什么：</p>
-<figure class="article-image"><img src="./assets/codexguide/github-actions-ci-fix-06-github-actions-discount-fix-diff.png" alt="github-actions-discount-fix-diff" loading="lazy"/><figcaption>github-actions-discount-fix-diff</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/github-actions-ci-fix-06-github-actions-discount-fix-diff.png" alt="github-actions-discount-fix-diff" loading="eager"/><figcaption>github-actions-discount-fix-diff</figcaption></figure>
 <p>就改了这一个字符，其他代码一行没动。</p>
 <p>点 Merge，完成。</p>
 <p>------</p>
@@ -2810,31 +2798,31 @@ PMID or DOI:</code></pre></div>
 <div class="section-break"></div>
 <h3 id="1-打开-hatch-pet">1. 打开 Hatch Pet</h3>
 <p>在对话框中输入 <code>/</code>，选择「Hatch Pet」。</p>
-<figure class="article-image"><img src="./assets/codexguide/hatch-pet-photo-01.png" alt="image.png" loading="lazy"/><figcaption>image.png</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/hatch-pet-photo-01.png" alt="image.png" loading="eager"/><figcaption>image.png</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="2-上传素材并生成">2. 上传素材并生成</h3>
 <p>上传一张图片（头像、照片都可以），然后输入提示词：</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>/Hatch Pet 帮我根据上传的照片生成一个萌系 Q 版的宠物。</code></pre></div>
-<figure class="article-image"><img src="./assets/codexguide/hatch-pet-photo-02.png" alt="image.png" loading="lazy"/><figcaption>image.png</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/hatch-pet-photo-02.png" alt="image.png" loading="eager"/><figcaption>image.png</figcaption></figure>
 <p>Codex 会自动完成风格转换、生成帧数、添加动画效果。</p>
-<figure class="article-image"><img src="./assets/codexguide/hatch-pet-photo-03.png" alt="image.png" loading="lazy"/><figcaption>image.png</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/hatch-pet-photo-03.png" alt="image.png" loading="eager"/><figcaption>image.png</figcaption></figure>
 <p>生成过程中会显示进度提示：</p>
-<figure class="article-image"><img src="./assets/codexguide/hatch-pet-photo-04.png" alt="image.png" loading="lazy"/><figcaption>image.png</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/hatch-pet-photo-04.png" alt="image.png" loading="eager"/><figcaption>image.png</figcaption></figure>
 <blockquote>生成时间通常需要 1-3 分钟，请耐心等待。</blockquote>
 <div class="section-break"></div>
 <h3 id="3-选择宠物">3. 选择宠物</h3>
 <p>生成完成后，在「自定义宠物」区域点击选择，专属宠物就诞生了。</p>
-<figure class="article-image"><img src="./assets/codexguide/hatch-pet-photo-05.png" alt="image.png" loading="lazy"/><figcaption>image.png</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/hatch-pet-photo-05.png" alt="image.png" loading="eager"/><figcaption>image.png</figcaption></figure>
 <p>最终效果：</p>
-<figure class="article-image"><img src="./assets/codexguide/hatch-pet-photo-06.png" alt="image.png" loading="lazy"/><figcaption>image.png</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/hatch-pet-photo-06.png" alt="image.png" loading="eager"/><figcaption>image.png</figcaption></figure>
 <p>生成后的动画效果可以在 Codex 的自定义宠物列表和输出目录中查看。</p>
 <p>宠物包输出位置：</p>
-<figure class="article-image"><img src="./assets/codexguide/hatch-pet-photo-07.png" alt="文章图片" loading="lazy"/><figcaption>文章图片</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/hatch-pet-photo-07.png" alt="文章图片" loading="eager"/><figcaption>文章图片</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="4-分享与安装">4. 分享与安装</h3>
 <p><strong>分享给朋友：</strong> 将宠物文件压缩后发送即可，将宠物文件放到以下路径。</p>
 <div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>~/.codex/pet</code></pre></div>
-<figure class="article-image"><img src="./assets/codexguide/hatch-pet-photo-08.png" alt="image.png" loading="lazy"/><figcaption>image.png</figcaption></figure>
+<figure class="article-image"><img src="./assets/codexguide/hatch-pet-photo-08.png" alt="image.png" loading="eager"/><figcaption>image.png</figcaption></figure>
 <div class="section-break"></div>
 <h3 id="5-提示词参考">5. 提示词参考</h3>
 <div class="table-wrap"><table><tr><th>风格</th><th>提示词示例</th></tr>
