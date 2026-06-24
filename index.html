@@ -1783,150 +1783,307 @@ PMID or DOI:</code></pre></div>
 <li>Figma 文件分层清楚，后续能继续改。</li>
 </ul>
 <div class="section-break"></div>
+<div class="section-break"></div>
+<p>description: &quot;Agent 智能客服完整案例拆解：把客服流程拆成知识库、意图识别、回答生成和人工兜底。&quot;</p>
+<div class="section-break"></div>
 </section>
 <section class="content-section" data-step="31"><div class="section-kicker">Chapter 31</div><h2 id="10-12-codex-agent-智能客服-把客服流程拆成可落地任务">10.12 Codex × Agent 智能客服：把客服流程拆成可落地任务</h2>
-<p>这个案例适合学习企业知识库客服的基本结构：用户提问、知识检索、答案生成、兜底转人工。重点不是照抄某个客服产品，而是学会把客服任务拆成 Codex 能执行的模块。</p>
-<figure class="article-image"><img src="./assets/codexguide/agent-case-01.png" alt="Codex × Agent 智能客服：把客服流程拆成可落地任务" loading="eager"/><figcaption>Codex × Agent 智能客服：把客服流程拆成可落地任务</figcaption></figure>
-<h3 id="这个案例学什么">这个案例学什么</h3>
+<p>这个案例来自飞书里的 Agent 智能客服资料。它适合学习一件事：不要一上来就说“我要做一个智能客服”，而是把客服流程拆成几个能检查、能演示、能迭代的小模块。</p>
+<p>智能客服不是简单替人聊天。一个能用的客服 Agent 至少要做到：听懂用户在问什么、知道去哪里找依据、回答时不要乱编、遇到解决不了的问题能转人工、最后还能留下记录方便复盘。</p>
+<figure class="article-image"><img src="./assets/codexguide/agent-case-01.png" alt="Agent 智能客服案例封面" loading="eager"/><figcaption>Agent 智能客服案例封面</figcaption></figure>
+<h3 id="这个案例真正学什么">这个案例真正学什么</h3>
 <ul>
-<li>如何把客服需求拆成知识库、意图识别、回答生成和人工兜底</li>
-<li>如何让 Codex 先画流程，再写页面或原型</li>
-<li>如何检查回答是否有依据，避免胡编</li>
+<li>把“客服”拆成标准问答、多轮追问、知识检索、答案生成、转人工和数据记录。</li>
+<li>让 Codex 先画流程，再写页面或原型，不要直接做一个大系统。</li>
+<li>学会设计兜底：不知道就说不知道，不能解决就转人工，不要强行回答。</li>
+<li>学会验收客服 Agent：不是看它会不会聊天，而是看它能不能稳定解决问题。</li>
 </ul>
+<h3 id="最小可做版本">最小可做版本</h3>
+<p>先别做全渠道客服，也别接真实账号。最小版本只做一个小场景，比如“售后问题查询”或“课程资料领取”。</p>
+<div class="table-wrap"><table><tr><th>模块</th><th>做什么</th><th>新手怎么理解</th></tr>
+<tr><td data-label="模块">用户入口</td><td data-label="做什么">用户输入问题</td><td data-label="新手怎么理解">一个聊天框就够</td></tr>
+<tr><td data-label="模块">意图识别</td><td data-label="做什么">判断用户想问什么</td><td data-label="新手怎么理解">是查进度、问规则，还是投诉</td></tr>
+<tr><td data-label="模块">知识库</td><td data-label="做什么">放标准答案和规则</td><td data-label="新手怎么理解">可以先用一张表格代替</td></tr>
+<tr><td data-label="模块">回答生成</td><td data-label="做什么">根据知识库组织答案</td><td data-label="新手怎么理解">必须说明依据来自哪里</td></tr>
+<tr><td data-label="模块">追问补全</td><td data-label="做什么">信息不够时继续问</td><td data-label="新手怎么理解">比如缺订单号、手机号、时间</td></tr>
+<tr><td data-label="模块">人工兜底</td><td data-label="做什么">解决不了就交给人</td><td data-label="新手怎么理解">不要让 AI 硬答</td></tr>
+<tr><td data-label="模块">日志记录</td><td data-label="做什么">记录问题和处理结果</td><td data-label="新手怎么理解">后面才能优化知识库</td></tr></table></div>
 <h3 id="照着做">照着做</h3>
 <ol>
-<li>先写清楚业务场景，不要只说“做一个 Agent”。</li>
-<li>让 Codex 先拆模块和流程，不要马上写完整系统。</li>
-<li>对每个模块写清楚输入、输出和失败情况。</li>
-<li>只做一个最小演示版本，能跑通再继续加功能。</li>
-<li>最后让 Codex 自己做 review：有没有越权、幻觉、漏验收、没有兜底。</li>
+<li>先选一个很小的客服场景。不要写“做智能客服”，要写“处理售后进度查询”。</li>
+<li>列出 20 个真实问题，按类型分组：规则类、进度类、异常类、投诉类。</li>
+<li>把答案整理成知识表：问题类型、需要的信息、标准答案、不能自动处理的情况。</li>
+<li>让 Codex 画流程图：用户提问以后，先判断意图，再决定回答、追问或转人工。</li>
+<li>让 Codex 做一个低保真页面：一个聊天框、一个知识库表、一个日志区。</li>
+<li>用 8 到 10 个测试问题去试：正常问题、信息缺失、问错领域、情绪化投诉都要测。</li>
+<li>最后让 Codex 自己复查：有没有乱编、有没有越权、有没有该转人工却没转。</li>
 </ol>
 <h3 id="可以直接复制的提示词">可以直接复制的提示词</h3>
-<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请帮我设计一个智能客服 Agent 的最小可用原型。先画出用户提问、知识检索、答案生成、转人工、日志记录这 5 个模块的流程，再列出每个模块需要哪些输入和输出。不要直接写大系统，先做可以演示的版本。</code></pre></div>
-<h3 id="验收标准">验收标准</h3>
+<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请帮我设计一个智能客服 Agent 的最小可用原型。场景是：[填写具体场景，例如售后进度查询]。
+
+请先不要写完整系统，按下面顺序输出：
+1. 用户会问的 20 个典型问题，并按意图分类。
+2. 每类问题需要哪些信息，信息不够时应该怎么追问。
+3. 知识库表格字段：问题类型、标准答案、依据、不能自动处理的情况。
+4. 客服 Agent 的流程图：用户提问 → 意图识别 → 查知识库 → 生成回答 → 追问/转人工 → 记录日志。
+5. 一个可以演示的低保真页面方案。
+6. 10 条测试用例，用来检查它会不会乱答。
+
+要求：不知道就说不知道；没有依据不能编；高风险或投诉类问题必须转人工。</code></pre></div>
+<h3 id="验收清单-2">验收清单</h3>
 <ul>
-<li>能说清楚这个 Agent 帮谁解决什么问题。</li>
-<li>有流程图或模块说明，而不是只有一句概念。</li>
-<li>每个工具都有边界，知道什么时候不能自动执行。</li>
-<li>有日志、人工确认或失败兜底。</li>
-<li>能把这个案例改写成你自己的真实任务。</li>
+<li>能说清楚这个客服 Agent 服务谁、解决哪一类问题。</li>
+<li>至少有 4 类问题意图，不是所有问题都走同一条回答。</li>
+<li>每个回答都能追到知识库依据。</li>
+<li>信息不够时会追问，不会直接编答案。</li>
+<li>有“无法处理”和“转人工”的规则。</li>
+<li>有测试问题和日志记录，后续能继续优化。</li>
 </ul>
+<h3 id="练习任务">练习任务</h3>
+<p>拿你自己的一个业务场景练：比如资料领取、售后进度、活动规则、内部制度问答。只做一个场景，不要贪多。做完后让 Codex 用“正常问题、缺信息问题、超范围问题、情绪化问题”各测 2 条。</p>
+<div class="section-break"></div>
+<div class="section-break"></div>
+<p>description: &quot;AI Agent 系统架构完整案例拆解：先画清楚角色、工具、记忆、权限和日志，再开发。&quot;</p>
 <div class="section-break"></div>
 </section>
 <section class="content-section" data-step="32"><div class="section-kicker">Chapter 32</div><h2 id="10-13-codex-agent-系统架构-先画清楚再开发">10.13 Codex × Agent 系统架构：先画清楚再开发</h2>
-<p>这个案例适合学习 Agent 系统架构。新手最容易一上来就堆工具，结果系统变得很乱。正确顺序是先让 Codex 画清楚角色、工具、记忆、任务队列和安全边界。</p>
-<figure class="article-image"><img src="./assets/codexguide/agent-case-02.png" alt="Codex × Agent 系统架构：先画清楚再开发" loading="eager"/><figcaption>Codex × Agent 系统架构：先画清楚再开发</figcaption></figure>
-<h3 id="这个案例学什么-2">这个案例学什么</h3>
+<p>这个案例来自飞书里的 AI Agent 系统架构设计资料。它适合解决一个很常见的问题：很多人一想到 Agent，就开始堆模型、工具、插件和自动化，最后系统看起来很厉害，但谁也说不清它到底怎么工作。</p>
+<p>正确做法是先画架构，再写代码。架构不是为了显得专业，而是为了让你知道：用户从哪里进来，模型什么时候判断，工具什么时候执行，哪些地方必须人工确认，失败以后怎么办。</p>
+<figure class="article-image"><img src="./assets/codexguide/agent-case-02.png" alt="AI Agent 系统架构案例封面" loading="eager"/><figcaption>AI Agent 系统架构案例封面</figcaption></figure>
+<h3 id="这个案例真正学什么-2">这个案例真正学什么</h3>
 <ul>
-<li>Agent 系统通常由模型、工具、记忆、任务流、权限和日志组成</li>
-<li>架构图要先服务理解，不要一开始追求复杂</li>
-<li>每个工具都要写清楚能做什么、不能做什么</li>
+<li>Agent 系统不只是一个模型，通常还包括任务编排、工具调用、知识库、记忆、权限、日志和人工复核。</li>
+<li>架构图要先服务理解，不要为了复杂而复杂。</li>
+<li>每个工具都要写边界：能做什么、不能做什么、什么时候必须停下来问人。</li>
+<li>一个好架构必须能解释失败情况，而不是只画成功流程。</li>
 </ul>
+<h3 id="一张简单架构应该包含什么">一张简单架构应该包含什么</h3>
+<div class="table-wrap"><table><tr><th>部分</th><th>作用</th><th>新手检查方式</th></tr>
+<tr><td data-label="部分">用户入口</td><td data-label="作用">接收任务</td><td data-label="新手检查方式">聊天框、表单、网页入口都可以</td></tr>
+<tr><td data-label="部分">任务理解</td><td data-label="作用">把用户话拆成目标和约束</td><td data-label="新手检查方式">Codex 先复述任务</td></tr>
+<tr><td data-label="部分">任务编排</td><td data-label="作用">决定先做什么、后做什么</td><td data-label="新手检查方式">输出步骤清单</td></tr>
+<tr><td data-label="部分">工具层</td><td data-label="作用">执行搜索、读文件、写文件、生成图等动作</td><td data-label="新手检查方式">每个工具有权限边界</td></tr>
+<tr><td data-label="部分">知识库</td><td data-label="作用">提供依据</td><td data-label="新手检查方式">回答能引用来源</td></tr>
+<tr><td data-label="部分">记忆/上下文</td><td data-label="作用">保存本次任务需要的信息</td><td data-label="新手检查方式">不要保存敏感信息</td></tr>
+<tr><td data-label="部分">人工确认</td><td data-label="作用">高风险动作前停下来</td><td data-label="新手检查方式">写入、删除、发布前确认</td></tr>
+<tr><td data-label="部分">日志</td><td data-label="作用">留下执行记录</td><td data-label="新手检查方式">方便复盘和追责</td></tr></table></div>
 <h3 id="照着做-2">照着做</h3>
 <ol>
-<li>先写清楚业务场景，不要只说“做一个 Agent”。</li>
-<li>让 Codex 先拆模块和流程，不要马上写完整系统。</li>
-<li>对每个模块写清楚输入、输出和失败情况。</li>
-<li>只做一个最小演示版本，能跑通再继续加功能。</li>
-<li>最后让 Codex 自己做 review：有没有越权、幻觉、漏验收、没有兜底。</li>
+<li>先写一句话场景：这个 Agent 帮谁，在什么情况下，完成什么任务。</li>
+<li>列出输入和输出：用户给它什么，它最后交付什么。</li>
+<li>列工具清单：读资料、查网页、生成页面、写文档、发布网站，每个工具单独写边界。</li>
+<li>画主流程：接收任务 → 拆解任务 → 选择工具 → 执行 → 检查 → 交付。</li>
+<li>画失败流程：资料缺失、权限不够、工具失败、结果不可信时分别怎么办。</li>
+<li>标出人工确认点：删除文件、发布线上、连接账号、发送消息等动作必须停下来。</li>
+<li>最后让 Codex 把架构变成一页说明文档，让别人看得懂。</li>
 </ol>
 <h3 id="可以直接复制的提示词-2">可以直接复制的提示词</h3>
-<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请帮我把一个 Agent 系统画成架构说明。场景是：[填写你的业务]。请输出：1. 模块清单；2. 每个模块的职责；3. 数据如何流动；4. 哪些地方需要人工确认；5. 一张可以给新人看的流程图。</code></pre></div>
-<h3 id="验收标准-2">验收标准</h3>
+<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请帮我设计一个 AI Agent 的系统架构。场景是：[填写你的业务场景]。
+
+请按下面格式输出：
+1. 这个 Agent 的用户是谁，它解决什么问题。
+2. 输入是什么，输出是什么。
+3. 模块清单：用户入口、任务理解、任务编排、工具层、知识库、记忆、人工确认、日志。
+4. 每个模块的职责、输入、输出和失败情况。
+5. 一张从用户发起任务到最终交付的流程图。
+6. 哪些动作必须人工确认，为什么。
+7. 最小可用版本先做哪些，后续版本再加哪些。
+
+要求：架构要能给非技术读者看懂，不要堆概念；每个工具都要写清楚边界。</code></pre></div>
+<h3 id="验收清单-3">验收清单</h3>
 <ul>
-<li>能说清楚这个 Agent 帮谁解决什么问题。</li>
-<li>有流程图或模块说明，而不是只有一句概念。</li>
-<li>每个工具都有边界，知道什么时候不能自动执行。</li>
-<li>有日志、人工确认或失败兜底。</li>
-<li>能把这个案例改写成你自己的真实任务。</li>
+<li>读者能一眼看懂 Agent 的工作流。</li>
+<li>有成功流程，也有失败流程。</li>
+<li>工具不是随便堆的，每个工具都有用途和边界。</li>
+<li>明确哪些动作不能自动执行。</li>
+<li>有日志和复盘机制。</li>
+<li>可以从架构直接拆出第一版开发任务。</li>
 </ul>
+<h3 id="练习任务-2">练习任务</h3>
+<p>选一个你熟悉的任务，比如“自动整理会议纪要”“整理网站教程”“批量检查页面问题”。让 Codex 先画架构，不写代码。你只看一件事：如果某一步失败，它有没有下一步处理办法。</p>
+<div class="section-break"></div>
+<div class="section-break"></div>
+<p>description: &quot;LLM Agent 量化投资案例拆解：把高风险场景拆成研究助手、回测草稿和风险复核。&quot;</p>
 <div class="section-break"></div>
 </section>
 <section class="content-section" data-step="33"><div class="section-kicker">Chapter 33</div><h2 id="10-14-codex-llm-agent-量化投资-把复杂流程拆成研究助手">10.14 Codex × LLM Agent 量化投资：把复杂流程拆成研究助手</h2>
-<p>这个案例适合学习高风险场景怎么用 Agent。量化投资不能让 AI 直接替你下判断，更适合让它做资料整理、策略说明、回测脚本草稿和风险检查。</p>
-<figure class="article-image"><img src="./assets/codexguide/agent-case-03.png" alt="Codex × LLM Agent 量化投资：把复杂流程拆成研究助手" loading="eager"/><figcaption>Codex × LLM Agent 量化投资：把复杂流程拆成研究助手</figcaption></figure>
-<h3 id="这个案例学什么-3">这个案例学什么</h3>
+<p>这个案例来自飞书里的“基于 LLM 的 Agent 在量化投资中的应用”。它适合学习高风险场景怎么用 Agent：不是让 AI 直接替你做决策，而是让它做研究辅助、资料整理、策略说明、回测脚本草稿和风险检查。</p>
+<p>量化投资这类场景一定要小心。Agent 可以帮你整理逻辑，但不能替你保证收益，更不能直接给买卖建议。页面里要把“人工复核”和“风险提示”放在非常明显的位置。</p>
+<figure class="article-image"><img src="./assets/codexguide/agent-case-03.png" alt="LLM Agent 量化投资案例封面" loading="eager"/><figcaption>LLM Agent 量化投资案例封面</figcaption></figure>
+<h3 id="这个案例真正学什么-3">这个案例真正学什么</h3>
 <ul>
-<li>高风险场景里，Agent 应该做研究辅助，不直接做最终决策</li>
-<li>要把数据来源、假设、回测口径写清楚</li>
-<li>输出必须保留风险提示和人工复核位置</li>
+<li>高风险任务要把 Agent 放在“研究助手”位置，不要放在“最终决策者”位置。</li>
+<li>所有数据来源、假设、指标口径都要写清楚。</li>
+<li>回测结果只能说明历史表现，不能代表未来结果。</li>
+<li>每个输出都要带风险提示和人工复核节点。</li>
 </ul>
+<h3 id="最小可做版本-2">最小可做版本</h3>
+<p>不要一开始做自动交易。最小版本可以只做“策略研究助手”。它接收一个策略想法，然后输出研究框架、需要的数据、指标解释、回测脚本草稿和风险清单。</p>
+<div class="table-wrap"><table><tr><th>模块</th><th>做什么</th><th>不能做什么</th></tr>
+<tr><td data-label="模块">策略理解</td><td data-label="做什么">把用户想法拆成可研究假设</td><td data-label="不能做什么">不能直接判断一定赚钱</td></tr>
+<tr><td data-label="模块">数据清单</td><td data-label="做什么">列出需要哪些字段</td><td data-label="不能做什么">不能伪造数据来源</td></tr>
+<tr><td data-label="模块">指标解释</td><td data-label="做什么">解释收益、回撤、波动等指标</td><td data-label="不能做什么">不能只报好看的指标</td></tr>
+<tr><td data-label="模块">回测草稿</td><td data-label="做什么">生成可检查的脚本思路</td><td data-label="不能做什么">不能直接连真实交易</td></tr>
+<tr><td data-label="模块">风险复核</td><td data-label="做什么">列出过拟合、样本偏差、成本影响</td><td data-label="不能做什么">不能省略风险提示</td></tr>
+<tr><td data-label="模块">人工确认</td><td data-label="做什么">让人确认假设和结果</td><td data-label="不能做什么">不能自动做最终决策</td></tr></table></div>
 <h3 id="照着做-3">照着做</h3>
 <ol>
-<li>先写清楚业务场景，不要只说“做一个 Agent”。</li>
-<li>让 Codex 先拆模块和流程，不要马上写完整系统。</li>
-<li>对每个模块写清楚输入、输出和失败情况。</li>
-<li>只做一个最小演示版本，能跑通再继续加功能。</li>
-<li>最后让 Codex 自己做 review：有没有越权、幻觉、漏验收、没有兜底。</li>
+<li>先写一个策略想法，比如“研究某类指标是否和后续收益有关”。</li>
+<li>让 Codex 先把它改写成研究假设，而不是直接写代码。</li>
+<li>让 Codex 列数据字段：时间、标的、价格、成交量、指标、成本、样本范围。</li>
+<li>让 Codex 生成回测流程，不要先追求复杂模型。</li>
+<li>让 Codex 输出风险清单：数据偏差、幸存者偏差、过拟合、交易成本、样本太短。</li>
+<li>最后让 Codex 写“这份结果不能说明什么”，逼它说清楚边界。</li>
 </ol>
 <h3 id="可以直接复制的提示词-3">可以直接复制的提示词</h3>
-<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请把“量化投资研究助手”拆成一个安全的 Agent 工作流。要求只做资料整理、指标解释、策略草稿和回测脚本建议，不给买卖建议。输出模块、输入数据、风险点、人工复核节点和一个练习任务。</code></pre></div>
-<h3 id="验收标准-3">验收标准</h3>
+<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请把“量化投资研究助手”拆成一个安全的 Agent 工作流。
+
+策略想法是：[填写你的策略想法]。
+
+要求：
+1. 只做资料整理、指标解释、策略草稿和回测脚本建议。
+2. 不给买卖建议，不做收益承诺，不连接真实交易。
+3. 输出研究假设、所需数据字段、回测步骤、关键指标、风险清单和人工复核点。
+4. 如果数据不足，请明确说明不能得出结论。
+5. 最后写一段“这份结果不能说明什么”。</code></pre></div>
+<h3 id="验收清单-4">验收清单</h3>
 <ul>
-<li>能说清楚这个 Agent 帮谁解决什么问题。</li>
-<li>有流程图或模块说明，而不是只有一句概念。</li>
-<li>每个工具都有边界，知道什么时候不能自动执行。</li>
-<li>有日志、人工确认或失败兜底。</li>
-<li>能把这个案例改写成你自己的真实任务。</li>
+<li>没有任何“应该买/应该卖”的结论。</li>
+<li>所有数据来源和假设都写清楚。</li>
+<li>有回测口径，不只是一段策略描述。</li>
+<li>有风险清单，而且不是一句空话。</li>
+<li>明确要求人工复核。</li>
+<li>结果里能看到“不确定性”和“不能证明什么”。</li>
 </ul>
+<h3 id="练习任务-3">练习任务</h3>
+<p>让 Codex 把一个策略想法改成研究计划，不要让它直接输出结论。你可以要求它把最终结果分成三栏：能证明什么、不能证明什么、下一步要补什么数据。</p>
+<div class="section-break"></div>
+<div class="section-break"></div>
+<p>description: &quot;SQL-Agent 完整案例拆解：把自然语言问题变成可解释、可检查、只读优先的 SQL。&quot;</p>
 <div class="section-break"></div>
 </section>
 <section class="content-section" data-step="34"><div class="section-kicker">Chapter 34</div><h2 id="10-15-codex-sql-agent-把自然语言变成可检查-sql">10.15 Codex × SQL-Agent：把自然语言变成可检查 SQL</h2>
-<p>这个案例适合学习 SQL-Agent。重点不是让 AI 直接查库，而是让它先读表结构、解释意图、生成 SQL、再让人确认或在测试库执行。</p>
-<figure class="article-image"><img src="./assets/codexguide/agent-case-04.png" alt="Codex × SQL-Agent：把自然语言变成可检查 SQL" loading="eager"/><figcaption>Codex × SQL-Agent：把自然语言变成可检查 SQL</figcaption></figure>
-<h3 id="这个案例学什么-4">这个案例学什么</h3>
+<p>这个案例来自飞书里的“SQL-Agent：实现 SQL 生成、翻译”。它适合学习一个非常实用的 Agent 场景：用户用自然语言提问，Agent 根据表结构生成 SQL，再解释查询逻辑，让人确认后执行。</p>
+<p>重点不是让 AI 直接连数据库乱查，而是让它先读懂表结构、复述问题、选择字段、生成 SQL、解释 SQL、列出风险。尤其涉及真实数据时，必须只读优先，最好先在测试库或样例数据里跑。</p>
+<figure class="article-image"><img src="./assets/codexguide/agent-case-04.png" alt="SQL-Agent 案例封面" loading="eager"/><figcaption>SQL-Agent 案例封面</figcaption></figure>
+<h3 id="这个案例真正学什么-4">这个案例真正学什么</h3>
 <ul>
-<li>先给表结构，再让 Agent 生成 SQL</li>
-<li>SQL 生成后必须解释查询逻辑</li>
-<li>涉及真实数据时要限制权限，只读优先</li>
+<li>SQL-Agent 的核心不是“会写 SQL”，而是“写出来能解释、能检查、能限制风险”。</li>
+<li>表结构比提示词更重要。不给字段说明，Agent 很容易猜表名和字段。</li>
+<li>生成 SQL 之后必须解释：用了哪些表、为什么这么 join、where 条件是什么。</li>
+<li>默认只读，不做删除、更新、写入类操作。</li>
 </ul>
+<h3 id="最小可做版本-3">最小可做版本</h3>
+<p>准备三样东西就能练：一段自然语言问题、一份表结构说明、一组样例数据。先不要连接真实业务库。</p>
+<div class="table-wrap"><table><tr><th>步骤</th><th>Agent 要做什么</th><th>人要检查什么</th></tr>
+<tr><td data-label="步骤">复述问题</td><td data-label="Agent 要做什么">把自然语言改写成查询目标</td><td data-label="人要检查什么">有没有理解错</td></tr>
+<tr><td data-label="步骤">选择表字段</td><td data-label="Agent 要做什么">说明需要哪些表和字段</td><td data-label="人要检查什么">有没有猜不存在的字段</td></tr>
+<tr><td data-label="步骤">生成 SQL</td><td data-label="Agent 要做什么">写出查询语句</td><td data-label="人要检查什么">是否只读、是否加限制</td></tr>
+<tr><td data-label="步骤">解释 SQL</td><td data-label="Agent 要做什么">解释 join、where、group by</td><td data-label="人要检查什么">逻辑是否合理</td></tr>
+<tr><td data-label="步骤">风险提示</td><td data-label="Agent 要做什么">标出可能不准的地方</td><td data-label="人要检查什么">口径是否缺失</td></tr>
+<tr><td data-label="步骤">执行前确认</td><td data-label="Agent 要做什么">等人确认后再跑</td><td data-label="人要检查什么">不自动碰生产库</td></tr></table></div>
 <h3 id="照着做-4">照着做</h3>
 <ol>
-<li>先写清楚业务场景，不要只说“做一个 Agent”。</li>
-<li>让 Codex 先拆模块和流程，不要马上写完整系统。</li>
-<li>对每个模块写清楚输入、输出和失败情况。</li>
-<li>只做一个最小演示版本，能跑通再继续加功能。</li>
-<li>最后让 Codex 自己做 review：有没有越权、幻觉、漏验收、没有兜底。</li>
+<li>先整理表结构。每张表至少写：表名、字段名、字段含义、主键、常见关联字段。</li>
+<li>写一个自然语言问题，比如“统计最近 30 天每个渠道的新增用户数”。</li>
+<li>让 Codex 先复述问题，确认它理解的是不是你想要的口径。</li>
+<li>让 Codex 选择表和字段，并说明为什么选它们。</li>
+<li>让 Codex 生成 SQL，但要求默认加 limit 或时间范围。</li>
+<li>让 Codex 解释 SQL，并列出不确定字段和需要人工确认的口径。</li>
+<li>最后才在测试库或样例数据上执行。</li>
 </ol>
 <h3 id="可以直接复制的提示词-4">可以直接复制的提示词</h3>
-<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请设计一个 SQL-Agent 的练习流程。输入是数据库表结构和一个自然语言问题。请让 Agent 先复述问题，再选择表和字段，生成 SQL，解释 SQL，最后列出需要人工确认的风险。不要直接连接生产数据库。</code></pre></div>
-<h3 id="验收标准-4">验收标准</h3>
+<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请设计一个 SQL-Agent 的练习流程。输入包括：
+1. 数据库表结构：[粘贴表名、字段、含义、关联关系]
+2. 用户问题：[粘贴自然语言问题]
+
+请按下面顺序输出：
+1. 先复述用户真正想查什么。
+2. 选择需要用到的表和字段，并解释原因。
+3. 如果口径不明确，先提出澄清问题。
+4. 生成只读 SQL，默认不要写入、更新或删除数据。
+5. 逐行解释 SQL 逻辑。
+6. 列出执行前需要人工确认的风险。
+7. 给 3 条测试问题，检查 SQL-Agent 有没有乱猜字段。
+
+注意：不要连接生产数据库，不要编造不存在的字段。</code></pre></div>
+<h3 id="验收清单-5">验收清单</h3>
 <ul>
-<li>能说清楚这个 Agent 帮谁解决什么问题。</li>
-<li>有流程图或模块说明，而不是只有一句概念。</li>
-<li>每个工具都有边界，知道什么时候不能自动执行。</li>
-<li>有日志、人工确认或失败兜底。</li>
-<li>能把这个案例改写成你自己的真实任务。</li>
+<li>SQL 之前先复述了问题。</li>
+<li>没有使用表结构里不存在的字段。</li>
+<li>SQL 是只读查询。</li>
+<li>有时间范围、limit 或样例数据限制。</li>
+<li>解释了 join、where、group by 的原因。</li>
+<li>对不确定口径提出了问题，而不是硬写。</li>
 </ul>
+<h3 id="练习任务-4">练习任务</h3>
+<p>随便设计两张表：用户表和订单表。让 Codex 根据“最近 7 天复购用户数”生成 SQL。重点检查它有没有先问清楚“复购”的定义。</p>
+<div class="section-break"></div>
+<div class="section-break"></div>
+<p>description: &quot;商用 AI Agent 完整案例拆解：从 0 到 1 做一个能接任务、调工具、交付结果的小闭环。&quot;</p>
 <div class="section-break"></div>
 </section>
 <section class="content-section" data-step="35"><div class="section-kicker">Chapter 35</div><h2 id="10-16-codex-商用-ai-agent-从-0-到-1-做最小闭环">10.16 Codex × 商用 AI Agent：从 0 到 1 做最小闭环</h2>
-<p>这个案例适合学习商业化 Agent 的入门路径。不要一开始就做“大而全智能体”，先做一个能接收任务、调用工具、返回结果、记录日志的小闭环。</p>
-<figure class="article-image"><img src="./assets/codexguide/agent-case-05.png" alt="Codex × 商用 AI Agent：从 0 到 1 做最小闭环" loading="eager"/><figcaption>Codex × 商用 AI Agent：从 0 到 1 做最小闭环</figcaption></figure>
-<h3 id="这个案例学什么-5">这个案例学什么</h3>
+<p>这个案例来自飞书里的“从 0-1 打造商用 AI Agent”。它适合学习商业化 Agent 的入门路径：不要一开始就做一个“大而全智能体”，先做一个能接收任务、调用工具、返回结果、记录日志、失败兜底的小闭环。</p>
+<p>商用 Agent 最重要的不是炫技，而是稳定交付。用户给它一个明确任务，它能一步步处理，处理不了也能说清楚原因，并把过程留痕。</p>
+<figure class="article-image"><img src="./assets/codexguide/agent-case-05.png" alt="商用 AI Agent 案例封面" loading="eager"/><figcaption>商用 AI Agent 案例封面</figcaption></figure>
+<h3 id="这个案例真正学什么-5">这个案例真正学什么</h3>
 <ul>
-<li>商用 Agent 先做最小闭环，再扩功能</li>
-<li>要明确用户、任务、工具、输出和验收</li>
-<li>上线前必须有权限、日志、失败兜底和人工接管</li>
+<li>从真实任务出发，而不是从工具出发。</li>
+<li>第一版只做一个小闭环：输入、处理、输出、验收、记录。</li>
+<li>工具越多，越要写权限和失败兜底。</li>
+<li>商用场景必须能复盘：为什么这么做、哪里失败、谁确认过。</li>
 </ul>
+<h3 id="最小闭环长什么样">最小闭环长什么样</h3>
+<div class="table-wrap"><table><tr><th>环节</th><th>要回答的问题</th><th>示例</th></tr>
+<tr><td data-label="环节">用户是谁</td><td data-label="要回答的问题">谁会用它</td><td data-label="示例">运营、设计、内容、客服</td></tr>
+<tr><td data-label="环节">任务是什么</td><td data-label="要回答的问题">它重复帮人做哪件事</td><td data-label="示例">整理资料、生成页面、检查表格</td></tr>
+<tr><td data-label="环节">输入是什么</td><td data-label="要回答的问题">用户要给什么材料</td><td data-label="示例">文档、截图、表格、链接</td></tr>
+<tr><td data-label="环节">工具是什么</td><td data-label="要回答的问题">Agent 需要哪些能力</td><td data-label="示例">读文件、浏览网页、生成文档、检查结果</td></tr>
+<tr><td data-label="环节">输出是什么</td><td data-label="要回答的问题">最后交付什么</td><td data-label="示例">页面、报告、清单、表格</td></tr>
+<tr><td data-label="环节">验收是什么</td><td data-label="要回答的问题">怎样算完成</td><td data-label="示例">可打开、可复核、无缺图、无错链</td></tr>
+<tr><td data-label="环节">失败怎么办</td><td data-label="要回答的问题">做不了时怎么处理</td><td data-label="示例">提示缺材料、转人工、暂停等待确认</td></tr></table></div>
 <h3 id="照着做-5">照着做</h3>
 <ol>
-<li>先写清楚业务场景，不要只说“做一个 Agent”。</li>
-<li>让 Codex 先拆模块和流程，不要马上写完整系统。</li>
-<li>对每个模块写清楚输入、输出和失败情况。</li>
-<li>只做一个最小演示版本，能跑通再继续加功能。</li>
-<li>最后让 Codex 自己做 review：有没有越权、幻觉、漏验收、没有兜底。</li>
+<li>先找一个重复任务。不要选“管理全部业务”，选“把一篇教程整理成网页”这种小任务。</li>
+<li>写清楚输入材料：用户给链接、文档、截图，还是表格。</li>
+<li>写清楚交付物：最终要一个网页、一份表格，还是一个文档。</li>
+<li>让 Codex 拆流程：读取材料 → 提取结构 → 生成初稿 → 插入图片 → 检查 → 发布。</li>
+<li>让 Codex 标出人工确认点：用外部素材、发布线上、修改原文、删除内容。</li>
+<li>做一个最小演示版本，只服务一个任务，不要一口气做平台。</li>
+<li>用真实材料跑一遍，记录失败点，再迭代第二版。</li>
 </ol>
 <h3 id="可以直接复制的提示词-5">可以直接复制的提示词</h3>
-<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请帮我把一个商用 AI Agent 从 0 到 1 拆成最小闭环。业务场景是：[填写场景]。请输出用户是谁、它要完成什么任务、需要调用哪些工具、失败时怎么办、验收标准是什么。</code></pre></div>
-<h3 id="验收标准-5">验收标准</h3>
+<div class="example-card"><div class="example-head"><span>示例</span></div><pre><code>请帮我把一个商用 AI Agent 从 0 到 1 拆成最小闭环。
+
+业务场景是：[填写具体场景]
+目标用户是：[填写谁来用]
+输入材料是：[填写文档、截图、链接、表格等]
+最后交付物是：[填写网页、报告、表格、清单等]
+
+请输出：
+1. 这个 Agent 只解决哪一个重复任务。
+2. 用户需要提供哪些输入。
+3. Agent 每一步怎么处理。
+4. 需要调用哪些工具，每个工具的边界是什么。
+5. 哪些地方必须人工确认。
+6. 失败时怎么兜底。
+7. 第一版最小可用原型怎么做。
+8. 验收标准和测试用例。
+
+要求：不要做大而全系统；先做一个能演示、能复盘、能继续迭代的小闭环。</code></pre></div>
+<h3 id="验收清单-6">验收清单</h3>
 <ul>
-<li>能说清楚这个 Agent 帮谁解决什么问题。</li>
-<li>有流程图或模块说明，而不是只有一句概念。</li>
-<li>每个工具都有边界，知道什么时候不能自动执行。</li>
-<li>有日志、人工确认或失败兜底。</li>
-<li>能把这个案例改写成你自己的真实任务。</li>
+<li>任务足够小，一句话能说清楚。</li>
+<li>输入、处理、输出都有明确格式。</li>
+<li>工具调用有边界，不是什么都自动做。</li>
+<li>有人工确认点。</li>
+<li>有日志或过程记录。</li>
+<li>有失败兜底，不会卡住也不会乱交付。</li>
+<li>第一版可以用真实材料跑一遍。</li>
 </ul>
+<h3 id="练习任务-5">练习任务</h3>
+<p>把你现在最常重复的一件事写出来，比如“把资料整理成教程页”“把截图改成网页”“把会议内容整理成执行清单”。让 Codex 只做这一个任务的最小闭环，不要做平台。</p>
 </section>
 <section class="content-section" data-step="36"><div class="section-kicker">Chapter 36</div><h2 id="11-接下来怎么练">11 接下来怎么练</h2>
 <p>不要要求自己一次读完。更稳的做法是：</p>
